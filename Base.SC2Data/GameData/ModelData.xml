@@ -1,0 +1,690 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<Catalog>
+    <CModel id="AiurTree">
+        <ScaleMax value="2.000000,2.000000,2.000000"/>
+        <ScaleMin value="2.000000,2.000000,2.000000"/>
+    </CModel>
+    <CModel id="Armory">
+        <ScaleMax value="0.700000,0.700000,0.700000"/>
+        <ScaleMin value="0.700000,0.700000,0.700000"/>
+        <Radius value="1.000000"/>
+    </CModel>
+    <CModel id="ArmoryPlacement">
+        <ScaleMax value="0.700000,0.700000,0.700000"/>
+        <ScaleMin value="0.700000,0.700000,0.700000"/>
+    </CModel>
+    <CModel id="Assimilator">
+        <ScaleMax value="0.700000,0.700000,0.700000"/>
+        <ScaleMin value="0.700000,0.700000,0.700000"/>
+        <Radius value="1.000000"/>
+    </CModel>
+    <CModel id="AssimilatorBirth">
+        <Radius value="1.000000"/>
+    </CModel>
+    <CModel id="BanelingNest">
+        <Radius value="1.000000"/>
+        <ScaleMax value="0.850000,0.850000,0.850000"/>
+        <ScaleMin value="0.850000,0.850000,0.850000"/>
+    </CModel>
+    <CModel id="Barracks">
+        <ScaleMax value="0.600000,0.600000,0.600000"/>
+        <ScaleMin value="0.600000,0.600000,0.600000"/>
+        <Radius value="1.000000"/>
+    </CModel>
+    <CModel id="BarracksPlacement">
+        <ScaleMax value="0.600000,0.600000,0.600000"/>
+        <ScaleMin value="0.600000,0.600000,0.600000"/>
+    </CModel>
+    <CModel id="Battlecruiser">
+        <Radius value="0.750000"/>
+    </CModel>
+    <CModel id="BlinkOriginModel">
+        <Model value="Assets\Effects\Protoss\ProtossBuildingDeath\ProtossBuildingDeath_Low.m3"/>
+        <AnimSpeed value="2.000000"/>
+        <ScaleMax value="0.500000,0.500000,0.500000"/>
+        <ScaleMin value="0.500000,0.500000,0.500000"/>
+    </CModel>
+    <CModel id="BloodTargetImpact2" parent="ImpactFX">
+        <Model value="Assets\Effects\Other\BloodTargetImpact\BloodTargetImpact.m3"/>
+        <EditorCategories value="Race:Neutral"/>
+        <Flags index="Ignorable" value="1"/>
+    </CModel>
+    <CModel id="BroodLord">
+        <Radius value="0.750000"/>
+    </CModel>
+    <CModel id="Bunker">
+        <ScaleMax value="0.850000,0.850000,0.850000"/>
+        <ScaleMin value="0.850000,0.850000,0.850000"/>
+        <Radius value="1.000000"/>
+    </CModel>
+    <CModel id="BunkerPlacement">
+        <ScaleMax value="0.850000,0.850000,0.850000"/>
+        <ScaleMin value="0.850000,0.850000,0.850000"/>
+    </CModel>
+    <CModel id="Carrier">
+        <Radius value="0.750000"/>
+    </CModel>
+    <CModel id="CreepTumor">
+        <Radius value="0.000000"/>
+        <SelectionRadius value="0.000000"/>
+        <ShadowRadius value="0.000000"/>
+    </CModel>
+    <CModel id="CyberneticsCore">
+        <ScaleMax value="0.850000,0.850000,0.850000"/>
+        <ScaleMin value="0.850000,0.850000,0.850000"/>
+        <Radius value="1.000000"/>
+    </CModel>
+    <CModel id="CyberneticsCoreBirth">
+        <ScaleMax value="0.850000,0.850000,0.850000"/>
+        <ScaleMin value="0.850000,0.850000,0.850000"/>
+        <Radius value="1.000000"/>
+    </CModel>
+    <CModel id="CyberneticsCorePlacement">
+        <ScaleMax value="0.850000,0.850000,0.850000"/>
+        <ScaleMin value="0.850000,0.850000,0.850000"/>
+    </CModel>
+    <CModel id="DarkShrine">
+        <ScaleMax value="0.650000,0.650000,0.650000"/>
+        <ScaleMin value="0.650000,0.650000,0.650000"/>
+        <Radius value="1.000000"/>
+    </CModel>
+    <CModel id="DarkShrineBirth">
+        <ScaleMax value="0.750000,0.750000,0.750000"/>
+        <ScaleMin value="0.750000,0.750000,0.750000"/>
+        <Radius value="1.000000"/>
+    </CModel>
+    <CModel id="DarkShrinePlacement">
+        <ScaleMax value="0.750000,0.750000,0.750000"/>
+        <ScaleMin value="0.750000,0.750000,0.750000"/>
+        <Radius value="1.000000"/>
+    </CModel>
+    <CModel id="DarkShrineSplat">
+        <ScaleMax value="0.750000,0.750000,0.750000"/>
+    </CModel>
+    <CModel id="EngineeringBay">
+        <ScaleMax value="0.550000,0.550000,0.550000"/>
+        <ScaleMin value="0.550000,0.550000,0.550000"/>
+        <Radius value="1.000000"/>
+    </CModel>
+    <CModel id="EngineeringBayPlacement">
+        <ScaleMax value="0.550000,0.550000,0.550000"/>
+        <ScaleMin value="0.550000,0.550000,0.550000"/>
+    </CModel>
+    <CModel id="ExecutorPortrait2" parent="Portrait" Race="Protoss"/>
+    <CModel id="Factory">
+        <ScaleMax value="0.650000,0.650000,0.650000"/>
+        <ScaleMin value="0.650000,0.650000,0.650000"/>
+        <Radius value="1.000000"/>
+    </CModel>
+    <CModel id="FactoryPlacement">
+        <ScaleMax value="0.650000,0.650000,0.650000"/>
+        <ScaleMin value="0.650000,0.650000,0.650000"/>
+    </CModel>
+    <CModel id="FleetBeacon">
+        <ScaleMax value="0.750000,0.750000,0.750000"/>
+        <Radius value="1.000000"/>
+    </CModel>
+    <CModel id="FleetBeaconBirth">
+        <ScaleMax value="0.750000,0.750000,0.750000"/>
+        <ScaleMin value="0.800000,0.800000,0.800000"/>
+        <Radius value="1.000000"/>
+    </CModel>
+    <CModel id="FleetBeaconPlacement">
+        <ScaleMax value="0.750000,0.750000,0.750000"/>
+        <ScaleMin value="0.850000,0.850000,0.850000"/>
+    </CModel>
+    <CModel id="Forge">
+        <ScaleMax value="0.750000,0.750000,0.750000"/>
+        <ScaleMin value="0.750000,0.750000,0.750000"/>
+        <Radius value="1.000000"/>
+    </CModel>
+    <CModel id="ForgeBirth">
+        <ScaleMax value="0.750000,0.750000,0.750000"/>
+        <Radius value="1.000000"/>
+    </CModel>
+    <CModel id="ForgePlacement">
+        <ScaleMax value="0.750000,0.750000,0.750000"/>
+    </CModel>
+    <CModel id="FusionCore">
+        <ScaleMax value="0.500000,0.500000,0.500000"/>
+        <ScaleMin value="0.500000,0.500000,0.500000"/>
+        <Radius value="1.000000"/>
+    </CModel>
+    <CModel id="FusionCoreDeath">
+        <Radius value="1.000000"/>
+    </CModel>
+    <CModel id="FusionCorePlacement">
+        <ScaleMax value="0.500000,0.500000,0.500000"/>
+        <ScaleMin value="0.500000,0.500000,0.500000"/>
+    </CModel>
+    <CModel id="Gateway">
+        <ScaleMax value="0.700000,0.700000,0.700000"/>
+        <ScaleMin value="0.700000,0.700000,0.700000"/>
+        <Radius value="1.000000"/>
+    </CModel>
+    <CModel id="GatewayBirth">
+        <ScaleMax value="0.700000,0.700000,0.700000"/>
+        <ScaleMin value="0.700000,0.700000,0.700000"/>
+        <Radius value="1.000000"/>
+    </CModel>
+    <CModel id="GatewayPlacement">
+        <ScaleMax value="0.700000,0.700000,0.700000"/>
+        <ScaleMin value="0.700000,0.700000,0.700000"/>
+    </CModel>
+    <CModel id="Ghost">
+        <Model value="Assets\Units\Terran\Nova\Nova.m3"/>
+    </CModel>
+    <CModel id="GhostAcademy">
+        <ScaleMax value="0.750000,0.750000,0.750000"/>
+        <ScaleMin value="0.750000,0.750000,0.750000"/>
+        <Radius value="1.000000"/>
+    </CModel>
+    <CModel id="GhostAcademyPlacement">
+        <ScaleMax value="0.750000,0.750000,0.750000"/>
+        <ScaleMin value="0.750000,0.750000,0.750000"/>
+    </CModel>
+    <CModel id="GhostDeath">
+        <Model value="Assets\Units\Terran\NovaDeath\NovaDeath.m3"/>
+    </CModel>
+    <CModel id="HybridCShadow">
+        <ScaleMax value="0.500000,0.500000,0.500000"/>
+        <ScaleMin value="0.500000,0.500000,0.500000"/>
+    </CModel>
+    <CModel id="HybridCShadowBig">
+        <ScaleMax value="0.600000,0.600000,0.600000"/>
+        <ScaleMin value="0.600000,0.600000,0.600000"/>
+    </CModel>
+    <CModel id="HybridCShadowSmall">
+        <ScaleMax value="0.400000,0.400000,0.400000"/>
+        <ScaleMin value="0.400000,0.400000,0.400000"/>
+    </CModel>
+    <CModel id="HybridWarpIn">
+        <ScaleMax value="0.600000,0.600000,0.600000"/>
+        <ScaleMin value="0.600000,0.600000,0.600000"/>
+    </CModel>
+    <CModel id="HybridWarpInEffect">
+        <ScaleMax value="0.600000,0.600000,0.600000"/>
+        <ScaleMin value="0.600000,0.600000,0.600000"/>
+    </CModel>
+    <CModel id="HydraliskDen">
+        <ScaleMax value="0.750000,0.750000,0.750000"/>
+        <ScaleMin value="0.750000,0.750000,0.750000"/>
+        <Radius value="1.000000"/>
+    </CModel>
+    <CModel id="LurkerDen">
+        <ScaleMax value="0.750000,0.750000,0.750000"/>
+        <ScaleMin value="0.750000,0.750000,0.750000"/>
+        <Radius value="1.000000"/>
+    </CModel>
+    <CModel id="Maar">
+        <ScaleMax value="0.500000,0.500000,0.500000"/>
+        <ScaleMin value="0.500000,0.500000,0.500000"/>
+        <SelectionRadius value="0.468000"/>
+        <ShadowRadius value="0.468000"/>
+    </CModel>
+    <CModel id="Marine2" parent="Unit" Race="Terran">
+        <Model value="Assets\Units\Terran\Marine\Marine.m3"/>
+        <AttachProps Id="Ref_Target" SquibType="Flesh" RadiusTarget="0.300000"/>
+        <Lighting value="Marine"/>
+        <Occlusion value="Show"/>
+        <Radius value="0.375000"/>
+        <TechPurchaseCamera value="Star2CameraMid03"/>
+        <UnitGlossaryCamera value="Star2CameraMid03"/>
+        <PlanetPanelCamera value="Star2CameraMid03"/>
+        <Events>
+            <Anim value="Stand,Victory,00"/>
+            <Name value="SquibStart"/>
+            <Type value="Custom"/>
+            <Time value="3.200000"/>
+        </Events>
+        <Events>
+            <Anim value="Stand,Victory,00"/>
+            <Name value="SquibStop"/>
+            <Type value="Custom"/>
+            <Time value="4.650000"/>
+        </Events>
+        <Events>
+            <Anim value="Stand,Victory,01"/>
+            <Name value="SquibStart"/>
+            <Type value="Custom"/>
+            <Time value="0.350000"/>
+        </Events>
+        <Events>
+            <Anim value="Stand,Victory,01"/>
+            <Name value="SquibStop"/>
+            <Type value="Custom"/>
+            <Time value="2.350000"/>
+        </Events>
+        <SelectionRadius value="0.375000"/>
+        <ShadowRadius value="0.375000"/>
+    </CModel>
+    <CModel id="MarineDeath2" parent="UnitDeath" Race="Terran">
+        <Model value="Assets\Units\Terran\MarineDeath\MarineDeath.m3"/>
+        <LowQualityModel value="TerranSmallUnitDeathLow"/>
+        <Lighting value="MarineDeath"/>
+        <Occlusion value="Show"/>
+    </CModel>
+    <CModel id="MarineDeathAcid2" parent="UnitDeath" Race="Terran">
+        <Model value="Assets\Units\Terran\MarineDeathAcid\MarineDeathAcid.m3"/>
+        <LowQualityModel value="TerranSmallUnitDeathLow"/>
+        <Lighting value="MarineDeathAcid"/>
+        <Occlusion value="Show"/>
+    </CModel>
+    <CModel id="MarineDeathBlast2" parent="UnitDeath" Race="Terran">
+        <Model value="Assets\Units\Terran\MarineDeathBlast\MarineDeathBlast.m3"/>
+        <LowQualityModel value="TerranSmallUnitDeathLow"/>
+        <Lighting value="MarineDeathBlast"/>
+        <Occlusion value="Show"/>
+    </CModel>
+    <CModel id="MarineDeathEat2" parent="UnitDeath" Race="Terran">
+        <Model value="Assets\Units\Terran\MarineDeathEat\MarineDeathEat.m3"/>
+        <LowQualityModel value="TerranSmallUnitDeathLow"/>
+        <Lighting value="MarineDeathEat"/>
+        <Occlusion value="Show"/>
+    </CModel>
+    <CModel id="MarineDeathEviscerate2" parent="UnitDeath" Race="Terran">
+        <Model value="Assets\Units\Terran\MarineDeathEviscerate\MarineDeathEviscerate.m3"/>
+        <LowQualityModel value="TerranSmallUnitDeathLow"/>
+        <Lighting value="MarineDeathEviscerate"/>
+        <Occlusion value="Show"/>
+        <VariationCount value="2"/>
+        <Variations Number="0" Probability="9"/>
+        <Variations Number="1"/>
+    </CModel>
+    <CModel id="MarineDeathFire2" parent="UnitDeath" Race="Terran">
+        <Model value="Assets\Units\Terran\MarineDeathFire\MarineDeathFire.m3"/>
+        <LowQualityModel value="TerranSmallUnitDeathLow"/>
+        <Lighting value="MarineDeathFire"/>
+        <Occlusion value="Show"/>
+    </CModel>
+    <CModel id="MarinePortrait2" parent="FXAPortrait" Race="Terran">
+        <Model value="Assets\Portraits\Terran\MarinePortrait\MarinePortrait.m3"/>
+        <FacialController value="LocalizedData\Facial\MarinePortrait.fxa"/>
+        <Image value="Assets\Textures\MarinePortrait_Static.dds"/>
+        <Lighting value="MarinePortrait"/>
+    </CModel>
+    <CModel id="MercCompound">
+        <ScaleMax value="0.500000,0.500000,0.500000"/>
+        <ScaleMin value="0.500000,0.500000,0.500000"/>
+        <Radius value="1.000000"/>
+    </CModel>
+    <CModel id="MercCompoundPlacement">
+        <ScaleMax value="0.500000,0.500000,0.500000"/>
+        <ScaleMin value="0.500000,0.500000,0.500000"/>
+    </CModel>
+    <CModel id="Nexus">
+        <ScaleMax value="1.700000,1.700000,1.700000"/>
+        <ScaleMin value="1.700000,1.700000,1.700000"/>
+    </CModel>
+    <CModel id="NydusCanal">
+        <Radius value="1.000000"/>
+    </CModel>
+    <CModel id="NydusCanalPlacement">
+        <Radius value="1.000000"/>
+    </CModel>
+    <CModel id="OverlordPortrait2" parent="Portrait" Race="Zerg">
+        <Model value="Assets\Portraits\Zerg\OverlordPortrait\OverlordPortrait.m3"/>
+        <Image value="Assets\Textures\OverlordPortrait_Static.dds"/>
+        <Lighting value="OverlordPortrait"/>
+    </CModel>
+    <CModel id="PhotonCannon2" parent="Building" Race="Protoss">
+        <Model value="Assets\Buildings\Protoss\PhotonCannon\PhotonCannon.m3"/>
+        <AttachProps Id="Ref_TurretZ">
+            <Keys index="Turret" value="0"/>
+        </AttachProps>
+        <Radius value="1.000000"/>
+        <SquibTypeDefault value="Metal"/>
+        <TechPurchaseCamera value="Star2CameraMid06"/>
+        <UnitGlossaryCamera value="Star2CameraMid06"/>
+        <PlanetPanelCamera value="Star2CameraMid06"/>
+        <SelectionLayer value="2"/>
+        <SelectionRadius value="1.176200"/>
+        <ShadowRadius value="1.176200"/>
+        <Tipability value="1.000000"/>
+        <TextureDeclares Prefix="photoncannon_">
+            <Adaptions TriggerOnSubstring="_Diffuse" Slot="main"/>
+            <Adaptions TriggerOnSubstring="_Specular" Slot="main"/>
+            <Adaptions TriggerOnSubstring="_Emissive" Slot="main"/>
+        </TextureDeclares>
+        <TextureDeclares Prefix="photoncannonbase_">
+            <Adaptions TriggerOnSubstring="_Diffuse" Slot="generic05"/>
+            <Adaptions TriggerOnSubstring="_Specular" Slot="generic05"/>
+            <Adaptions TriggerOnSubstring="_Emissive" Slot="generic05"/>
+        </TextureDeclares>
+        <TextureDeclares Prefix="lazerbolt1_">
+            <Adaptions Slot="generic01"/>
+        </TextureDeclares>
+        <TextureDeclares Prefix="grad_">
+            <Adaptions Slot="generic02"/>
+        </TextureDeclares>
+        <TextureDeclares Prefix="warpline2_">
+            <Adaptions Slot="generic03"/>
+        </TextureDeclares>
+        <TextureDeclares Prefix="tronsquare1_">
+            <Adaptions Slot="generic04"/>
+        </TextureDeclares>
+    </CModel>
+    <CModel id="PhotonCannonAttackImpact2" parent="ImpactFX">
+        <Model value="Assets\Effects\Protoss\PhaseCannonMissileImpact\PhaseCannonMissileImpact.m3"/>
+        <EditorCategories value="Race:Protoss"/>
+    </CModel>
+    <CModel id="PhotonCannonBirth2" parent="PhotonCannon">
+        <Model value="Assets\Buildings\Protoss\PhotonCannonWarpIn\PhotonCannonWarpIn.m3"/>
+        <AttachProps index="0" removed="1"/>
+        <Events>
+            <Anim value="Stand,Build,End"/>
+            <Name value="BuildingWarpIn"/>
+            <Type value="Sound"/>
+            <Time value="1.166600"/>
+        </Events>
+        <TextureDeclares index="2" removed="1"/>
+        <TextureDeclares index="3" removed="1"/>
+        <TextureDeclares index="4" removed="1"/>
+        <TextureDeclares index="5" removed="1"/>
+    </CModel>
+    <CModel id="PhotonCannonDeath2" parent="UnitDeath">
+        <Model value="Assets\Buildings\Protoss\PhotonCannonDeath\PhotonCannonDeath.m3"/>
+        <LowQualityModel value="ProtossSmallBuildingDeathLow"/>
+        <EditorCategories value="Race:Protoss"/>
+        <TextureDeclares Prefix="photoncannon_">
+            <Adaptions TriggerOnSubstring="_Diffuse" Slot="main"/>
+            <Adaptions TriggerOnSubstring="_Specular" Slot="main"/>
+        </TextureDeclares>
+        <TextureDeclares Prefix="photoncannonbase_">
+            <Adaptions TriggerOnSubstring="_Diffuse" Slot="generic05"/>
+            <Adaptions TriggerOnSubstring="_Specular" Slot="generic05"/>
+        </TextureDeclares>
+        <VariationCount value="2"/>
+    </CModel>
+    <CModel id="PhotonCannonDeathUnpowered2" parent="UnitDeath">
+        <Model value="Assets\Buildings\Protoss\PhotonCannonDeathUnpowered\PhotonCannonDeathUnpowered.m3"/>
+        <LowQualityModel value="ProtossSmallBuildingDeathLow"/>
+        <EditorCategories value="Race:Protoss"/>
+        <TextureDeclares Prefix="photoncannon_">
+            <Adaptions TriggerOnSubstring="_Diffuse" Slot="main"/>
+            <Adaptions TriggerOnSubstring="_Specular" Slot="main"/>
+        </TextureDeclares>
+        <TextureDeclares Prefix="photoncannonbase_">
+            <Adaptions TriggerOnSubstring="_Diffuse" Slot="generic05"/>
+            <Adaptions TriggerOnSubstring="_Specular" Slot="generic05"/>
+        </TextureDeclares>
+    </CModel>
+    <CModel id="PhotonCannonPlacement2" parent="Placement" Race="Protoss">
+        <LowQualityModel value="PhotonCannon"/>
+        <Lighting value="PhaseCannon"/>
+        <Radius value="-1.000000"/>
+        <ScaleMax value="0.850000,0.850000,0.850000"/>
+        <ScaleMin value="0.850000,0.850000,0.850000"/>
+        <SelectionRadius value="0.000000"/>
+        <ShadowRadius value="0.000000"/>
+    </CModel>
+    <CModel id="PhotonCannonSplat2" parent="Splat">
+        <Model value="Assets\Splats\Splat_PhotonCannon\Splat_PhotonCannon.m3"/>
+        <EditorCategories value="Race:Protoss"/>
+        <ScaleMax value="0.850000,0.850000,0.850000"/>
+        <ScaleMin value="0.850000,0.850000,0.850000"/>
+    </CModel>
+    <CModel id="ProtossBuildingBirthSmall2" parent="Building" Race="Protoss">
+        <Model value="Assets\Buildings\Protoss\ProtossBuild\ProtossBuild.m3"/>
+        <LowQualityModel value="ProtossBuildingBirthLowSmall"/>
+        <Radius value="1.000000"/>
+        <ScaleMax value="0.800000,0.800000,0.800000"/>
+        <ScaleMin value="0.800000,0.800000,0.800000"/>
+        <SelectionLayer value="2"/>
+        <SelectionRadius value="1.250000"/>
+        <ShadowRadius value="1.250000"/>
+    </CModel>
+    <CModel id="ProtossSmallUnitDeath2" parent="UnitDeath" Race="Protoss">
+        <Model value="Assets\Effects\Protoss\ProtossSmallUnitDeath\ProtossSmallUnitDeath.m3"/>
+        <LowQualityModel value="ProtossSmallUnitDeathLow"/>
+        <Lighting value="ProtossSmallUnitDeath"/>
+        <Occlusion value="Show"/>
+    </CModel>
+    <CModel id="ProtossSmallUnitDeath3" parent="UnitDeath" Race="Protoss">
+        <Model value="Assets\Effects\Protoss\ProtossSmallUnitDeath\ProtossSmallUnitDeath.m3"/>
+        <LowQualityModel value="ProtossSmallUnitDeathLow"/>
+        <Lighting value="ProtossSmallUnitDeath"/>
+        <Occlusion value="Show"/>
+    </CModel>
+    <CModel id="ProtossSmallUnitDeath4" parent="UnitDeath" Race="Protoss">
+        <Model value="Assets\Effects\Protoss\ProtossSmallUnitDeath\ProtossSmallUnitDeath.m3"/>
+        <LowQualityModel value="ProtossSmallUnitDeathLow"/>
+        <Occlusion value="Show"/>
+    </CModel>
+    <CModel id="ProtossWarpInDeath2" parent="BuildingDeath" Race="Protoss">
+        <Model value="Assets\Buildings\Protoss\WarpInDeath\WarpIndeath.m3"/>
+        <LowQualityModel value="ProtossBuildingDeathLow"/>
+    </CModel>
+    <CModel id="PsiIndoctrinator">
+        <ScaleMax value="0.450000,0.450000,0.450000"/>
+        <ScaleMin value="0.450000,0.450000,0.450000"/>
+        <Radius value="1.000000"/>
+    </CModel>
+    <CModel id="Queen">
+        <Radius value="0.800000"/>
+        <ScaleMax value="0.600000,0.600000,0.600000"/>
+        <ScaleMin value="0.600000,0.600000,0.600000"/>
+        <SelectionRadius value="1.000000"/>
+    </CModel>
+    <CModel id="Refinery">
+        <ScaleMax value="0.600000,0.600000,0.600000"/>
+        <ScaleMin value="0.600000,0.600000,0.600000"/>
+        <Radius value="1.000000"/>
+    </CModel>
+    <CModel id="RoachWarren">
+        <Radius value="1.000000"/>
+    </CModel>
+    <CModel id="RoboticsBay">
+        <ScaleMax value="0.750000,0.750000,0.750000"/>
+        <ScaleMin value="0.750000,0.750000,0.750000"/>
+    </CModel>
+    <CModel id="RoboticsFacility">
+        <ScaleMax value="0.700000,0.700000,0.700000"/>
+        <ScaleMin value="0.700000,0.700000,0.700000"/>
+        <Radius value="1.000000"/>
+    </CModel>
+    <CModel id="RoboticsFacilityBirth">
+        <ScaleMax value="0.750000,0.750000,0.750000"/>
+        <ScaleMin value="0.750000,0.750000,0.750000"/>
+        <Radius value="1.000000"/>
+    </CModel>
+    <CModel id="RoboticsFacilityPlacement">
+        <ScaleMax value="0.750000,0.750000,0.750000"/>
+        <ScaleMin value="0.750000,0.750000,0.750000"/>
+    </CModel>
+    <CModel id="RoboticsSupportBay">
+        <ScaleMax value="0.750000,0.750000,0.750000"/>
+        <ScaleMin value="0.750000,0.750000,0.750000"/>
+        <Radius value="1.000000"/>
+    </CModel>
+    <CModel id="RoboticsSupportBayBirth">
+        <ScaleMax value="0.750000,0.750000,0.750000"/>
+        <ScaleMin value="0.750000,0.750000,0.750000"/>
+        <Radius value="1.000000"/>
+    </CModel>
+    <CModel id="RoboticsSupportBayPlacement">
+        <ScaleMax value="0.750000,0.750000,0.750000"/>
+        <ScaleMin value="0.750000,0.750000,0.750000"/>
+    </CModel>
+    <CModel id="SensorTowerPlacement">
+        <ScaleMax value="1.500000,1.500000,1.500000"/>
+        <ScaleMin value="1.500000,1.500000,1.500000"/>
+    </CModel>
+    <CModel id="SentryGun">
+        <ScaleMax value="0.700000,0.700000,0.700000"/>
+        <ScaleMin value="0.700000,0.700000,0.700000"/>
+    </CModel>
+    <CModel id="SpawningPool">
+        <ScaleMax value="0.850000,0.850000,0.850000"/>
+        <ScaleMin value="0.850000,0.850000,0.850000"/>
+        <Radius value="1.000000"/>
+    </CModel>
+    <CModel id="Spire">
+        <ScaleMax value="0.750000,0.750000,0.750000"/>
+        <ScaleMin value="0.750000,0.750000,0.750000"/>
+    </CModel>
+    <CModel id="Spire2" parent="Building" Race="Zerg">
+        <Model value="Assets\Buildings\Zerg\GreaterSpire\GreaterSpire.m3"/>
+        <AttachProps Id="Ref_Target" SquibType="Flesh" RadiusTarget="1.000000"/>
+        <Lighting value="Spire"/>
+        <Radius value="1.000000"/>
+        <ScaleMax value="0.700000,0.700000,0.700000"/>
+        <ScaleMin value="0.700000,0.700000,0.700000"/>
+        <SelectionLayer value="2"/>
+        <SelectionRadius value="1.000000"/>
+        <ShadowRadius value="1.000000"/>
+    </CModel>
+    <CModel id="SpireDeath2" parent="BuildingDeath" Race="Zerg">
+        <Model value="Assets\Buildings\Zerg\SpireDeath\SpireDeath.m3"/>
+        <LowQualityModel value="SpireDeathLow"/>
+        <Lighting value="SpireDeath"/>
+        <Occlusion value="Show"/>
+        <Events>
+            <Anim value="Death,00"/>
+            <Name value="ZergExplosionMedium"/>
+            <Type value="Sound"/>
+            <Time value="0.010000"/>
+        </Events>
+        <Events>
+            <Anim value="Death,00"/>
+            <Name value="ZergExplosionLarge"/>
+            <Type value="Sound"/>
+            <Time value="0.700000"/>
+        </Events>
+    </CModel>
+    <CModel id="Stargate">
+        <ScaleMax value="0.650000,0.650000,0.650000"/>
+        <ScaleMin value="0.650000,0.650000,0.650000"/>
+        <Radius value="1.000000"/>
+    </CModel>
+    <CModel id="StargateBirth">
+        <ScaleMax value="0.650000,0.650000,0.650000"/>
+        <ScaleMin value="0.650000,0.650000,0.650000"/>
+        <Radius value="1.000000"/>
+    </CModel>
+    <CModel id="StargatePlacement">
+        <ScaleMax value="0.650000,0.650000,0.650000"/>
+        <ScaleMin value="0.650000,0.650000,0.650000"/>
+    </CModel>
+    <CModel id="Starport">
+        <ScaleMax value="0.650000,0.650000,0.650000"/>
+        <ScaleMin value="0.650000,0.650000,0.650000"/>
+        <Radius value="1.000000"/>
+    </CModel>
+    <CModel id="StarportPlacement">
+        <ScaleMax value="0.650000,0.650000,0.650000"/>
+        <ScaleMin value="0.650000,0.650000,0.650000"/>
+    </CModel>
+    <CModel id="SupplyDepot">
+        <Radius value="1.000000"/>
+    </CModel>
+    <CModel id="TalDarimMothership">
+        <Radius value="0.450000"/>
+        <ScaleMax value="0.150000,0.150000,0.150000"/>
+        <ScaleMin value="0.150000,0.150000,0.150000"/>
+        <SelectionRadius value="0.468700"/>
+        <ShadowRadius value="0.468700"/>
+    </CModel>
+    <CModel id="TaurenSpaceMarine">
+        <ScaleMax value="0.600000,0.600000,0.600000"/>
+        <ScaleMin value="0.600000,0.600000,0.600000"/>
+        <SelectionRadius value="0.375000"/>
+        <ShadowRadius value="0.375000"/>
+    </CModel>
+    <CModel id="TemplarArchive">
+        <ScaleMax value="0.700000,0.700000,0.700000"/>
+        <ScaleMin value="0.700000,0.700000,0.700000"/>
+        <Radius value="1.000000"/>
+    </CModel>
+    <CModel id="TemplarArchiveBirth">
+        <ScaleMax value="0.700000,0.700000,0.700000"/>
+        <Radius value="1.000000"/>
+    </CModel>
+    <CModel id="TemplarArchivesPlacement">
+        <ScaleMax value="0.700000,0.700000,0.700000"/>
+        <ScaleMin value="0.700000,0.700000,0.700000"/>
+    </CModel>
+    <CModel id="TerranSmallUnitDeath2" parent="UnitDeath" Race="Terran">
+        <Model value="Assets\Effects\Terran\TerranSmallUnitDeath\TerranSmallUnitDeath.m3"/>
+        <LowQualityModel value="TerranSmallUnitDeathLow"/>
+        <Lighting value="TerranSmallUnitDeath"/>
+        <Occlusion value="Show"/>
+    </CModel>
+    <CModel id="TerranSmallUnitDeath3" parent="UnitDeath" Race="Terran">
+        <Model value="Assets\Effects\Terran\TerranSmallUnitDeath\TerranSmallUnitDeath.m3"/>
+        <LowQualityModel value="TerranSmallUnitDeathLow"/>
+        <Lighting value="TerranSmallUnitDeath"/>
+        <Occlusion value="Show"/>
+    </CModel>
+    <CModel id="TerranSmallUnitDeath4" parent="UnitDeath" Race="Terran">
+        <Model value="Assets\Effects\Terran\TerranSmallUnitDeath\TerranSmallUnitDeath.m3"/>
+        <LowQualityModel value="TerranSmallUnitDeathLow"/>
+        <Occlusion value="Show"/>
+    </CModel>
+    <CModel id="Thor">
+        <Radius value="1.000000"/>
+        <ScaleMax value="0.550000,0.550000,0.550000"/>
+        <ScaleMin value="0.550000,0.550000,0.550000"/>
+        <SelectionRadius value="1.500000"/>
+        <ShadowRadius value="1.500000"/>
+    </CModel>
+    <CModel id="ThorCE">
+        <Radius value="1.000000"/>
+        <ScaleMax value="0.550000,0.550000,0.550000"/>
+        <ScaleMin value="0.550000,0.550000,0.550000"/>
+        <SelectionRadius value="1.500000"/>
+        <ShadowRadius value="1.500000"/>
+    </CModel>
+    <CModel id="TwilightCouncil">
+        <ScaleMax value="0.650000,0.650000,0.650000"/>
+        <ScaleMin value="0.650000,0.650000,0.650000"/>
+        <Radius value="1.000000"/>
+    </CModel>
+    <CModel id="TwilightCouncilBirth">
+        <ScaleMax value="0.650000,0.650000,0.500000"/>
+        <ScaleMin value="0.650000,0.650000,0.650000"/>
+        <Radius value="1.000000"/>
+    </CModel>
+    <CModel id="TwilightCouncilPlacement">
+        <ScaleMax value="0.650000,0.650000,0.650000"/>
+        <ScaleMin value="0.650000,0.650000,0.650000"/>
+    </CModel>
+    <CModel id="UltraliskCavern">
+        <ScaleMax value="0.650000,0.650000,0.650000"/>
+        <ScaleMin value="0.650000,0.650000,0.650000"/>
+        <Radius value="1.000000"/>
+    </CModel>
+    <CModel id="UtilityBot">
+        <ScaleMax value="1.000000,1.000000,1.000000"/>
+        <ScaleMin value="1.000000,1.000000,1.000000"/>
+    </CModel>
+    <CModel id="WolfStatue">
+        <Radius value="0.200000"/>
+        <ScaleMax value="0.200000,0.200000,0.200000"/>
+        <ScaleMin value="0.200000,0.200000,0.200000"/>
+        <SelectionRadius value="0.200000"/>
+        <ShadowRadius value="0.200000"/>
+    </CModel>
+    <CModel id="ZergBuildingDeath2" parent="BuildingDeath" Race="Zerg">
+        <Model value="Assets\Effects\Zerg\ZergBuildingDeath\ZergBuildingDeath.m3"/>
+        <LowQualityModel value="ZergBuildingDeathLow"/>
+        <Lighting value="ZergBuildingDeath"/>
+    </CModel>
+    <CModel id="ZergSmallUnitDeath2" parent="UnitDeath" Race="Zerg">
+        <Model value="Assets\Effects\Zerg\ZergSmallUnitDeath\ZergSmallUnitDeath.m3"/>
+        <LowQualityModel value="ZergSmallUnitDeathLow"/>
+        <Lighting value="ZergSmallUnitDeath"/>
+        <Occlusion value="Show"/>
+    </CModel>
+    <CModel id="ZergSmallUnitDeath3" parent="UnitDeath" Race="Zerg">
+        <Model value="Assets\Effects\Zerg\ZergSmallUnitDeath\ZergSmallUnitDeath.m3"/>
+        <LowQualityModel value="ZergSmallUnitDeathLow"/>
+        <Lighting value="ZergSmallUnitDeath"/>
+        <Occlusion value="Show"/>
+    </CModel>
+    <CModel id="ZergSmallUnitDeath4" parent="UnitDeath" Race="Zerg">
+        <Model value="Assets\Effects\Zerg\ZergSmallUnitDeath\ZergSmallUnitDeath.m3"/>
+        <LowQualityModel value="ZergSmallUnitDeathLow"/>
+        <Occlusion value="Show"/>
+    </CModel>
+</Catalog>

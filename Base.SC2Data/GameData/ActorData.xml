@@ -1,0 +1,512 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<Catalog>
+    <CActorModel id="BlinkOriginModel"/>
+    <CActorModel id="BlinkOriginModel2" parent="BlinkOriginModel"/>
+    <CActorSound id="BlinkStopSound2" parent="SoundOneShot">
+        <On Terms="Effect.Blink.Stop; At Source" Send="Create"/>
+        <Host Subject="_Selectable"/>
+        <HostSiteOps Ops="SOpAttachOrigin"/>
+        <Sound value="Stalker_Blink"/>
+    </CActorSound>
+    <CActorUnit id="CreepTumor">
+        <BarHeight value="1"/>
+        <BarWidth value="1"/>
+    </CActorUnit>
+    <!--                                                                                         -->
+    <!-- Hive Mind Emulator .................................................................... -->
+    <!--                                                                                         -->
+    <CActorUnit id="HiveMindEmulator">
+        <On index="48" Terms="AbilMorph.*.Finish; MorphTo HiveMindEmulator" Send="Create"/>
+        <On index="49" Terms="UnitConstruction.HiveMindEmulator.Start" Send="Create BuildingTerrainFlatten"/>
+        <On index="50" Terms="UnitConstruction.HiveMindEmulator.Cancel" Send="Create BuildingTerrainFlatten"/>
+        <On index="51" Terms="UnitConstruction.HiveMindEmulator.Finish" Target="_BuildingTerrainFlatten" Send="Destroy"/>
+        <On index="52" Terms="UnitConstruction.HiveMindEmulator.Start" Target="_BuildingTerrainFlatten" Send="QueryRadius 1.750000 BuildingCrushQueryResponse"/>
+        <On index="53" Terms="UnitBirth.HiveMindEmulator.Normal" Send="Create BuildingTerrainFlatten"/>
+        <On index="54" Terms="UnitBirth.HiveMindEmulator.Suppressed" Send="Create BuildingTerrainFlattenInstant"/>
+        <On index="55" Terms="UnitBirth.HiveMindEmulator.EditorPlaced" Send="Create BuildingTerrainFlattenEditor"/>
+        <On index="56" Terms="UnitDeath.HiveMindEmulator" Target="_BuildingTerrainFlatten" Send="Destroy"/>
+        <On Terms="Abil.MindControl.SourceCastStart" Send="AnimPlay Attack Attack"/>
+    </CActorUnit>
+    <CActorModel id="Immolation" parent="BuffOneShot">
+        <Flags index="ScaleToHost" value="1"/>
+        <EditorCategories value=""/>
+        <On Terms="Effect.ImmolationDamage.Start" Send="Create"/>
+        <Host Subject="_Unit"/>
+        <HostSiteOps Ops="SOpAttachHead"/>
+        <Model value="HellionUpgradedAttackDamageReaction"/>
+        <AutoScaleFactor value="2.000000"/>
+        <ModelFlags index="AllowHitTest" value="0"/>
+    </CActorModel>
+    <CActorUnit id="Marine2" parent="GenericUnitBase" unitName="Marine2">
+        <On Terms="ActorCreation; ValidateUnit NoMarineShield" Send="AnimPlay Cover Cover PlayForever 0.000000"/>
+        <On Terms="Upgrade.ShieldWall.Add" Send="AnimClear Cover"/>
+        <On Terms="Upgrade.ShieldWall.Remove" Send="AnimPlay Cover Cover PlayForever 0.000000"/>
+        <On Terms="UnitDeath.Marine2; AnimPlaying Cover" Target="_DeathModel" Send="AnimPlay Cover Cover PlayForever 0.000000"/>
+        <On Terms="Abil.attack.ReadyStart" Send="AnimGroupApply Ready"/>
+        <On Terms="WeaponStart.*.AttackStart; WeaponTargetElevation GE 20.000000" Send="AnimBracketStart Attack Attack,Superior"/>
+        <On Terms="WeaponStart.*.AttackStart; WeaponTargetElevation LE -20.000000" Send="AnimBracketStart Attack Attack,Inferior"/>
+        <On Terms="WeaponStart.*.AttackStart" Send="AnimBracketStart Attack Attack"/>
+        <On Terms="WeaponStop.*.AttackStop" Send="AnimBracketStop Attack"/>
+        <On Terms="Abil.attack.ReadyStop" Send="AnimGroupRemove Ready"/>
+        <On Terms="ModelEvent; ModelEventName SquibStart" Send="Create MarineCheerSquib"/>
+        <On Terms="ModelEvent; ModelEventName SquibStop" Target="MarineCheerSquib" Send="Destroy"/>
+        <On Terms="ModelEvent; ModelEventName SquibStop" Target="MarineCheerSquibSound" Send="Destroy"/>
+        <DeathArray index="Normal" ModelLink="MarineDeath2" SoundLink="Marine_DeathFXBloodSpray2"/>
+        <DeathArray index="Blast" ModelLink="MarineDeathBlast2"/>
+        <DeathArray index="Disintegrate" ModelLink="MarineDeathAcid2" SoundLink="Uni_DeathFXAcid2"/>
+        <DeathArray index="Eat" AnimProps="Stand" ModelLink="MarineDeathEat2" SoundLink="Marine_DeathFXEat2"/>
+        <DeathArray index="Eviscerate" ModelLink="MarineDeathEviscerate2" SoundLink="Marine_DeathFXEviscerate2"/>
+        <DeathArray index="Fire" ModelLink="MarineDeathFire2" SoundLink="Marine_DeathFXFire2"/>
+        <DeathArray index="Silentkill" SoundLink="Uni_DeathFXSilentKill2"/>
+        <DeathArray index="Squish" SoundLink="Marine_DeathFXBloodSpray2"/>
+        <DeathCustoms index="0" ModelLink="ProtossSmallUnitDeath2" Name="AntiGravProtoss"/>
+        <DeathCustoms index="1" ModelLink="TerranSmallUnitDeath2" Name="AntiGravTerran"/>
+        <DeathCustoms index="2" ModelLink="ZergSmallUnitDeath2" Name="AntiGravZerg"/>
+        <PortraitModel value="MarinePortrait2"/>
+        <StandAnimTurnTime value="4"/>
+        <WalkAnimMoveSpeed value="2.25"/>
+        <BarWidth value="36"/>
+        <BarOffset value="40"/>
+        <UnitIcon value="Assets\Textures\btn-unit-terran-marine.dds"/>
+        <HeroIcon value="Assets\Textures\btn-unit-terran-marine.dds"/>
+        <AbilSoundArray AbilCmd="StimPack,0" Sound="Marine_StimPackVO"/>
+        <LifeArmorIcon value="Assets\Textures\btn-upgrade-terran-infantryarmorlevel0.dds"/>
+        <GlossaryAnim value="Cover"/>
+    </CActorUnit>
+    <CActorSound id="Marine_Death2" parent="SoundOneShot">
+        <On Terms="UnitDeath.Marine2; PassChance 100.000000" Send="Create"/>
+    </CActorSound>
+    <CActorTurret id="PhoenixTurret2">
+        <On Terms="TurretEnable.Phoenix2" Send="Create"/>
+    </CActorTurret>
+    <CActorUnit id="PhotonCannon">
+        <On index="61" Terms="AbilMorph.*.Finish; MorphTo PhotonCannon2" Send="Destroy"/>
+        <On index="62" Terms="AbilMorph.*.Finish; MorphTo HiveMindEmulator" Send="Destroy"/>
+        <On Terms="UnitBirth; ValidateUnit NoDarkProtoss" Send="TextureSelectById TronSquareGreen"/>
+        <On Terms="UnitBirth; ValidateUnit NoDarkProtoss" Send="TextureSelectById WarpLineGreen"/>
+    </CActorUnit>
+    <CActorUnit id="PhotonCannon2" parent="PhotonCannon" unitName="PhotonCannon2">
+        <On index="0" Terms="UnitBirth.PhotonCannon2" Send="Create SoundEmitter PhotonCannon2_Ambience"/>
+        <On index="1" Terms="UnitBirth.PhotonCannon2"/>
+        <On index="2" Terms="UnitRevive.PhotonCannon2"/>
+        <On index="3" Terms="UnitConstruction.PhotonCannon2.Start"/>
+        <On index="4" Terms="UnitConstruction.PhotonCannon2.Finish"/>
+        <On index="48" Terms="AbilMorph.*.Finish; MorphTo PhotonCannon2" Send="Create"/>
+        <On index="49" Terms="UnitBirth" Send="AnimPlay Birth Stand,Unpowered,End 0 0.000000 0.000000"/>
+        <On index="50" Send="TextureSelectById PhotonCannonDarkDiffuse"/>
+        <On index="51" Terms="Upgrade.DarkProtoss.Add" Send="TextureSelectById PhotonCannonDarkSpecular"/>
+        <On index="52" Terms="Upgrade.DarkProtoss.Add" Send="TextureSelectById PhotonCannonDarkEmissive"/>
+        <On index="53" Terms="Upgrade.DarkProtoss.Add" Send="TextureSelectById PhotonCannonBaseDarkDiffuse"/>
+        <On index="54" Terms="Upgrade.DarkProtoss.Add" Send="TextureSelectById PhotonCannonBaseDarkSpecular"/>
+        <On index="55" Terms="Upgrade.DarkProtoss.Add" Send="TextureSelectById PhotonCannonBaseDarkEmissive"/>
+        <On index="56" Terms="Upgrade.DarkProtoss.Add" Send="TextureSelectById LazerBoltGreen"/>
+        <On index="57" Terms="Upgrade.DarkProtoss.Add" Send="TextureSelectById GradRaysGreen"/>
+        <On index="58" Terms="Upgrade.DarkProtoss.Add" Send="TextureSelectById TronSquareGreen"/>
+        <On index="59" Terms="Upgrade.DarkProtoss.Add" Send="TextureSelectById WarpLineGreen"/>
+        <On index="60" Terms="Upgrade.DarkProtoss.Add" Send="TextureSelectById PhotonCannonDarkDiffuse"/>
+        <On index="61" Terms="ActorCreation; ValidateUnit NoDarkProtoss" Send="TextureSelectById PhotonCannonDarkSpecular"/>
+        <On index="62" Terms="ActorCreation; ValidateUnit NoDarkProtoss" Send="TextureSelectById PhotonCannonDarkEmissive"/>
+        <On index="63" Terms="ActorCreation; ValidateUnit NoDarkProtoss" Send="TextureSelectById PhotonCannonBaseDarkDiffuse"/>
+        <On index="64" Terms="ActorCreation; ValidateUnit NoDarkProtoss" Send="TextureSelectById PhotonCannonBaseDarkSpecular"/>
+        <On index="65" Terms="ActorCreation; ValidateUnit NoDarkProtoss" Send="TextureSelectById PhotonCannonBaseDarkEmissive"/>
+        <On index="66" Terms="UnitBirth; ValidateUnit NoDarkProtoss" Send="TextureSelectById LazerBoltGreen"/>
+        <On index="67" Terms="UnitBirth; ValidateUnit NoDarkProtoss" Send="TextureSelectById GradRaysGreen"/>
+        <On index="68" Terms="UnitBirth; ValidateUnit NoDarkProtoss" Send="TextureSelectById TronSquareGreen"/>
+        <On index="69" Terms="UnitBirth; ValidateUnit NoDarkProtoss" Send="TextureSelectById WarpLineGreen"/>
+        <On index="70" removed="1"/>
+        <On index="71" removed="1"/>
+        <On index="72" removed="1"/>
+        <Model value="PhotonCannon2"/>
+        <EventDataFootprint index="0" Model="PhotonCannon2Footprint"/>
+        <BuildModel value="PhotonCannonBirth2"/>
+        <DeathArray index="Normal" ModelLink="PhotonCannonDeath2" VoiceLink="PhotonCannon2DeathVoice"/>
+        <DeathArray index="UnderConstruction" ModelLink="ProtossWarpInDeath2"/>
+        <DeathCustoms index="0" ModelLink="ProtossSmallUnitDeath4"/>
+        <DeathCustoms index="1" ModelLink="TerranSmallUnitDeath4"/>
+        <DeathCustoms index="2" ModelLink="ZergSmallUnitDeath4"/>
+        <DeathCustoms index="3" ModelLink="PhotonCannonDeathUnpowered2"/>
+        <PlacementModel value="PhotonCannonPlacement2"/>
+        <PortraitModel value="ExecutorPortrait2"/>
+        <GroupSoundArray index="What" value="PhotonCannon2_GroupWhat"/>
+        <GroupSoundArray index="Yes" value="PhotonCannon2_GroupYes"/>
+        <GroupSoundArray index="Attack" value="PhotonCannon2_GroupAttack"/>
+        <GroupSoundArray index="Board" value="PhotonCannon2_GroupBoard"/>
+        <HighlightTooltip value="Unit/Name/PhotonCannon2"/>
+        <SoundArray index="Birth" value="PhotonCannon2_Birth"/>
+        <SoundArray index="Help" value="PhotonCannon2_Help"/>
+        <SoundArray index="Yes" value="PhotonCannon2_Yes"/>
+        <SoundArray index="Attack" value="PhotonCannon2_Attack"/>
+        <SoundArray index="Pissed" value="PhotonCannon2_Pissed"/>
+        <SoundArray index="Movement" value="PhotonCannon2_Movement"/>
+        <SoundArray index="Turning" value="PhotonCannon2_Turning"/>
+        <SoundArray index="Board" value="PhotonCannon2_Board"/>
+        <SoundArray index="Click" value="PhotonCannon2_Click"/>
+        <SoundArray index="ClickError" value="PhotonCannon2_ClickError"/>
+        <SoundArray index="Highlight" value="PhotonCannon2_Highlight"/>
+    </CActorUnit>
+    <CActorAction id="PhotonCannonAttack2" parent="GenericAttack" effectImpact="PhotonCannonU3" effectLaunch="PhotonCannonLM3">
+        <LaunchAssets Sound="PhotonCannon_AttackLaunch"/>
+        <ImpactMap index="None" Sound="PhotonCannon_AttackImpact"/>
+        <ImpactMap index="Flesh" ModelReaction="BloodTargetImpact2"/>
+    </CActorAction>
+    <CActorSplat id="PhotonCannonSplat2" parent="GenericUnitSplat" unitName="PhotonCannon2">
+        <On index="1" Terms="AbilMorph.*.Finish; MorphTo PhotonCannon2" Send="ActionImpact"/>
+        <On index="2" Terms="ActorOrphan" Send="Destroy"/>
+        <On Terms="UnitBirth.PhotonCannon2" Send="Create"/>
+    </CActorSplat>
+    <CActorModel id="ProtossBuildingBirthSmall2" parent="ProtossBuildingBirthAddition">
+        <On Terms="UnitConstruction.Obelisk.Start" Send="Create"/>
+        <On Terms="UnitConstruction.DarkShrine.Start" Send="Create"/>
+        <On Terms="UnitConstruction.PhotonCannon2.Start" Send="Create"/>
+        <On Terms="UnitConstruction.Pylon.Start" Send="Create"/>
+    </CActorModel>
+    <CActorStateMonitor id="ProtossFlamesSmallBuilding2">
+        <On Terms="UnitCreation.Pylon" Send="Create"/>
+        <On Terms="UnitCreation.PhotonCannon2" Send="Create"/>
+        <On Terms="UnitCreation.Obelisk" Send="Create"/>
+        <On Terms="UnitCreation.RoboticsBay" Send="Create"/>
+        <On Terms="UnitCreation.DarkShrine" Send="Create"/>
+        <On Terms="StateChange; StateValid ProtossFire" Send="Create ProtossFlameSetFireSmall"/>
+        <On Terms="StateChange; StateValid ProtossFire" Send="Create ProtossFlameSetFireTransitionSmall"/>
+        <On Terms="StateChange; !StateValid ProtossFire" Target="ProtossFlameSetFireSmall" Send="Destroy"/>
+        <On Terms="StateChange; !StateValid ProtossFire" Target="ProtossFlameSetFireTransitionSmall" Send="Destroy"/>
+        <On Terms="StateChange; StateValid ProtossFire" Send="Create ProtossFlameLoopSmall"/>
+        <On Terms="StateChange; !StateValid ProtossFire" Target="ProtossFlameLoopSmall" Send="Destroy"/>
+        <StateArray Name="ProtossNormal" Terms="ValidateUnit ProtossBurnDownNormal"/>
+        <StateArray Name="ProtossFire" Terms="ValidateUnit ProtossBurnDownFire"/>
+    </CActorStateMonitor>
+    <!--                                                                                         -->
+    <!-- PsiIndoctrinator ...................................................................... -->
+    <!--                                                                                         -->
+    <CActorUnit id="PsiIndoctrinator">
+        <BuildModel value="BunkerBuild"/>
+        <DeathArray index="Normal" ModelLink="GhostAcademyDeath"/>
+    </CActorUnit>
+    <CActorUnit id="Pylon">
+        <On index="45" Terms="AbilMorph.*.Finish; MorphTo Pylon2" Send="Destroy"/>
+        <On index="46" Terms="WeaponStart.*.AttackStart" Send="AnimBracketStart Attack Attack"/>
+        <On index="47" Terms="WeaponStart.*.AttackStart; AnimPlaying Birth" Send="AnimClear Birth"/>
+        <On index="48" Terms="WeaponStop.*.AttackStop" Send="AnimBracketStop Attack"/>
+        <On index="49" Terms="Abil.attack.ReadyStop" Send="AnimGroupRemove Ready"/>
+        <On index="50" Terms="Upgrade.DarkProtoss.Add" Send="TextureSelectById GlowGreen"/>
+        <On index="51" Terms="Upgrade.DarkProtoss.Add" Send="TextureSelectById PylonDarkDiffuse"/>
+        <On index="52" Terms="Upgrade.DarkProtoss.Add" Send="TextureSelectById PylonDarkSpecular"/>
+        <On index="53" Terms="Upgrade.DarkProtoss.Add" Send="TextureSelectById PylonDarkEmissive"/>
+        <On index="54" Terms="UnitBirth; ValidateUnit NoDarkProtoss" Send="TextureSelectById GlowGreen"/>
+        <On index="55" Terms="ActorCreation; ValidateUnit NoDarkProtoss" Send="TextureSelectById PylonDarkDiffuse"/>
+        <On index="56" Terms="ActorCreation; ValidateUnit NoDarkProtoss" Send="TextureSelectById PylonDarkSpecular"/>
+        <On Terms="ActorCreation; ValidateUnit NoDarkProtoss" Send="TextureSelectById PylonDarkEmissive"/>
+    </CActorUnit>
+    <CActorUnit id="Pylon2" parent="GenericUnitStandard" unitName="Pylon2">
+        <On Terms="Upgrade.DarkProtoss.Add" Send="TextureSelectById GlowGreen"/>
+        <On Terms="Upgrade.DarkProtoss.Add" Send="TextureSelectById PylonDarkDiffuse"/>
+        <On Terms="Upgrade.DarkProtoss.Add" Send="TextureSelectById PylonDarkSpecular"/>
+        <On Terms="Upgrade.DarkProtoss.Add" Send="TextureSelectById PylonDarkEmissive"/>
+        <On Terms="UnitBirth; ValidateUnit NoDarkProtoss" Send="TextureSelectById GlowGreen"/>
+        <On Terms="ActorCreation; ValidateUnit NoDarkProtoss" Send="TextureSelectById PylonDarkDiffuse"/>
+        <On Terms="ActorCreation; ValidateUnit NoDarkProtoss" Send="TextureSelectById PylonDarkSpecular"/>
+        <On Terms="ActorCreation; ValidateUnit NoDarkProtoss" Send="TextureSelectById PylonDarkEmissive"/>
+        <On Terms="AbilMorph.*.Finish; MorphTo Pylon2" Send="Create"/>
+        <On Terms="AbilMorph.*.Finish; MorphTo Pylon2" Send="SetTintColor 183,198,223"/>
+        <On Terms="AbilMorph.*.Finish; MorphTo Pylon3" Send="Destroy"/>
+        <Model value="Pylon"/>
+        <AnimBlendTime value="0.750000"/>
+        <EventDataSound Name="BuildingWarpIn" Actor="UnitSound" Sound="Protoss_BuildingWarpIn"/>
+        <BuildModel value="PylonBirth"/>
+        <DeathArray index="Normal" ModelLink="PylonDeath" SoundLink="Pylon_Explode"/>
+        <DeathArray index="UnderConstruction" ModelLink="ProtossWarpInDeath" SoundLink="Pylon_Explode"/>
+        <DeathActorModel value="PylonDeath"/>
+        <PlacementModel value="PylonPlacement"/>
+        <PlacementSound value="Protoss_BuildingPlacementSmall"/>
+        <PortraitModel value="ExecutorPortrait"/>
+        <BarOffset value="90"/>
+        <BarWidth value="75"/>
+        <GroupIcon>
+            <Image value="Assets\Textures\Wireframe-Protoss-Pylon.dds"/>
+        </GroupIcon>
+        <HeroIcon value="Assets\Textures\btn-building-protoss-pylon.dds"/>
+        <LifeArmorIcon value="Assets\Textures\btn-armor-protoss-buildingplating.dds"/>
+        <SoundArray index="Ready" value="Pylon_What"/>
+        <SoundArray index="What" value="Pylon_What"/>
+        <SoundArray index="Construction" value="Protoss_ConstructionWhat"/>
+        <UnitFlags index="StandAnimBirthVariation" value="0"/>
+        <UnitIcon value="Assets\Textures\btn-building-protoss-pylon.dds"/>
+        <Wireframe>
+            <Image value="Assets\Textures\Wireframe-Protoss-Pylon.dds"/>
+        </Wireframe>
+        <WireframeShield>
+            <Image value="Assets\Textures\Wireframe-Protoss-Pylon-Shield01.dds"/>
+            <Image value="Assets\Textures\Wireframe-Protoss-Pylon-Shield02.dds"/>
+            <Image value="Assets\Textures\Wireframe-Protoss-Pylon-Shield03.dds"/>
+        </WireframeShield>
+    </CActorUnit>
+    <CActorUnit id="Pylon22" parent="GenericUnitStandard" unitName="Pylon3">
+        <On Terms="Upgrade.DarkProtoss.Add" Send="TextureSelectById GlowGreen"/>
+        <On Terms="Upgrade.DarkProtoss.Add" Send="TextureSelectById PylonDarkDiffuse"/>
+        <On Terms="Upgrade.DarkProtoss.Add" Send="TextureSelectById PylonDarkSpecular"/>
+        <On Terms="Upgrade.DarkProtoss.Add" Send="TextureSelectById PylonDarkEmissive"/>
+        <On Terms="UnitBirth; ValidateUnit NoDarkProtoss" Send="TextureSelectById GlowGreen"/>
+        <On Terms="ActorCreation; ValidateUnit NoDarkProtoss" Send="TextureSelectById PylonDarkDiffuse"/>
+        <On Terms="ActorCreation; ValidateUnit NoDarkProtoss" Send="TextureSelectById PylonDarkSpecular"/>
+        <On Terms="ActorCreation; ValidateUnit NoDarkProtoss" Send="TextureSelectById PylonDarkEmissive"/>
+        <On Terms="AbilMorph.*.Finish; MorphTo Pylon3" Send="Create"/>
+        <On Terms="AbilMorph.*.Finish; MorphTo Pylon3" Send="SetTintColor 69,86,241"/>
+        <On Terms="AbilMorph.*.Finish; MorphTo Pylon4" Send="Destroy"/>
+        <Model value="Pylon"/>
+        <AnimBlendTime value="0.750000"/>
+        <EventDataSound Name="BuildingWarpIn" Actor="UnitSound" Sound="Protoss_BuildingWarpIn"/>
+        <BuildModel value="PylonBirth"/>
+        <DeathArray index="Normal" ModelLink="PylonDeath" SoundLink="Pylon_Explode"/>
+        <DeathArray index="UnderConstruction" ModelLink="ProtossWarpInDeath" SoundLink="Pylon_Explode"/>
+        <DeathActorModel value="PylonDeath"/>
+        <PlacementModel value="PylonPlacement"/>
+        <PlacementSound value="Protoss_BuildingPlacementSmall"/>
+        <PortraitModel value="ExecutorPortrait"/>
+        <BarOffset value="90"/>
+        <BarWidth value="75"/>
+        <GroupIcon>
+            <Image value="Assets\Textures\Wireframe-Protoss-Pylon.dds"/>
+        </GroupIcon>
+        <HeroIcon value="Assets\Textures\btn-building-protoss-pylon.dds"/>
+        <HighlightTooltip value="Unit/Name/Pylon22"/>
+        <LifeArmorIcon value="Assets\Textures\btn-armor-protoss-buildingplating.dds"/>
+        <SoundArray index="Ready" value="Pylon_What"/>
+        <SoundArray index="What" value="Pylon_What"/>
+        <SoundArray index="Construction" value="Protoss_ConstructionWhat"/>
+        <UnitFlags index="StandAnimBirthVariation" value="0"/>
+        <UnitIcon value="Assets\Textures\btn-building-protoss-pylon.dds"/>
+        <Wireframe>
+            <Image value="Assets\Textures\Wireframe-Protoss-Pylon.dds"/>
+        </Wireframe>
+        <WireframeShield>
+            <Image value="Assets\Textures\Wireframe-Protoss-Pylon-Shield01.dds"/>
+            <Image value="Assets\Textures\Wireframe-Protoss-Pylon-Shield02.dds"/>
+            <Image value="Assets\Textures\Wireframe-Protoss-Pylon-Shield03.dds"/>
+        </WireframeShield>
+    </CActorUnit>
+    <CActorUnit id="Pylon222" parent="GenericUnitStandard" unitName="Pylon4">
+        <On Terms="Upgrade.DarkProtoss.Add" Send="TextureSelectById GlowGreen"/>
+        <On Terms="Upgrade.DarkProtoss.Add" Send="TextureSelectById PylonDarkDiffuse"/>
+        <On Terms="Upgrade.DarkProtoss.Add" Send="TextureSelectById PylonDarkSpecular"/>
+        <On Terms="Upgrade.DarkProtoss.Add" Send="TextureSelectById PylonDarkEmissive"/>
+        <On Terms="UnitBirth; ValidateUnit NoDarkProtoss" Send="TextureSelectById GlowGreen"/>
+        <On Terms="ActorCreation; ValidateUnit NoDarkProtoss" Send="TextureSelectById PylonDarkDiffuse"/>
+        <On Terms="ActorCreation; ValidateUnit NoDarkProtoss" Send="TextureSelectById PylonDarkSpecular"/>
+        <On Terms="ActorCreation; ValidateUnit NoDarkProtoss" Send="TextureSelectById PylonDarkEmissive"/>
+        <On Terms="AbilMorph.*.Finish; MorphTo Pylon4" Send="Create"/>
+        <On Terms="AbilMorph.*.Finish; MorphTo Pylon4" Send="SetTintColor 148,16,128"/>
+        <On Terms="AbilMorph.*.Finish; MorphTo Pylon5" Send="Destroy"/>
+        <Model value="Pylon"/>
+        <AnimBlendTime value="0.750000"/>
+        <EventDataSound Name="BuildingWarpIn" Actor="UnitSound" Sound="Protoss_BuildingWarpIn"/>
+        <BuildModel value="PylonBirth"/>
+        <DeathArray index="Normal" ModelLink="PylonDeath" SoundLink="Pylon_Explode"/>
+        <DeathArray index="UnderConstruction" ModelLink="ProtossWarpInDeath" SoundLink="Pylon_Explode"/>
+        <DeathActorModel value="PylonDeath"/>
+        <PlacementModel value="PylonPlacement"/>
+        <PlacementSound value="Protoss_BuildingPlacementSmall"/>
+        <PortraitModel value="ExecutorPortrait"/>
+        <BarOffset value="90"/>
+        <BarWidth value="75"/>
+        <GroupIcon>
+            <Image value="Assets\Textures\Wireframe-Protoss-Pylon.dds"/>
+        </GroupIcon>
+        <HeroIcon value="Assets\Textures\btn-building-protoss-pylon.dds"/>
+        <HighlightTooltip value="Unit/Name/Pylon222"/>
+        <LifeArmorIcon value="Assets\Textures\btn-armor-protoss-buildingplating.dds"/>
+        <SoundArray index="Ready" value="Pylon_What"/>
+        <SoundArray index="What" value="Pylon_What"/>
+        <SoundArray index="Construction" value="Protoss_ConstructionWhat"/>
+        <UnitFlags index="StandAnimBirthVariation" value="0"/>
+        <UnitIcon value="Assets\Textures\btn-building-protoss-pylon.dds"/>
+        <Wireframe>
+            <Image value="Assets\Textures\Wireframe-Protoss-Pylon.dds"/>
+        </Wireframe>
+        <WireframeShield>
+            <Image value="Assets\Textures\Wireframe-Protoss-Pylon-Shield01.dds"/>
+            <Image value="Assets\Textures\Wireframe-Protoss-Pylon-Shield02.dds"/>
+            <Image value="Assets\Textures\Wireframe-Protoss-Pylon-Shield03.dds"/>
+        </WireframeShield>
+    </CActorUnit>
+    <CActorUnit id="Pylon223" parent="GenericUnitStandard" unitName="Pylon5">
+        <On Terms="Upgrade.DarkProtoss.Add" Send="TextureSelectById GlowGreen"/>
+        <On Terms="Upgrade.DarkProtoss.Add" Send="TextureSelectById PylonDarkDiffuse"/>
+        <On Terms="Upgrade.DarkProtoss.Add" Send="TextureSelectById PylonDarkSpecular"/>
+        <On Terms="Upgrade.DarkProtoss.Add" Send="TextureSelectById PylonDarkEmissive"/>
+        <On Terms="UnitBirth; ValidateUnit NoDarkProtoss" Send="TextureSelectById GlowGreen"/>
+        <On Terms="ActorCreation; ValidateUnit NoDarkProtoss" Send="TextureSelectById PylonDarkDiffuse"/>
+        <On Terms="ActorCreation; ValidateUnit NoDarkProtoss" Send="TextureSelectById PylonDarkSpecular"/>
+        <On Terms="ActorCreation; ValidateUnit NoDarkProtoss" Send="TextureSelectById PylonDarkEmissive"/>
+        <On Terms="AbilMorph.*.Finish; MorphTo Pylon5" Send="Create"/>
+        <On Terms="AbilMorph.*.Finish; MorphTo Pylon5" Send="SetTintColor 255,55,61"/>
+        <On Terms="AbilMorph.*.Finish; MorphTo Pylon6" Send="Destroy"/>
+        <Model value="Pylon"/>
+        <AnimBlendTime value="0.750000"/>
+        <EventDataSound Name="BuildingWarpIn" Actor="UnitSound" Sound="Protoss_BuildingWarpIn"/>
+        <BuildModel value="PylonBirth"/>
+        <DeathArray index="Normal" ModelLink="PylonDeath" SoundLink="Pylon_Explode"/>
+        <DeathArray index="UnderConstruction" ModelLink="ProtossWarpInDeath" SoundLink="Pylon_Explode"/>
+        <DeathActorModel value="PylonDeath"/>
+        <PlacementModel value="PylonPlacement"/>
+        <PlacementSound value="Protoss_BuildingPlacementSmall"/>
+        <PortraitModel value="ExecutorPortrait"/>
+        <BarOffset value="90"/>
+        <BarWidth value="75"/>
+        <GroupIcon>
+            <Image value="Assets\Textures\Wireframe-Protoss-Pylon.dds"/>
+        </GroupIcon>
+        <HeroIcon value="Assets\Textures\btn-building-protoss-pylon.dds"/>
+        <HighlightTooltip value="Unit/Name/Pylon223"/>
+        <LifeArmorIcon value="Assets\Textures\btn-armor-protoss-buildingplating.dds"/>
+        <SoundArray index="Ready" value="Pylon_What"/>
+        <SoundArray index="What" value="Pylon_What"/>
+        <SoundArray index="Construction" value="Protoss_ConstructionWhat"/>
+        <UnitFlags index="StandAnimBirthVariation" value="0"/>
+        <UnitIcon value="Assets\Textures\btn-building-protoss-pylon.dds"/>
+        <Wireframe>
+            <Image value="Assets\Textures\Wireframe-Protoss-Pylon.dds"/>
+        </Wireframe>
+        <WireframeShield>
+            <Image value="Assets\Textures\Wireframe-Protoss-Pylon-Shield01.dds"/>
+            <Image value="Assets\Textures\Wireframe-Protoss-Pylon-Shield02.dds"/>
+            <Image value="Assets\Textures\Wireframe-Protoss-Pylon-Shield03.dds"/>
+        </WireframeShield>
+    </CActorUnit>
+    <CActorUnit id="Pylon2232" parent="GenericUnitStandard" unitName="Pylon6">
+        <On Terms="Upgrade.DarkProtoss.Add" Send="TextureSelectById GlowGreen"/>
+        <On Terms="Upgrade.DarkProtoss.Add" Send="TextureSelectById PylonDarkDiffuse"/>
+        <On Terms="Upgrade.DarkProtoss.Add" Send="TextureSelectById PylonDarkSpecular"/>
+        <On Terms="Upgrade.DarkProtoss.Add" Send="TextureSelectById PylonDarkEmissive"/>
+        <On Terms="UnitBirth; ValidateUnit NoDarkProtoss" Send="TextureSelectById GlowGreen"/>
+        <On Terms="ActorCreation; ValidateUnit NoDarkProtoss" Send="TextureSelectById PylonDarkDiffuse"/>
+        <On Terms="ActorCreation; ValidateUnit NoDarkProtoss" Send="TextureSelectById PylonDarkSpecular"/>
+        <On Terms="ActorCreation; ValidateUnit NoDarkProtoss" Send="TextureSelectById PylonDarkEmissive"/>
+        <On Terms="AbilMorph.*.Finish; MorphTo Pylon6" Send="Create"/>
+        <On Terms="AbilMorph.*.Finish; MorphTo Pylon6" Send="SetTintColor 89,0,2"/>
+        <Model value="Pylon"/>
+        <AnimBlendTime value="0.750000"/>
+        <EventDataSound Name="BuildingWarpIn" Actor="UnitSound" Sound="Protoss_BuildingWarpIn"/>
+        <BuildModel value="PylonBirth"/>
+        <DeathArray index="Normal" ModelLink="PylonDeath" SoundLink="Pylon_Explode"/>
+        <DeathArray index="UnderConstruction" ModelLink="ProtossWarpInDeath" SoundLink="Pylon_Explode"/>
+        <DeathActorModel value="PylonDeath"/>
+        <PlacementModel value="PylonPlacement"/>
+        <PlacementSound value="Protoss_BuildingPlacementSmall"/>
+        <PortraitModel value="ExecutorPortrait"/>
+        <BarOffset value="90"/>
+        <BarWidth value="75"/>
+        <GroupIcon>
+            <Image value="Assets\Textures\Wireframe-Protoss-Pylon.dds"/>
+        </GroupIcon>
+        <HeroIcon value="Assets\Textures\btn-building-protoss-pylon.dds"/>
+        <HighlightTooltip value="Unit/Name/Pylon2232"/>
+        <LifeArmorIcon value="Assets\Textures\btn-armor-protoss-buildingplating.dds"/>
+        <SoundArray index="Ready" value="Pylon_What"/>
+        <SoundArray index="What" value="Pylon_What"/>
+        <SoundArray index="Construction" value="Protoss_ConstructionWhat"/>
+        <UnitFlags index="StandAnimBirthVariation" value="0"/>
+        <UnitIcon value="Assets\Textures\btn-building-protoss-pylon.dds"/>
+        <Wireframe>
+            <Image value="Assets\Textures\Wireframe-Protoss-Pylon.dds"/>
+        </Wireframe>
+        <WireframeShield>
+            <Image value="Assets\Textures\Wireframe-Protoss-Pylon-Shield01.dds"/>
+            <Image value="Assets\Textures\Wireframe-Protoss-Pylon-Shield02.dds"/>
+            <Image value="Assets\Textures\Wireframe-Protoss-Pylon-Shield03.dds"/>
+        </WireframeShield>
+    </CActorUnit>
+    <CActorSplat id="PylonSplat2" parent="GenericUnitSplat" unitName="Pylon2">
+        <Model value="PylonSplat"/>
+    </CActorSplat>
+    <CActorSplat id="PylonSplat22" parent="GenericUnitSplat" unitName="Pylon3">
+        <Model value="PylonSplat"/>
+    </CActorSplat>
+    <CActorSplat id="PylonSplat222" parent="GenericUnitSplat" unitName="Pylon4">
+        <Model value="PylonSplat"/>
+    </CActorSplat>
+    <CActorSplat id="PylonSplat223" parent="GenericUnitSplat" unitName="Pylon5">
+        <Model value="PylonSplat"/>
+    </CActorSplat>
+    <CActorSplat id="PylonSplat2232" parent="GenericUnitSplat" unitName="Pylon6">
+        <Model value="PylonSplat"/>
+    </CActorSplat>
+    <CActorRange id="SensorTowerRadar">
+        <Range value="0.000000"/>
+    </CActorRange>
+    <!--                                                                                         -->
+    <!-- Sentry Gun ............................................................................ -->
+    <!--                                                                                         -->
+    <CActorUnit id="SentryGun">
+        <On index="51" Terms="AbilMorph.*.Finish; MorphTo SentryGun" Target="_BuildingTerrainFlatten" Send="Create"/>
+        <On index="52" Terms="UnitConstruction.SentryGun.Start" Target="_BuildingTerrainFlatten" Send="QueryRadius 1.750000 BuildingCrushQueryResponse"/>
+        <On index="53" Terms="UnitBirth.SentryGun.Normal" Send="Create BuildingTerrainFlatten"/>
+        <On index="54" Terms="UnitBirth.SentryGun.Suppressed" Send="Create BuildingTerrainFlattenInstant"/>
+        <On index="55" Terms="UnitBirth.SentryGun.EditorPlaced" Send="Create BuildingTerrainFlattenEditor"/>
+        <On index="56" Terms="UnitDeath.SentryGun" Target="_BuildingTerrainFlatten" Send="Destroy"/>
+        <On index="57" Terms="UnitDeath.SentryGun" Target="_BuildingTerrainFlatten" Send="Create"/>
+        <On index="58" Terms="UnitBirth.SentryGunUnderground" Send="AnimGroupApply Burrow Burrow Unburrow ClosingFull,Instant"/>
+        <On index="59" Terms="AbilMorph.*.Start; MorphTo SentryGunUnderground" Send="AnimGroupApply Burrow Burrow Unburrow ClosingFull"/>
+        <On Terms="AbilMorph.*.Start; MorphTo SentryGun" Send="AnimGroupRemove Burrow"/>
+    </CActorUnit>
+    <CActorUnit id="Spire2" parent="ZergBuilding" unitName="Spire2">
+        <Macros value="QueueAnim"/>
+        <On Terms="AbilMorph.*.Start; MorphTo GreaterSpire" Send="StatusSet Morphing 1"/>
+        <On Terms="AbilMorph.*.Start; MorphTo GreaterSpire" Send="Create SpireMorph"/>
+        <On Terms="AbilMorph.*.Start; MorphTo GreaterSpire" Target="SpireMorph" Send="Signal Started"/>
+        <On Terms="AbilMorph.*.Start; MorphTo GreaterSpire" Send="AnimPlay Morph Morph PlayForever 0.000000 0.000000 3.333000 AsDuration"/>
+        <On Terms="AbilMorph.*.Cancel; MorphTo GreaterSpire" Send="StatusSet Morphing 0"/>
+        <On Terms="AbilMorph.*.Cancel; MorphTo GreaterSpire" Target="SpireMorph" Send="Signal Finished"/>
+        <On Terms="AbilMorph.*.Cancel; MorphTo GreaterSpire" Send="AnimClear Morph"/>
+        <On Terms="AbilMorph.*.Cancel; MorphTo GreaterSpire" Send="AnimClear ::Progress"/>
+        <On Terms="AbilMorph.*.Cancel; MorphTo GreaterSpire" Send="AnimBaselineStart"/>
+        <On Terms="AbilMorph.*.Cancel; MorphTo GreaterSpire" Send="AnimPlay Rebirth Build,D,Start 0 0.000000 0.000000 2.000000 AsDuration"/>
+        <On Terms="AbilMorph.*.Finish; MorphTo GreaterSpire" Target="SpireMorph" Send="Signal Finished"/>
+        <On Terms="AbilMorph.*.Finish; MorphTo GreaterSpire" Send="Destroy"/>
+        <On Terms="UnitDeathCustomize; IsStatus Morphing 1" Send="DeathCustomize Upgrade"/>
+        <DeathArray index="Normal" ModelLink="SpireDeath2" SoundLink=""/>
+        <DeathArray index="UnderConstruction" ModelLink="ZergBuildingDeath2" SoundLink="Spire_Explode2"/>
+        <DeathCustoms index="0" ModelLink="ProtossSmallUnitDeath3"/>
+        <DeathCustoms index="1" ModelLink="TerranSmallUnitDeath3"/>
+        <DeathCustoms index="2" ModelLink="ZergSmallUnitDeath3"/>
+        <DeathCustoms ModelLink="ZergBuildingDeath2" SoundLink="Spire_Explode2" Name="Upgrade"/>
+        <PlacementSound value="Zerg_BuildingPlacement2"/>
+        <PortraitModel value="OverlordPortrait2"/>
+        <BarWidth value="120"/>
+        <BarOffset value="190"/>
+        <NameOffset value="70"/>
+        <UnitIcon value="Assets\Textures\btn-building-zerg-spire.dds"/>
+        <HeroIcon value="Assets\Textures\btn-building-zerg-spire.dds"/>
+        <SoundArray index="Ready" value="Spire_What2"/>
+        <SoundArray index="Construction" value="Zerg_BuildingMorphWhat2"/>
+        <LifeArmorIcon value="Assets\Textures\btn-armor-zerg-building.dds"/>
+        <UnitFlags index="ShowBlobShadow" value="0"/>
+        <BuildModel value="SpireBuild"/>
+    </CActorUnit>
+    <!--                                                                                         -->
+    <!-- TaurenSpaceMarine ..................................................................... -->
+    <!--                                                                                         -->
+    <CActorUnit id="TaurenSpaceMarine">
+        <BarWidth value="36"/>
+    </CActorUnit>
+    <!--                                                                                         -->
+    <!-- Tychus05 Hero Mothership .............................................................. -->
+    <!--                                                                                         -->
+    <CActorUnit id="Tychus05HeroMothership">
+        <BarOffset value="40"/>
+        <BarWidth value="42"/>
+    </CActorUnit>
+    <CActorStateMonitor id="ZergBloodSmallBuilding2" parent="ZergBlood">
+        <On Terms="UnitCreation.CreepTumor" Send="Create"/>
+        <On Terms="UnitCreation.CreepTumorBurrowed" Send="Create"/>
+        <On Terms="UnitCreation.Spire2" Send="Create"/>
+        <On Terms="UnitCreation.GreaterSpire" Send="Create"/>
+        <On Terms="UnitCreation.SpineCrawler" Send="Create"/>
+        <On Terms="UnitCreation.SporeCrawler" Send="Create"/>
+        <On Terms="UnitCreation.SpineCrawlerUprooted" Send="Create"/>
+        <On Terms="UnitCreation.SporeCrawlerUprooted" Send="Create"/>
+    </CActorStateMonitor>
+    <!-- Nuke                                                                                    -->
+    <CActorSplat id="nukeCursorSplat">
+        <On index="0" Terms="Abil.Blast.Cursor"/>
+    </CActorSplat>
+</Catalog>

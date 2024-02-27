@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CBehaviorBuff id="BroodlingFate">
+        <Duration value="3"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CloakFieldEffect">
+        <Modification AttackSpeedMultiplier="25">
+            <StateFlags index="Cloak" value="0"/>
+            <VitalDamageLeechArray index="Life">
+                <KindArray index="Spell" value="0.25"/>
+                <KindArray index="Melee" value="0.25"/>
+                <KindArray index="Ranged" value="0.25"/>
+                <KindArray index="Splash" value="0.25"/>
+            </VitalDamageLeechArray>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="Corruption"/>
+    <CBehaviorBuff id="DamageDealtMega2">
+        <Cost>
+            <Charge Link="Behavior/DamageDealtMega"/>
+            <Cooldown Link="Behavior/DamageDealtMega"/>
+        </Cost>
+        <InfoFlags index="Hidden" value="1"/>
+        <Modification>
+            <DamageDealtFraction index="Spell" value="1.1"/>
+            <DamageDealtFraction index="Melee" value="1.1"/>
+            <DamageDealtFraction index="Ranged" value="1.1"/>
+            <DamageDealtFraction index="Splash" value="1.1"/>
+            <DeathResponse>
+                <Cost>
+                    <Charge Link="Behavior/DamageDealtMega"/>
+                    <Cooldown Link="Behavior/DamageDealtMega"/>
+                </Cost>
+            </DeathResponse>
+        </Modification>
+        <DamageResponse>
+            <Cost>
+                <Charge Link="Behavior/DamageDealtMega"/>
+                <Cooldown Link="Behavior/DamageDealtMega"/>
+            </Cost>
+        </DamageResponse>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="DamageDealtMinimal">
+        <Modification>
+            <DamageDealtFraction index="Spell" value="0.1"/>
+            <DamageDealtFraction index="Melee" value="0.1"/>
+            <DamageDealtFraction index="Ranged" value="0.1"/>
+            <DamageDealtFraction index="Splash" value="0.1"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="Detector1" parent="Detector">
+        <Alignment value="Positive"/>
+        <Cost>
+            <Charge Link="Behavior/Detector10"/>
+            <Cooldown Link="Behavior/Detector10"/>
+        </Cost>
+        <InfoFlags index="Hidden" value="1"/>
+        <InfoIcon value="Assets\Textures\btn-status-detector.dds"/>
+        <Modification Detect="5">
+            <DeathResponse>
+                <Cost>
+                    <Charge Link="Behavior/Detector10"/>
+                    <Cooldown Link="Behavior/Detector10"/>
+                </Cost>
+            </DeathResponse>
+        </Modification>
+        <DamageResponse>
+            <Cost>
+                <Charge Link="Behavior/Detector10"/>
+                <Cooldown Link="Behavior/Detector10"/>
+            </Cost>
+        </DamageResponse>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="FungalGrowth">
+        <MaxStackCount value="2"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="GhostCloak">
+        <Modification>
+            <VitalRegenArray index="Energy" value="-1"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorVeterancy id="HeroLevel">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <XPFraction index="Kills" value="0"/>
+        <VeterancyLevelArray MinVeterancyXP="10"/>
+        <VeterancyLevelArray MinVeterancyXP="5">
+            <Modification MoveSpeedBonus="0.1015">
+                <DamageDealtUnscaled index="Melee" value="1"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="10">
+            <Modification MoveSpeedBonus="0.1015">
+                <DamageDealtUnscaled index="Melee" value="1"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="15">
+            <Modification MoveSpeedBonus="0.1015">
+                <DamageDealtUnscaled index="Melee" value="1"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="20">
+            <Modification MoveSpeedBonus="0.1015">
+                <DamageDealtUnscaled index="Melee" value="1"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="25">
+            <Modification MoveSpeedBonus="0.1015">
+                <DamageDealtUnscaled index="Melee" value="1"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="30">
+            <Modification MoveSpeedBonus="0.1015">
+                <DamageDealtUnscaled index="Melee" value="1"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="35">
+            <Modification MoveSpeedBonus="0.1015">
+                <DamageDealtUnscaled index="Melee" value="1"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="40">
+            <Modification MoveSpeedBonus="0.1015">
+                <DamageDealtUnscaled index="Melee" value="1"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="45">
+            <Modification MoveSpeedBonus="0.1015">
+                <DamageDealtUnscaled index="Melee" value="1"/>
+            </Modification>
+        </VeterancyLevelArray>
+    </CBehaviorVeterancy>
+    <CBehaviorBuff id="Immolation">
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Duration value="-1"/>
+        <Period value="1"/>
+        <PeriodicEffect value="ImmolationSearch"/>
+    </CBehaviorBuff>
+    <!-- Cant parent from TimedLife due to the morph applying the InfestedTerranTimedLife behavior,-->
+    <!--        as the TimedLife parent would use <KillCredit Value="Caster"/> which sets kill credit to the egg -->
+    <CBehaviorBuff id="InfestedTerranTimedLife">
+        <Duration value="12"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="MarineShield2">
+        <Alignment value="Positive"/>
+        <Cost>
+            <Charge Link="Behavior/MarineShield"/>
+            <Cooldown Link="Behavior/MarineShield"/>
+        </Cost>
+        <InfoFlags index="Hidden" value="1"/>
+        <InfoIcon value="Assets\Textures\BTN-upgrade-terran-combatshield.dds"/>
+        <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
+        <Requirements value="UseShieldWall"/>
+        <Modification>
+            <DeathResponse>
+                <Cost>
+                    <Charge Link="Behavior/MarineShield"/>
+                    <Cooldown Link="Behavior/MarineShield"/>
+                </Cost>
+            </DeathResponse>
+        </Modification>
+        <DamageResponse>
+            <Cost>
+                <Charge Link="Behavior/MarineShield"/>
+                <Cooldown Link="Behavior/MarineShield"/>
+            </Cost>
+        </DamageResponse>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="PermanentlyCloaked2">
+        <InfoIcon value="Assets\Textures\btn-ability-terran-cloak.dds"/>
+        <Duration value="1.5"/>
+        <Modification>
+            <StateFlags index="SuppressCollision" value="1"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="PsiStorm">
+        <MaxStackCount value="2"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="SalvageBunker">
+        <Duration value="0.5"/>
+        <Modification>
+            <AbilLinkEnableArray index="1" value="SalvageBunkerRefund2"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="StimPack2">
+        <Alignment value="Positive"/>
+        <Cost>
+            <Charge Link="Behavior/StimPack"/>
+            <Cooldown Link="Behavior/StimPack"/>
+        </Cost>
+        <InfoIcon value="Assets\Textures\btn-ability-terran-stimpack.dds"/>
+        <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
+        <Duration value="15"/>
+        <Modification MoveSpeedMultiplier="1.5" AttackSpeedMultiplier="1.5">
+            <DeathResponse>
+                <Cost>
+                    <Charge Link="Behavior/StimPack"/>
+                    <Cooldown Link="Behavior/StimPack"/>
+                </Cost>
+            </DeathResponse>
+        </Modification>
+        <DamageResponse>
+            <Cost>
+                <Charge Link="Behavior/StimPack"/>
+                <Cooldown Link="Behavior/StimPack"/>
+            </Cost>
+        </DamageResponse>
+    </CBehaviorBuff>
+</Catalog>

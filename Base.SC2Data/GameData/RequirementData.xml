@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<Catalog>
+    <CRequirement id="HaveArmory2">
+        <EditorCategories value="Race:Protoss,TechType:Unit"/>
+        <NodeArray index="Use" Link="CountUnitAssimilatorCompleteOnlyTechTreeCheat"/>
+    </CRequirement>
+    <CRequirement id="HaveDTorHT">
+        <EditorCategories value="Race:Protoss,TechType:Unit"/>
+        <NodeArray index="Use" Link="Or3315126919CountUnitAssimilatorCompleteOnly1952641197TechTreeCheatCountUnitDarkShrineCompleteOnly3550425427TechTreeCheat"/>
+    </CRequirement>
+    <CRequirement id="LearnCentrificalHooks">
+        <NodeArray index="Use" Link=""/>
+    </CRequirement>
+    <CRequirement id="LearnGlialReconstitution">
+        <NodeArray index="Use" Link=""/>
+    </CRequirement>
+    <CRequirement id="LearnHunterSeekerMissiles">
+        <NodeArray index="Use" Link=""/>
+    </CRequirement>
+    <CRequirement id="LearnProtossAirArmor2">
+        <NodeArray index="Use" Link="AndEq4283478838CountUpgradeProtossAirArmorsLevel1CompleteOnly1"/>
+    </CRequirement>
+    <CRequirement id="LearnProtossAirArmor3">
+        <NodeArray index="Use" Link="AndCountUpgradeProtossAirArmorsLevel2CompleteOnly2731442398NotCountUpgradeProtossAirArmorsLevel3InProgressOnly"/>
+        <NodeArray index="Show" Link="AndLTCountUpgradeProtossAirArmorsLevel3QueuedOrBetter7AllowUnitPhoenix"/>
+    </CRequirement>
+    <CRequirement id="LearnProtossAirWeapon2">
+        <NodeArray index="Use" Link="AndEq1491800815CountUpgradeProtossAirWeaponsLevel1CompleteOnly1"/>
+    </CRequirement>
+    <CRequirement id="LearnProtossAirWeapon3">
+        <NodeArray index="Use" Link="AndCountUpgradeProtossAirWeaponsLevel2CompleteOnly524089035TechTreeCheatNotCountUpgradeProtossAirWeaponsLevel3InProgressOnlyTechTreeCheat"/>
+        <NodeArray index="Show" Link="AndLTCountUpgradeProtossAirWeaponsLevel3QueuedOrBetter7AllowUnitPhoenix"/>
+    </CRequirement>
+    <CRequirement id="LearnProtossGroundArmor2">
+        <NodeArray index="Use" Link="AndEq3569156689CountUpgradeProtossGroundArmorsLevel1CompleteOnly1"/>
+    </CRequirement>
+    <CRequirement id="LearnProtossGroundArmor3">
+        <NodeArray index="Use" Link="AndCountUpgradeProtossGroundArmorsLevel2CompleteOnly419273267NotCountUpgradeProtossGroundArmorsLevel3InProgressOnly"/>
+        <NodeArray index="Show" Link="LTCountUpgradeProtossGroundArmorsLevel3QueuedOrBetter7"/>
+    </CRequirement>
+    <CRequirement id="LearnProtossGroundWeapon2">
+        <NodeArray index="Use" Link="AndEq1740904084CountUpgradeProtossGroundWeaponsLevel1CompleteOnly1"/>
+    </CRequirement>
+    <CRequirement id="LearnProtossGroundWeapon3">
+        <NodeArray index="Use" Link="AndCountUpgradeProtossGroundWeaponsLevel2CompleteOnlyNotCountUpgradeProtossGroundWeaponsLevel3InProgressOnlyTechTreeCheat"/>
+        <NodeArray index="Show" Link="LTCountUpgradeProtossGroundWeaponsLevel3QueuedOrBetter7"/>
+    </CRequirement>
+    <CRequirement id="LearnProtossShield2">
+        <NodeArray index="Use" Link="AndEq3354561256CountUpgradeProtossShieldsLevel1CompleteOnly1"/>
+    </CRequirement>
+    <CRequirement id="LearnProtossShield3">
+        <NodeArray index="Use" Link="AndCountUpgradeProtossShieldsLevel2CompleteOnly3751249461NotCountUpgradeProtossShieldsLevel3InProgressOnly"/>
+        <NodeArray index="Show" Link="LTCountUpgradeProtossShieldsLevel3QueuedOrBetter7"/>
+    </CRequirement>
+    <CRequirement id="LearnShieldWall2">
+        <EditorCategories value="Race:Terran,TechType:Ability"/>
+        <NodeArray index="Show" Link="NotCountUpgradeFirebatJuggernautPlatingQueuedOrBetter"/>
+    </CRequirement>
+    <CRequirement id="LearnTerranInfantryArmor2">
+        <NodeArray index="Use" Link="AndEq3446134918CountUpgradeTerranInfantryArmorsLevel1CompleteOnly1"/>
+    </CRequirement>
+    <CRequirement id="LearnTerranInfantryArmor3">
+        <NodeArray index="Use" Link="AndNot3722837715CountUpgradeTerranInfantryArmorsLevel3InProgressOnlyCountUpgradeTerranInfantryArmorsLevel2CompleteOnly"/>
+        <NodeArray index="Show" Link="LTCountUpgradeTerranInfantryArmorsLevel3QueuedOrBetter7"/>
+    </CRequirement>
+    <CRequirement id="LearnTerranInfantryWeapon2">
+        <NodeArray index="Use" Link="AndEq1429793488CountUpgradeTerranInfantryWeaponsLevel1CompleteOnly1"/>
+    </CRequirement>
+    <CRequirement id="LearnTerranInfantryWeapon3">
+        <NodeArray index="Use" Link="AndNotCountUpgradeTerranInfantryWeaponsLevel3InProgressOnlyTechTreeCheatCountUpgradeTerranInfantryWeaponsLevel2CompleteOnly"/>
+        <NodeArray index="Show" Link="LTCountUpgradeTerranInfantryWeaponsLevel3QueuedOrBetter7"/>
+    </CRequirement>
+    <CRequirement id="LearnTerranShipArmor3">
+        <NodeArray index="Use" Link="AndCountUpgradeTerranShipArmorsLevel2CompleteOnly1864353859NotCountUpgradeTerranShipArmorsLevel3InProgressOnly"/>
+        <NodeArray index="Show" Link="LTCountUpgradeTerranShipArmorsLevel3QueuedOrBetter7"/>
+    </CRequirement>
+    <CRequirement id="LearnTerranShipWeapon3">
+        <NodeArray index="Use" Link="AndCountUpgradeTerranShipWeaponsLevel2CompleteOnly1004646809TechTreeCheatNotCountUpgradeTerranShipWeaponsLevel3InProgressOnlyTechTreeCheat"/>
+        <NodeArray index="Show" Link="LTCountUpgradeTerranShipWeaponsLevel3QueuedOrBetter7"/>
+    </CRequirement>
+    <CRequirement id="LearnTerranVehicleArmor3">
+        <NodeArray index="Use" Link="AndCountUpgradeTerranVehicleArmorsLevel2CompleteOnly2517918925NotCountUpgradeTerranVehicleArmorsLevel3InProgressOnly"/>
+        <NodeArray index="Show" Link="LTCountUpgradeTerranVehicleArmorsLevel3QueuedOrBetter7"/>
+    </CRequirement>
+    <CRequirement id="LearnTerranVehicleWeapon3">
+        <NodeArray index="Use" Link="AndCountUpgradeTerranVehicleWeaponsLevel2CompleteOnly894233239TechTreeCheatNotCountUpgradeTerranVehicleWeaponsLevel3InProgressOnlyTechTreeCheat"/>
+        <NodeArray index="Show" Link="LTCountUpgradeTerranVehicleWeaponsLevel3QueuedOrBetter7"/>
+    </CRequirement>
+    <CRequirement id="LearnZergFlyerArmor2">
+        <NodeArray index="Use" Link="AndEq539690215CountUpgradeZergFlyerArmorsLevel1CompleteOnly1"/>
+    </CRequirement>
+    <CRequirement id="LearnZergFlyerArmor3">
+        <NodeArray index="Use" Link="AndCountUpgradeZergFlyerArmorsLevel2CompleteOnly504020316NotCountUpgradeZergFlyerArmorsLevel3InProgressOnly"/>
+        <NodeArray index="Show" Link="LTCountUpgradeZergFlyerArmorsLevel3QueuedOrBetter7"/>
+    </CRequirement>
+    <CRequirement id="LearnZergFlyerAttack2">
+        <NodeArray index="Use" Link="AndEq3274469600CountUpgradeZergFlyerWeaponsLevel1CompleteOnly1"/>
+    </CRequirement>
+    <CRequirement id="LearnZergFlyerAttack3">
+        <NodeArray index="Use" Link="AndCountUpgradeZergFlyerWeaponsLevel2CompleteOnly2419098971TechTreeCheatNotCountUpgradeZergFlyerWeaponsLevel3InProgressOnlyTechTreeCheat"/>
+        <NodeArray index="Show" Link="LTCountUpgradeZergFlyerWeaponsLevel3QueuedOrBetter7"/>
+    </CRequirement>
+    <CRequirement id="LearnZergGroundArmor2">
+        <NodeArray index="Use" Link="AndEq1695466224CountUpgradeZergGroundArmorsLevel1CompleteOnly1"/>
+    </CRequirement>
+    <CRequirement id="LearnZergGroundArmor3">
+        <NodeArray index="Use" Link="AndCountUpgradeZergGroundArmorsLevel2CompleteOnly4090499265NotCountUpgradeZergGroundArmorsLevel3InProgressOnly"/>
+        <NodeArray index="Show" Link="LTCountUpgradeZergGroundArmorsLevel3QueuedOrBetter7"/>
+    </CRequirement>
+    <CRequirement id="LearnZergMeleeWeapon2">
+        <NodeArray index="Use" Link="AndEq1542947369CountUpgradeZergMeleeWeaponsLevel1CompleteOnly1"/>
+    </CRequirement>
+    <CRequirement id="LearnZergMeleeWeapon3">
+        <NodeArray index="Use" Link="AndCountUpgradeZergMeleeWeaponsLevel2CompleteOnly2480428841TechTreeCheatNotCountUpgradeZergMeleeWeaponsLevel3InProgressOnlyTechTreeCheat"/>
+        <NodeArray index="Show" Link="LTCountUpgradeZergMeleeWeaponsLevel3QueuedOrBetter7"/>
+    </CRequirement>
+    <CRequirement id="LearnZergMissileWeapon2">
+        <NodeArray index="Use" Link="AndEq2966286162CountUpgradeZergMissileWeaponsLevel1CompleteOnly1"/>
+    </CRequirement>
+    <CRequirement id="LearnZergMissileWeapon3">
+        <NodeArray index="Use" Link="AndCountUpgradeZergMissileWeaponsLevel2CompleteOnly2358983352TechTreeCheatNotCountUpgradeZergMissileWeaponsLevel3InProgressOnlyTechTreeCheat"/>
+        <NodeArray index="Show" Link="LTCountUpgradeZergMissileWeaponsLevel3QueuedOrBetter7"/>
+    </CRequirement>
+    <CRequirement id="UseBlink2">
+        <EditorCategories value="Race:Protoss,TechType:Ability"/>
+    </CRequirement>
+    <CRequirement id="UseCloakingField">
+        <NodeArray index="Use" Link=""/>
+    </CRequirement>
+    <CRequirement id="UseIncineratorNozzles">
+        <NodeArray index="Use" Link=""/>
+        <NodeArray index="Show" Link=""/>
+    </CRequirement>
+    <CRequirement id="UseJuggernautPlatingFirebat">
+        <NodeArray index="Use" Link=""/>
+        <NodeArray index="Show" Link=""/>
+    </CRequirement>
+    <CRequirement id="UsePsiStorm">
+        <NodeArray index="Use" Link=""/>
+    </CRequirement>
+</Catalog>

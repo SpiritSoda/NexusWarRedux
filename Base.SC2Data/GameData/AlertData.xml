@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<Catalog>
+    <CAlert id="AttackTown"/>
+    <CAlert id="AttackTownAlly">
+        <Sound value=""/>
+    </CAlert>
+    <CAlert id="AttackUnit">
+        <Sound value="Alert_ZergForcesUnderAttack"/>
+        <Display index="Self" value="0"/>
+        <Display index="Other" value="0"/>
+    </CAlert>
+    <CAlert id="AttackUnitAlly">
+        <Display index="Self" value="0"/>
+        <Display index="Other" value="0"/>
+    </CAlert>
+    <CAlert id="AttackUnitAlly_Prot">
+        <Display index="Self" value="0"/>
+        <Display index="Other" value="0"/>
+    </CAlert>
+    <CAlert id="AttackUnitAlly_Terr">
+        <Display index="Self" value="0"/>
+        <Display index="Other" value="0"/>
+    </CAlert>
+    <CAlert id="AttackUnitAlly_Zerg">
+        <Display index="Self" value="0"/>
+        <Display index="Other" value="0"/>
+    </CAlert>
+    <CAlert id="AttackUnit_Prot">
+        <Display index="Self" value="0"/>
+        <Display index="Other" value="0"/>
+    </CAlert>
+    <CAlert id="AttackUnit_Zerg">
+        <Display index="Self" value="0"/>
+        <Display index="Other" value="0"/>
+    </CAlert>
+    <CAlert id="MorphComplete_Prot">
+        <Display index="Self" value="0"/>
+        <Display index="Other" value="0"/>
+    </CAlert>
+    <CAlert id="MorphComplete_Terr">
+        <Display index="Self" value="0"/>
+        <Display index="Other" value="0"/>
+    </CAlert>
+    <CAlert id="MorphComplete_Zerg">
+        <Display index="Self" value="0"/>
+        <Display index="Other" value="0"/>
+    </CAlert>
+    <CAlert id="TrainComplete_Prot">
+        <Display index="Self" value="0"/>
+        <Display index="Other" value="0"/>
+        <Sound value=""/>
+    </CAlert>
+    <CAlert id="TrainComplete_Terr">
+        <Display index="Self" value="0"/>
+        <Display index="Other" value="0"/>
+        <Sound value=""/>
+    </CAlert>
+    <CAlert id="TrainComplete_Zerg">
+        <Display index="Self" value="0"/>
+        <Display index="Other" value="0"/>
+        <Sound value=""/>
+    </CAlert>
+    <CAlert id="WarpTrainComplete_Prot">
+        <Display index="Self" value="0"/>
+        <Display index="Other" value="0"/>
+    </CAlert>
+    <CAlert id="WarpTrainComplete_Terr">
+        <Display index="Self" value="0"/>
+        <Display index="Other" value="0"/>
+    </CAlert>
+    <CAlert id="WarpTrainComplete_Zerg">
+        <Display index="Self" value="0"/>
+        <Display index="Other" value="0"/>
+    </CAlert>
+</Catalog>

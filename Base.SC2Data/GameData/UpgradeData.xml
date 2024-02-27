@@ -1,0 +1,756 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CUpgrade default="1" id="TerranInfantryArmors">
+        <AffectedUnitArray index="1" value="TaurenSpaceMarine"/>
+        <AffectedUnitArray index="2" value="Marauder"/>
+        <AffectedUnitArray index="3" value="Marine"/>
+        <AffectedUnitArray index="4" value="Reaper"/>
+        <AffectedUnitArray value="SCV"/>
+    </CUpgrade>
+    <CUpgrade default="1" id="TerranInfantryArmors2">
+        <InfoTooltipPriority value="51"/>
+        <Race value="Terr"/>
+        <ScoreCount value="ArmorTechnologyCount"/>
+        <ScoreValue value="ArmorTechnologyValue"/>
+        <ScoreResult value="BuildOrder"/>
+        <EffectArray Reference="Unit,SCV,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,SCV,LifeArmor" Value="1"/>
+        <EffectArray Reference="Unit,Marine,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,Marine,LifeArmor" Value="1"/>
+        <EffectArray Reference="Unit,Reaper,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,Reaper,LifeArmor" Value="1"/>
+        <EffectArray Reference="Unit,Marauder,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,Marauder,LifeArmor" Value="1"/>
+        <EffectArray Reference="Unit,Ghost,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,Ghost,LifeArmor" Value="1"/>
+        <EffectArray Reference="Unit,MULE,LifeArmor" Value="1"/>
+        <EffectArray Reference="Unit,MULE,LifeArmorLevel" Value="1"/>
+        <EditorCategories value="Race:Terran,UpgradeType:ArmorBonus"/>
+        <AffectedUnitArray value="Ghost"/>
+        <AffectedUnitArray value="Marauder"/>
+        <AffectedUnitArray value="Marine2"/>
+        <AffectedUnitArray value="Reaper"/>
+        <AffectedUnitArray value="SCV"/>
+    </CUpgrade>
+    <CUpgrade default="1" id="TerranInfantryWeapons2">
+        <InfoTooltipPriority value="61"/>
+        <Race value="Terr"/>
+        <ScoreCount value="WeaponTechnologyCount"/>
+        <ScoreValue value="WeaponTechnologyValue"/>
+        <ScoreResult value="BuildOrder"/>
+        <EffectArray Reference="Weapon,Marine,Level" Value="1"/>
+        <EffectArray Reference="Effect,Marine,Amount" Value="1"/>
+        <EffectArray Reference="Weapon,Reaper,Level" Value="1"/>
+        <EffectArray Reference="Weapon,ReaperD8,Level" Value="1"/>
+        <EffectArray Reference="Effect,Reaper,Amount" Value="1"/>
+        <EffectArray Reference="Effect,ReaperD8Damage,Amount" Value="3"/>
+        <EffectArray Reference="Weapon,Marauder,Level" Value="1"/>
+        <EffectArray Reference="Effect,MarauderU,Amount" Value="1.000000"/>
+        <EffectArray Reference="Effect,MarauderU,AttributeBonus[e_unitAttributeArmored]" Value="1.000000"/>
+        <EffectArray Reference="Weapon,Ghost,Level" Value="1"/>
+        <EffectArray Reference="Effect,Ghost,Amount" Value="1.000000"/>
+        <EffectArray Reference="Effect,Ghost,AttributeBonus[e_unitAttributeLight]" Value="1.000000"/>
+        <EditorCategories value="Race:Terran,UpgradeType:AttackBonus"/>
+        <AffectedUnitArray value="Ghost"/>
+        <AffectedUnitArray value="Marauder"/>
+        <AffectedUnitArray value="Marine2"/>
+        <AffectedUnitArray value="Reaper"/>
+    </CUpgrade>
+    <CUpgrade id="ChitinousPlating">
+        <EffectArray Reference="Unit,Ultralisk,Speed" Value="0.687500"/>
+    </CUpgrade>
+    <CUpgrade id="GraviticThrusters"/>
+    <CUpgrade id="IncreasedRange"/>
+    <CUpgrade id="IncreasedRange2">
+        <Flags index="UpgradeCheat" value="0"/>
+        <Icon value="Assets\Textures\aoe_splatterran1c.dds"/>
+        <Alert value="ResearchComplete"/>
+        <Race value="Prot"/>
+        <ScoreAmount value="400"/>
+        <ScoreResult value="BuildOrder"/>
+        <EffectArray Reference="Weapon,-,-" Value="2"/>
+        <EditorCategories value="Race:Protoss,UpgradeType:Talents"/>
+        <AffectedUnitArray value="Immortal2"/>
+    </CUpgrade>
+    <CUpgrade id="PhoenixRangeUpgrade">
+        <EffectArray index="0" Value="3"/>
+    </CUpgrade>
+    <CUpgrade id="ProtossAirArmorsLevel1">
+        <AffectedUnitArray index="1" value="Scout"/>
+        <AffectedUnitArray index="2" value="Interceptor"/>
+        <AffectedUnitArray index="3" value="Mothership"/>
+        <AffectedUnitArray index="4" value="Observer"/>
+        <AffectedUnitArray index="5" value="Phoenix"/>
+        <AffectedUnitArray index="6" value="VoidRay"/>
+        <AffectedUnitArray index="7" value="WarpPrismPhasing"/>
+        <AffectedUnitArray value="WarpPrism"/>
+        <EffectArray Reference="Unit,Scout,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,Scout,LifeArmor" Value="1"/>
+    </CUpgrade>
+    <CUpgrade id="ProtossAirArmorsLevel2">
+        <AffectedUnitArray index="1" value="Scout"/>
+        <AffectedUnitArray index="2" value="Interceptor"/>
+        <AffectedUnitArray index="3" value="Mothership"/>
+        <AffectedUnitArray index="4" value="Observer"/>
+        <AffectedUnitArray index="5" value="Phoenix"/>
+        <AffectedUnitArray index="6" value="VoidRay"/>
+        <AffectedUnitArray index="7" value="WarpPrismPhasing"/>
+        <AffectedUnitArray value="WarpPrism"/>
+        <EffectArray Reference="Unit,Scout,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,Scout,LifeArmor" Value="1"/>
+    </CUpgrade>
+    <CUpgrade id="ProtossAirArmorsLevel3">
+        <AffectedUnitArray index="1" value="Scout"/>
+        <AffectedUnitArray index="2" value="Interceptor"/>
+        <AffectedUnitArray index="3" value="Mothership"/>
+        <AffectedUnitArray index="4" value="Observer"/>
+        <AffectedUnitArray index="5" value="Phoenix"/>
+        <AffectedUnitArray index="6" value="VoidRay"/>
+        <AffectedUnitArray index="7" value="WarpPrismPhasing"/>
+        <AffectedUnitArray value="WarpPrism"/>
+        <EffectArray Reference="Unit,Scout,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,Scout,LifeArmor" Value="1"/>
+        <EffectArray Reference="Abil,CyberneticsCoreResearch,InfoArray[Research6].Charge.CountMax" Value="1"/>
+        <EffectArray Reference="Abil,CyberneticsCoreResearch,InfoArray[Research6].Resource[Minerals]" Value="125"/>
+        <MaxLevel value="7"/>
+    </CUpgrade>
+    <CUpgrade id="ProtossAirWeaponsLevel1">
+        <AffectedUnitArray index="1" value="Scout"/>
+        <AffectedUnitArray index="2" value="Mothership"/>
+        <AffectedUnitArray index="3" value="Phoenix"/>
+        <AffectedUnitArray value="VoidRay"/>
+        <EffectArray index="12" Operation="Set" Reference="Weapon,IonCannons,Icon" Value="Assets\Textures\btn-upgrade-protoss-airweaponslevel1.dds"/>
+        <EffectArray index="13" Operation="Set" Reference="Weapon,PrismaticBeam,Icon" Value="Assets\Textures\btn-upgrade-protoss-airweaponslevel1.dds"/>
+        <EffectArray index="14" Reference="Weapon,InterceptorBeam,Icon"/>
+        <EffectArray index="15" Operation="Add" Reference="Effect,ScoutAirU,Amount" Value="1"/>
+        <EffectArray index="16" Operation="Add" Reference="Effect,ScoutGround,Amount" Value="1"/>
+        <EffectArray index="17" Operation="Add" Reference="Weapon,ScoutAir,Level" Value="1"/>
+        <EffectArray Reference="Weapon,ScoutGround,Level" Value="1"/>
+    </CUpgrade>
+    <CUpgrade id="ProtossAirWeaponsLevel2">
+        <AffectedUnitArray index="1" value="Scout"/>
+        <AffectedUnitArray index="2" value="Mothership"/>
+        <AffectedUnitArray index="3" value="Phoenix"/>
+        <AffectedUnitArray value="VoidRay"/>
+        <EffectArray index="12" Operation="Set" Reference="Weapon,IonCannons,Icon" Value="Assets\Textures\btn-upgrade-protoss-airweaponslevel2.dds"/>
+        <EffectArray index="13" Operation="Set" Reference="Weapon,PrismaticBeam,Icon" Value="Assets\Textures\btn-upgrade-protoss-airweaponslevel2.dds"/>
+        <EffectArray index="14" Reference="Weapon,InterceptorBeam,Icon"/>
+        <EffectArray index="15" Operation="Add" Reference="Effect,ScoutAirU,Amount" Value="1"/>
+        <EffectArray index="16" Operation="Add" Reference="Effect,ScoutGround,Amount" Value="1"/>
+        <EffectArray index="17" Operation="Add" Reference="Weapon,ScoutAir,Level" Value="1"/>
+        <EffectArray Reference="Weapon,ScoutGround,Level" Value="1"/>
+    </CUpgrade>
+    <CUpgrade id="ProtossAirWeaponsLevel3">
+        <AffectedUnitArray index="1" value="Scout"/>
+        <AffectedUnitArray index="2" value="Mothership"/>
+        <AffectedUnitArray index="3" value="Phoenix"/>
+        <AffectedUnitArray value="VoidRay"/>
+        <EffectArray index="12" Operation="Set" Reference="Weapon,IonCannons,Icon" Value="Assets\Textures\btn-upgrade-protoss-airweaponslevel3.dds"/>
+        <EffectArray index="13" Operation="Set" Reference="Weapon,PrismaticBeam,Icon" Value="Assets\Textures\btn-upgrade-protoss-airweaponslevel3.dds"/>
+        <EffectArray index="14" Reference="Weapon,InterceptorBeam,Icon"/>
+        <EffectArray index="15" Operation="Add" Reference="Effect,ScoutAirU,Amount" Value="1"/>
+        <EffectArray index="16" Operation="Add" Reference="Effect,ScoutGround,Amount" Value="1"/>
+        <EffectArray index="17" Operation="Add" Reference="Weapon,ScoutAir,Level" Value="1"/>
+        <EffectArray Reference="Weapon,ScoutGround,Level" Value="1"/>
+        <EffectArray Reference="Abil,CyberneticsCoreResearch,InfoArray[Research3].Charge.CountMax" Value="1"/>
+        <EffectArray Reference="Abil,CyberneticsCoreResearch,InfoArray[Research3].Resource[Minerals]" Value="125"/>
+        <MaxLevel value="7"/>
+    </CUpgrade>
+    <CUpgrade id="ProtossGroundArmorsLevel1">
+        <EffectArray Reference="Unit,Zeratul,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,Zeratul,LifeArmor" Value="1"/>
+        <AffectedUnitArray index="1" value="Zeratul"/>
+        <AffectedUnitArray index="2" value="Colossus"/>
+        <AffectedUnitArray index="3" value="DarkTemplar"/>
+        <AffectedUnitArray index="4" value="Sentry"/>
+        <AffectedUnitArray index="5" value="HighTemplar"/>
+        <AffectedUnitArray index="6" value="Immortal"/>
+        <AffectedUnitArray index="7" value="Probe"/>
+        <AffectedUnitArray index="8" value="Stalker"/>
+        <AffectedUnitArray value="Zealot"/>
+    </CUpgrade>
+    <CUpgrade id="ProtossGroundArmorsLevel2">
+        <EffectArray Reference="Unit,Zeratul,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,Zeratul,LifeArmor" Value="1"/>
+        <AffectedUnitArray index="1" value="Zeratul"/>
+        <AffectedUnitArray index="2" value="Colossus"/>
+        <AffectedUnitArray index="3" value="DarkTemplar"/>
+        <AffectedUnitArray index="4" value="Sentry"/>
+        <AffectedUnitArray index="5" value="HighTemplar"/>
+        <AffectedUnitArray index="6" value="Immortal"/>
+        <AffectedUnitArray index="7" value="Probe"/>
+        <AffectedUnitArray index="8" value="Stalker"/>
+        <AffectedUnitArray value="Zealot"/>
+    </CUpgrade>
+    <CUpgrade id="ProtossGroundArmorsLevel3">
+        <EffectArray Reference="Unit,Zeratul,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,Zeratul,LifeArmor" Value="1"/>
+        <EffectArray Reference="Abil,ForgeResearch,InfoArray[Research6].Resource[Minerals]" Value="125"/>
+        <EffectArray Reference="Abil,ForgeResearch,InfoArray[Research6].Charge.CountMax" Value="1"/>
+        <AffectedUnitArray index="1" value="Zeratul"/>
+        <AffectedUnitArray index="2" value="Colossus"/>
+        <AffectedUnitArray index="3" value="DarkTemplar"/>
+        <AffectedUnitArray index="4" value="Sentry"/>
+        <AffectedUnitArray index="5" value="HighTemplar"/>
+        <AffectedUnitArray index="6" value="Immortal"/>
+        <AffectedUnitArray index="7" value="Probe"/>
+        <AffectedUnitArray index="8" value="Stalker"/>
+        <AffectedUnitArray value="Zealot"/>
+        <MaxLevel value="7"/>
+    </CUpgrade>
+    <CUpgrade id="ProtossGroundWeaponsLevel1">
+        <EffectArray Reference="Effect,Zeratul,Amount" Value="10"/>
+        <EffectArray Reference="Weapon,Zeratul,Level" Value="1"/>
+        <AffectedUnitArray index="1" value="Zeratul"/>
+        <AffectedUnitArray index="2" value="Colossus"/>
+        <AffectedUnitArray index="3" value="DarkTemplar"/>
+        <AffectedUnitArray index="4" value="Sentry"/>
+        <AffectedUnitArray index="5" value="HighTemplar"/>
+        <AffectedUnitArray index="6" value="Immortal"/>
+        <AffectedUnitArray index="7" value="Stalker"/>
+        <AffectedUnitArray value="Zealot"/>
+    </CUpgrade>
+    <CUpgrade id="ProtossGroundWeaponsLevel2">
+        <EffectArray Reference="Effect,Zeratul,Amount" Value="10"/>
+        <EffectArray Reference="Weapon,Zeratul,Level" Value="1"/>
+        <AffectedUnitArray index="1" value="Zeratul"/>
+        <AffectedUnitArray index="2" value="Colossus"/>
+        <AffectedUnitArray index="3" value="DarkTemplar"/>
+        <AffectedUnitArray index="4" value="Sentry"/>
+        <AffectedUnitArray index="5" value="HighTemplar"/>
+        <AffectedUnitArray index="6" value="Immortal"/>
+        <AffectedUnitArray index="7" value="Stalker"/>
+        <AffectedUnitArray value="Zealot"/>
+    </CUpgrade>
+    <CUpgrade id="ProtossGroundWeaponsLevel3">
+        <EffectArray Reference="Effect,Zeratul,Amount" Value="10"/>
+        <EffectArray Reference="Weapon,Zeratul,Level" Value="1"/>
+        <EffectArray Reference="Abil,ForgeResearch,InfoArray[Research3].Resource[Minerals]" Value="125"/>
+        <EffectArray Reference="Abil,ForgeResearch,InfoArray[Research3].Charge.CountMax" Value="1"/>
+        <AffectedUnitArray index="1" value="Zeratul"/>
+        <AffectedUnitArray index="2" value="Colossus"/>
+        <AffectedUnitArray index="3" value="DarkTemplar"/>
+        <AffectedUnitArray index="4" value="Sentry"/>
+        <AffectedUnitArray index="5" value="HighTemplar"/>
+        <AffectedUnitArray index="6" value="Immortal"/>
+        <AffectedUnitArray index="7" value="Stalker"/>
+        <AffectedUnitArray value="Zealot"/>
+        <MaxLevel value="7"/>
+    </CUpgrade>
+    <CUpgrade id="ProtossShieldsLevel1">
+        <EffectArray Reference="Unit,Scout,ShieldArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,Scout,ShieldArmor" Value="1"/>
+        <EffectArray Reference="Unit,Zeratul,ShieldArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,Zeratul,ShieldArmor" Value="1"/>
+        <AffectedUnitArray index="1" value="Scout"/>
+        <AffectedUnitArray index="2" value="Zeratul"/>
+        <AffectedUnitArray index="3" value="Assimilator"/>
+        <AffectedUnitArray index="4" value="Carrier"/>
+        <AffectedUnitArray index="5" value="Colossus"/>
+        <AffectedUnitArray index="6" value="CyberneticsCore"/>
+        <AffectedUnitArray index="7" value="DarkTemplar"/>
+        <AffectedUnitArray index="8" value="Sentry"/>
+        <AffectedUnitArray index="9" value="FleetBeacon"/>
+        <AffectedUnitArray index="10" value="Forge"/>
+        <AffectedUnitArray index="11" value="Gateway"/>
+        <AffectedUnitArray index="12" value="HighTemplar"/>
+        <AffectedUnitArray index="13" value="Immortal"/>
+        <AffectedUnitArray index="14" value="Interceptor"/>
+        <AffectedUnitArray index="15" value="Mothership"/>
+        <AffectedUnitArray index="16" value="Nexus"/>
+        <AffectedUnitArray index="17" value="DarkShrine"/>
+        <AffectedUnitArray index="18" value="Observer"/>
+        <AffectedUnitArray index="19" value="Phoenix"/>
+        <AffectedUnitArray index="20" value="PhotonCannon"/>
+        <AffectedUnitArray index="21" value="Probe"/>
+        <AffectedUnitArray index="22" value="Pylon"/>
+        <AffectedUnitArray index="23" value="RoboticsBay"/>
+        <AffectedUnitArray index="24" value="RoboticsFacility"/>
+        <AffectedUnitArray index="25" value="Stalker"/>
+        <AffectedUnitArray index="26" value="Stargate"/>
+        <AffectedUnitArray index="27" value="TemplarArchive"/>
+        <AffectedUnitArray index="28" value="TwilightCouncil"/>
+        <AffectedUnitArray index="29" value="VoidRay"/>
+        <AffectedUnitArray index="30" value="WarpGate"/>
+        <AffectedUnitArray index="31" value="WarpPrismPhasing"/>
+        <AffectedUnitArray value="WarpPrism"/>
+        <AffectedUnitArray value="Zealot"/>
+    </CUpgrade>
+    <CUpgrade id="ProtossShieldsLevel2">
+        <EffectArray Reference="Unit,Scout,ShieldArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,Scout,ShieldArmor" Value="1"/>
+        <EffectArray Reference="Unit,Zeratul,ShieldArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,Zeratul,ShieldArmor" Value="1"/>
+        <AffectedUnitArray index="1" value="Scout"/>
+        <AffectedUnitArray index="2" value="Zeratul"/>
+        <AffectedUnitArray index="3" value="Assimilator"/>
+        <AffectedUnitArray index="4" value="Carrier"/>
+        <AffectedUnitArray index="5" value="Colossus"/>
+        <AffectedUnitArray index="6" value="CyberneticsCore"/>
+        <AffectedUnitArray index="7" value="DarkTemplar"/>
+        <AffectedUnitArray index="8" value="Sentry"/>
+        <AffectedUnitArray index="9" value="FleetBeacon"/>
+        <AffectedUnitArray index="10" value="Forge"/>
+        <AffectedUnitArray index="11" value="Gateway"/>
+        <AffectedUnitArray index="12" value="HighTemplar"/>
+        <AffectedUnitArray index="13" value="Immortal"/>
+        <AffectedUnitArray index="14" value="Interceptor"/>
+        <AffectedUnitArray index="15" value="Mothership"/>
+        <AffectedUnitArray index="16" value="Nexus"/>
+        <AffectedUnitArray index="17" value="DarkShrine"/>
+        <AffectedUnitArray index="18" value="Observer"/>
+        <AffectedUnitArray index="19" value="Phoenix"/>
+        <AffectedUnitArray index="20" value="PhotonCannon"/>
+        <AffectedUnitArray index="21" value="Probe"/>
+        <AffectedUnitArray index="22" value="Pylon"/>
+        <AffectedUnitArray index="23" value="RoboticsBay"/>
+        <AffectedUnitArray index="24" value="RoboticsFacility"/>
+        <AffectedUnitArray index="25" value="Stalker"/>
+        <AffectedUnitArray index="26" value="Stargate"/>
+        <AffectedUnitArray index="27" value="TemplarArchive"/>
+        <AffectedUnitArray index="28" value="TwilightCouncil"/>
+        <AffectedUnitArray index="29" value="VoidRay"/>
+        <AffectedUnitArray index="30" value="WarpGate"/>
+        <AffectedUnitArray index="31" value="WarpPrismPhasing"/>
+        <AffectedUnitArray value="WarpPrism"/>
+        <AffectedUnitArray value="Zealot"/>
+    </CUpgrade>
+    <CUpgrade id="ProtossShieldsLevel3">
+        <EffectArray Reference="Unit,Scout,ShieldArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,Scout,ShieldArmor" Value="1"/>
+        <EffectArray Reference="Unit,Zeratul,ShieldArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,Zeratul,ShieldArmor" Value="1"/>
+        <EffectArray Reference="Abil,ForgeResearch,InfoArray[Research9].Charge.CountMax" Value="1"/>
+        <EffectArray Reference="Abil,ForgeResearch,InfoArray[Research9].Resource[Minerals]" Value="125"/>
+        <AffectedUnitArray index="1" value="Scout"/>
+        <AffectedUnitArray index="2" value="Zeratul"/>
+        <AffectedUnitArray index="3" value="Assimilator"/>
+        <AffectedUnitArray index="4" value="Carrier"/>
+        <AffectedUnitArray index="5" value="Colossus"/>
+        <AffectedUnitArray index="6" value="CyberneticsCore"/>
+        <AffectedUnitArray index="7" value="DarkTemplar"/>
+        <AffectedUnitArray index="8" value="Sentry"/>
+        <AffectedUnitArray index="9" value="FleetBeacon"/>
+        <AffectedUnitArray index="10" value="Forge"/>
+        <AffectedUnitArray index="11" value="Gateway"/>
+        <AffectedUnitArray index="12" value="HighTemplar"/>
+        <AffectedUnitArray index="13" value="Immortal"/>
+        <AffectedUnitArray index="14" value="Interceptor"/>
+        <AffectedUnitArray index="15" value="Mothership"/>
+        <AffectedUnitArray index="16" value="Nexus"/>
+        <AffectedUnitArray index="17" value="DarkShrine"/>
+        <AffectedUnitArray index="18" value="Observer"/>
+        <AffectedUnitArray index="19" value="Phoenix"/>
+        <AffectedUnitArray index="20" value="PhotonCannon"/>
+        <AffectedUnitArray index="21" value="Probe"/>
+        <AffectedUnitArray index="22" value="Pylon"/>
+        <AffectedUnitArray index="23" value="RoboticsBay"/>
+        <AffectedUnitArray index="24" value="RoboticsFacility"/>
+        <AffectedUnitArray index="25" value="Stalker"/>
+        <AffectedUnitArray index="26" value="Stargate"/>
+        <AffectedUnitArray index="27" value="TemplarArchive"/>
+        <AffectedUnitArray index="28" value="TwilightCouncil"/>
+        <AffectedUnitArray index="29" value="VoidRay"/>
+        <AffectedUnitArray index="30" value="WarpGate"/>
+        <AffectedUnitArray index="31" value="WarpPrismPhasing"/>
+        <AffectedUnitArray value="WarpPrism"/>
+        <AffectedUnitArray value="Zealot"/>
+        <MaxLevel value="7"/>
+    </CUpgrade>
+    <CUpgrade id="ShieldWall"/>
+    <CUpgrade id="ShieldWall2" parent="Research">
+        <InfoTooltipPriority value="2"/>
+        <Icon value="Assets\Textures\BTN-upgrade-terran-combatshield.dds"/>
+        <Race value="Terr"/>
+        <ScoreAmount value="300"/>
+        <ScoreResult value="BuildOrder"/>
+        <EffectArray Reference="Unit,Marine,LifeMax" Value="20"/>
+        <EffectArray Reference="Unit,Marine,LifeStart" Value="20"/>
+        <EffectArray Operation="Set" Reference="Actor,Marine,WireframeLayer[0]" Value="Assets\Textures\wireframe-terran-marine-shield.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,Marine,GroupIconLayer[0]" Value="Assets\Textures\wireframe-terran-marine-shield.dds"/>
+        <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
+        <AffectedUnitArray value="Marine2"/>
+    </CUpgrade>
+    <CUpgrade id="StimPack2" parent="Research">
+        <Icon value="Assets\Textures\btn-ability-terran-stimpack.dds"/>
+        <Race value="Terr"/>
+        <ScoreAmount value="200"/>
+        <ScoreResult value="BuildOrder"/>
+        <EditorCategories value="Race:Terran,UpgradeType:SpellResearch"/>
+        <AffectedUnitArray value="Marine2"/>
+    </CUpgrade>
+    <CUpgrade id="StrikeCannons"/>
+    <CUpgrade id="TerranInfantryArmorsLevel1">
+        <AffectedUnitArray index="1" value="Firebat"/>
+        <AffectedUnitArray index="2" value="TaurenSpaceMarine"/>
+        <AffectedUnitArray index="3" value="Marauder"/>
+        <AffectedUnitArray index="4" value="Marine"/>
+        <AffectedUnitArray value="Reaper"/>
+        <AffectedUnitArray value="SCV"/>
+        <EffectArray Reference="Unit,Firebat,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,Firebat,LifeArmor" Value="1"/>
+    </CUpgrade>
+    <CUpgrade id="TerranInfantryArmorsLevel12" parent="TerranInfantryArmors">
+        <InfoTooltipPriority value="0"/>
+        <Icon value="Assets\Textures\btn-upgrade-terran-infantryarmorlevel1.dds"/>
+        <ScoreAmount value="200"/>
+        <EffectArray Operation="Set" Reference="Actor,SCV,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-infantryarmorlevel1.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,MULE,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-infantryarmorlevel1.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,Marine,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-infantryarmorlevel1.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,Reaper,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-infantryarmorlevel1.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,Marauder,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-infantryarmorlevel1.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,Ghost,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-infantryarmorlevel1.dds"/>
+        <AffectedUnitArray index="2" value="Marine2"/>
+    </CUpgrade>
+    <CUpgrade id="TerranInfantryArmorsLevel2">
+        <AffectedUnitArray index="1" value="Firebat"/>
+        <AffectedUnitArray index="2" value="TaurenSpaceMarine"/>
+        <AffectedUnitArray index="3" value="Marauder"/>
+        <AffectedUnitArray index="4" value="Marine"/>
+        <AffectedUnitArray value="Reaper"/>
+        <AffectedUnitArray value="SCV"/>
+        <EffectArray Reference="Unit,Firebat,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,Firebat,LifeArmor" Value="1"/>
+    </CUpgrade>
+    <CUpgrade id="TerranInfantryArmorsLevel22" parent="TerranInfantryArmors">
+        <InfoTooltipPriority value="0"/>
+        <Icon value="Assets\Textures\btn-upgrade-terran-infantryarmorlevel2.dds"/>
+        <ScoreAmount value="350"/>
+        <EffectArray Operation="Set" Reference="Actor,SCV,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-infantryarmorlevel2.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,MULE,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-infantryarmorlevel2.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,Marine,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-infantryarmorlevel2.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,Reaper,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-infantryarmorlevel2.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,Marauder,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-infantryarmorlevel2.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,Ghost,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-infantryarmorlevel2.dds"/>
+        <AffectedUnitArray index="2" value="Marine2"/>
+    </CUpgrade>
+    <CUpgrade id="TerranInfantryArmorsLevel3">
+        <AffectedUnitArray index="1" value="Firebat"/>
+        <AffectedUnitArray index="2" value="TaurenSpaceMarine"/>
+        <AffectedUnitArray index="3" value="Marauder"/>
+        <AffectedUnitArray index="4" value="Marine"/>
+        <AffectedUnitArray value="Reaper"/>
+        <AffectedUnitArray value="SCV"/>
+        <EffectArray Reference="Unit,Firebat,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,Firebat,LifeArmor" Value="1"/>
+        <EffectArray Reference="Abil,EngineeringBayResearch,InfoArray[Research9].Charge.CountMax" Value="1"/>
+        <EffectArray Reference="Abil,EngineeringBayResearch,InfoArray[Research9].Resource[Minerals]" Value="125"/>
+        <MaxLevel value="7"/>
+    </CUpgrade>
+    <CUpgrade id="TerranInfantryArmorsLevel32" parent="TerranInfantryArmors">
+        <InfoTooltipPriority value="0"/>
+        <Icon value="Assets\Textures\btn-upgrade-terran-infantryarmorlevel3.dds"/>
+        <ScoreAmount value="500"/>
+        <EffectArray Operation="Set" Reference="Actor,SCV,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-infantryarmorlevel3.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,MULE,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-infantryarmorlevel3.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,Marine,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-infantryarmorlevel3.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,Reaper,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-infantryarmorlevel3.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,Marauder,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-infantryarmorlevel3.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,Ghost,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-infantryarmorlevel3.dds"/>
+        <AffectedUnitArray index="2" value="Marine2"/>
+    </CUpgrade>
+    <CUpgrade id="TerranInfantryWeaponsLevel1">
+        <AffectedUnitArray index="1" value="Firebat"/>
+        <AffectedUnitArray index="2" value="TaurenSpaceMarine"/>
+        <AffectedUnitArray index="3" value="Marauder"/>
+        <AffectedUnitArray value="Marine"/>
+        <AffectedUnitArray value="Reaper"/>
+        <EffectArray Reference="Effect,FirebatUFull,Amount" Value="1"/>
+        <EffectArray Reference="Weapon,Firebat,Level" Value="1"/>
+    </CUpgrade>
+    <CUpgrade id="TerranInfantryWeaponsLevel12" parent="TerranInfantryWeapons">
+        <InfoTooltipPriority value="0"/>
+        <Icon value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel1.dds"/>
+        <ScoreAmount value="200"/>
+        <EffectArray Operation="Set" Reference="Weapon,Marine,Icon" Value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel1.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,Reaper,Icon" Value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel1.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,Marauder,Icon" Value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel1.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,Ghost,Icon" Value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel1.dds"/>
+        <AffectedUnitArray index="2" value="Marine2"/>
+    </CUpgrade>
+    <CUpgrade id="TerranInfantryWeaponsLevel2">
+        <AffectedUnitArray index="1" value="Firebat"/>
+        <AffectedUnitArray index="2" value="TaurenSpaceMarine"/>
+        <AffectedUnitArray index="3" value="Marauder"/>
+        <AffectedUnitArray value="Marine"/>
+        <AffectedUnitArray value="Reaper"/>
+        <EffectArray Reference="Effect,FirebatUFull,Amount" Value="1"/>
+        <EffectArray Reference="Weapon,Firebat,Level" Value="1"/>
+    </CUpgrade>
+    <CUpgrade id="TerranInfantryWeaponsLevel22" parent="TerranInfantryWeapons">
+        <InfoTooltipPriority value="0"/>
+        <Icon value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel2.dds"/>
+        <ScoreAmount value="350"/>
+        <EffectArray Operation="Set" Reference="Weapon,Marine,Icon" Value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel2.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,Reaper,Icon" Value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel2.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,Marauder,Icon" Value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel2.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,Ghost,Icon" Value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel2.dds"/>
+        <AffectedUnitArray index="2" value="Marine2"/>
+    </CUpgrade>
+    <CUpgrade id="TerranInfantryWeaponsLevel3">
+        <AffectedUnitArray index="1" value="Firebat"/>
+        <AffectedUnitArray index="2" value="TaurenSpaceMarine"/>
+        <AffectedUnitArray index="3" value="Marauder"/>
+        <AffectedUnitArray value="Marine"/>
+        <AffectedUnitArray value="Reaper"/>
+        <EffectArray Reference="Effect,FirebatUFull,Amount" Value="1"/>
+        <EffectArray Reference="Weapon,Firebat,Level" Value="1"/>
+        <EffectArray Reference="Abil,EngineeringBayResearch,InfoArray[Research5].Charge.CountMax" Value="1"/>
+        <EffectArray Reference="Abil,EngineeringBayResearch,InfoArray[Research5].Resource[Minerals]" Value="125"/>
+        <MaxLevel value="7"/>
+    </CUpgrade>
+    <CUpgrade id="TerranInfantryWeaponsLevel32" parent="TerranInfantryWeapons">
+        <InfoTooltipPriority value="0"/>
+        <Icon value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel3.dds"/>
+        <ScoreAmount value="500"/>
+        <EffectArray Operation="Set" Reference="Weapon,Marine,Icon" Value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel3.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,Reaper,Icon" Value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel3.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,Marauder,Icon" Value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel3.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,Ghost,Icon" Value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel3.dds"/>
+        <AffectedUnitArray index="2" value="Marine2"/>
+    </CUpgrade>
+    <CUpgrade id="TerranShipArmorsLevel1">
+        <EffectArray Reference="Unit,ScienceVessel,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,ScienceVessel,LifeArmor" Value="1"/>
+    </CUpgrade>
+    <CUpgrade id="TerranShipArmorsLevel2">
+        <EffectArray Reference="Unit,ScienceVessel,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,ScienceVessel,LifeArmor" Value="1"/>
+    </CUpgrade>
+    <CUpgrade id="TerranShipArmorsLevel3">
+        <EffectArray Reference="Unit,ScienceVessel,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,ScienceVessel,LifeArmor" Value="1"/>
+        <EffectArray Reference="Abil,ArmoryResearch,InfoArray[Research11].Charge.CountMax" Value="1"/>
+        <EffectArray Reference="Abil,ArmoryResearch,InfoArray[Research11].Resource[Minerals]" Value="125"/>
+        <MaxLevel value="7"/>
+    </CUpgrade>
+    <CUpgrade id="TerranShipWeaponsLevel1">
+        <EffectArray Reference="Effect,MothershipBeamDamage,Amount" Value="1"/>
+        <EffectArray Reference="Weapon,MothershipBeam,Level" Value="1"/>
+    </CUpgrade>
+    <CUpgrade id="TerranShipWeaponsLevel2">
+        <EffectArray Reference="Effect,MothershipBeamDamage,Amount" Value="1"/>
+        <EffectArray Reference="Weapon,MothershipBeam,Level" Value="1"/>
+    </CUpgrade>
+    <CUpgrade id="TerranShipWeaponsLevel3">
+        <EffectArray Reference="Effect,MothershipBeamDamage,Amount" Value="1"/>
+        <EffectArray Reference="Weapon,MothershipBeam,Level" Value="1"/>
+        <EffectArray Reference="Abil,ArmoryResearch,InfoArray[Research14].Resource[Minerals]" Value="125"/>
+        <EffectArray Reference="Abil,ArmoryResearch,InfoArray[Research14].Charge.CountMax" Value="1"/>
+        <MaxLevel value="7"/>
+    </CUpgrade>
+    <CUpgrade id="TerranVehicleArmorsLevel1">
+        <EffectArray Reference="Unit,Odin,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,Odin,LifeArmor" Value="1"/>
+        <AffectedUnitArray index="1" value="Odin"/>
+        <AffectedUnitArray index="2" value="SiegeTankSieged"/>
+        <AffectedUnitArray index="3" value="SiegeTank"/>
+        <AffectedUnitArray value="Thor"/>
+    </CUpgrade>
+    <CUpgrade id="TerranVehicleArmorsLevel2">
+        <EffectArray Reference="Unit,Odin,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,Odin,LifeArmor" Value="1"/>
+        <AffectedUnitArray index="1" value="Odin"/>
+        <AffectedUnitArray index="2" value="SiegeTankSieged"/>
+        <AffectedUnitArray index="3" value="SiegeTank"/>
+        <AffectedUnitArray value="Thor"/>
+    </CUpgrade>
+    <CUpgrade id="TerranVehicleArmorsLevel3">
+        <EffectArray Reference="Unit,Odin,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,Odin,LifeArmor" Value="1"/>
+        <EffectArray Reference="Abil,ArmoryResearch,InfoArray[Research5].Resource[Minerals]" Value="125"/>
+        <EffectArray Reference="Abil,ArmoryResearch,InfoArray[Research5].Charge.CountMax" Value="1"/>
+        <AffectedUnitArray index="1" value="Odin"/>
+        <AffectedUnitArray index="2" value="SiegeTankSieged"/>
+        <AffectedUnitArray index="3" value="SiegeTank"/>
+        <AffectedUnitArray value="Thor"/>
+        <MaxLevel value="7"/>
+    </CUpgrade>
+    <CUpgrade id="TerranVehicleWeaponsLevel1">
+        <EffectArray Reference="Effect,OdinAADamage,Amount" Value="5"/>
+        <EffectArray Reference="Effect,OdinDamage,Amount" Value="10"/>
+        <EffectArray Reference="Weapon,OdinAntiAir,Level" Value="1"/>
+        <EffectArray Reference="Weapon,Odin,Level" Value="1"/>
+        <AffectedUnitArray index="1" value="Odin"/>
+        <AffectedUnitArray index="2" value="SiegeTankSieged"/>
+        <AffectedUnitArray index="3" value="SiegeTank"/>
+        <AffectedUnitArray value="Thor"/>
+    </CUpgrade>
+    <CUpgrade id="TerranVehicleWeaponsLevel2">
+        <EffectArray Reference="Effect,OdinAADamage,Amount" Value="5"/>
+        <EffectArray Reference="Effect,OdinDamage,Amount" Value="10"/>
+        <EffectArray Reference="Weapon,OdinAntiAir,Level" Value="1"/>
+        <EffectArray Reference="Weapon,Odin,Level" Value="1"/>
+        <AffectedUnitArray index="1" value="Odin"/>
+        <AffectedUnitArray index="2" value="SiegeTankSieged"/>
+        <AffectedUnitArray index="3" value="SiegeTank"/>
+        <AffectedUnitArray value="Thor"/>
+    </CUpgrade>
+    <CUpgrade id="TerranVehicleWeaponsLevel3">
+        <EffectArray Reference="Effect,OdinAADamage,Amount" Value="5"/>
+        <EffectArray Reference="Effect,OdinDamage,Amount" Value="10"/>
+        <EffectArray Reference="Weapon,OdinAntiAir,Level" Value="1"/>
+        <EffectArray Reference="Weapon,Odin,Level" Value="1"/>
+        <EffectArray Reference="Abil,ArmoryResearch,InfoArray[Research8].Charge.CountMax" Value="1"/>
+        <EffectArray Reference="Abil,ArmoryResearch,InfoArray[Research8].Resource[Minerals]" Value="125"/>
+        <AffectedUnitArray index="1" value="Odin"/>
+        <AffectedUnitArray index="2" value="SiegeTankSieged"/>
+        <AffectedUnitArray index="3" value="SiegeTank"/>
+        <AffectedUnitArray value="Thor"/>
+        <MaxLevel value="7"/>
+    </CUpgrade>
+    <CUpgrade id="ZergFlyerArmorsLevel3">
+        <EffectArray Reference="Abil,SpireResearch,InfoArray[Research6].Resource[Minerals]" Value="125"/>
+        <EffectArray Reference="Abil,SpireResearch,InfoArray[Research6].Charge.CountMax" Value="1"/>
+        <MaxLevel value="7"/>
+    </CUpgrade>
+    <CUpgrade id="ZergFlyerWeaponsLevel3">
+        <EffectArray Reference="Abil,SpireResearch,InfoArray[Research3].Charge.CountMax" Value="1"/>
+        <EffectArray Reference="Abil,SpireResearch,InfoArray[Research3].Resource[Minerals]" Value="125"/>
+        <MaxLevel value="7"/>
+    </CUpgrade>
+    <CUpgrade id="ZergGroundArmorsLevel1">
+        <AffectedUnitArray index="1" value="KerriganChar"/>
+        <AffectedUnitArray index="2" value="Lurker"/>
+        <AffectedUnitArray index="3" value="BanelingBurrowed"/>
+        <AffectedUnitArray index="4" value="Broodling"/>
+        <AffectedUnitArray index="5" value="Drone"/>
+        <AffectedUnitArray index="6" value="DroneBurrowed"/>
+        <AffectedUnitArray index="7" value="Hydralisk"/>
+        <AffectedUnitArray index="8" value="HydraliskBurrowed"/>
+        <AffectedUnitArray index="9" value="Infestor"/>
+        <AffectedUnitArray index="10" value="InfestorBurrowed"/>
+        <AffectedUnitArray index="11" value="Queen"/>
+        <AffectedUnitArray index="12" value="QueenBurrowed"/>
+        <AffectedUnitArray index="13" value="Roach"/>
+        <AffectedUnitArray index="14" value="RoachBurrowed"/>
+        <AffectedUnitArray index="15" value="Ultralisk"/>
+        <AffectedUnitArray index="16" value="UltraliskBurrowed"/>
+        <AffectedUnitArray value="Zergling"/>
+        <AffectedUnitArray value="ZerglingBurrowed"/>
+        <EffectArray Reference="Unit,LurkerBurrowed,LifeArmor" Value="1"/>
+        <EffectArray Reference="Unit,LurkerBurrowed,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,KerriganChar,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,KerriganChar,LifeArmor" Value="1"/>
+    </CUpgrade>
+    <CUpgrade id="ZergGroundArmorsLevel2">
+        <AffectedUnitArray index="1" value="KerriganChar"/>
+        <AffectedUnitArray index="2" value="Lurker"/>
+        <AffectedUnitArray index="3" value="BanelingBurrowed"/>
+        <AffectedUnitArray index="4" value="Broodling"/>
+        <AffectedUnitArray index="5" value="Drone"/>
+        <AffectedUnitArray index="6" value="DroneBurrowed"/>
+        <AffectedUnitArray index="7" value="Hydralisk"/>
+        <AffectedUnitArray index="8" value="HydraliskBurrowed"/>
+        <AffectedUnitArray index="9" value="Infestor"/>
+        <AffectedUnitArray index="10" value="InfestorBurrowed"/>
+        <AffectedUnitArray index="11" value="Queen"/>
+        <AffectedUnitArray index="12" value="QueenBurrowed"/>
+        <AffectedUnitArray index="13" value="Roach"/>
+        <AffectedUnitArray index="14" value="RoachBurrowed"/>
+        <AffectedUnitArray index="15" value="Ultralisk"/>
+        <AffectedUnitArray index="16" value="UltraliskBurrowed"/>
+        <AffectedUnitArray value="Zergling"/>
+        <AffectedUnitArray value="ZerglingBurrowed"/>
+        <EffectArray Reference="Unit,LurkerBurrowed,LifeArmor" Value="1"/>
+        <EffectArray Reference="Unit,LurkerBurrowed,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,KerriganChar,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,KerriganChar,LifeArmor" Value="1"/>
+    </CUpgrade>
+    <CUpgrade id="ZergGroundArmorsLevel3">
+        <AffectedUnitArray index="1" value="KerriganChar"/>
+        <AffectedUnitArray index="2" value="Lurker"/>
+        <AffectedUnitArray index="3" value="BanelingBurrowed"/>
+        <AffectedUnitArray index="4" value="Broodling"/>
+        <AffectedUnitArray index="5" value="Drone"/>
+        <AffectedUnitArray index="6" value="DroneBurrowed"/>
+        <AffectedUnitArray index="7" value="Hydralisk"/>
+        <AffectedUnitArray index="8" value="HydraliskBurrowed"/>
+        <AffectedUnitArray index="9" value="Infestor"/>
+        <AffectedUnitArray index="10" value="InfestorBurrowed"/>
+        <AffectedUnitArray index="11" value="Queen"/>
+        <AffectedUnitArray index="12" value="QueenBurrowed"/>
+        <AffectedUnitArray index="13" value="Roach"/>
+        <AffectedUnitArray index="14" value="RoachBurrowed"/>
+        <AffectedUnitArray index="15" value="Ultralisk"/>
+        <AffectedUnitArray index="16" value="UltraliskBurrowed"/>
+        <AffectedUnitArray value="Zergling"/>
+        <AffectedUnitArray value="ZerglingBurrowed"/>
+        <EffectArray Reference="Unit,LurkerBurrowed,LifeArmor" Value="1"/>
+        <EffectArray Reference="Unit,LurkerBurrowed,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,KerriganChar,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,KerriganChar,LifeArmor" Value="1"/>
+        <EffectArray Reference="Abil,evolutionchamberresearch,InfoArray[Research6].Resource[Minerals]" Value="125"/>
+        <EffectArray Reference="Abil,evolutionchamberresearch,InfoArray[Research6].Charge.CountMax" Value="1"/>
+        <MaxLevel value="7"/>
+    </CUpgrade>
+    <CUpgrade id="ZergMeleeWeaponsLevel3">
+        <EffectArray Reference="Abil,evolutionchamberresearch,InfoArray[Research3].Charge.CountMax" Value="1"/>
+        <EffectArray Reference="Abil,evolutionchamberresearch,InfoArray[Research3].Resource[Minerals]" Value="125"/>
+        <MaxLevel value="7"/>
+    </CUpgrade>
+    <CUpgrade id="ZergMissileWeaponsLevel1">
+        <AffectedUnitArray index="1" value="Infestor"/>
+        <AffectedUnitArray index="2" value="KerriganChar"/>
+        <AffectedUnitArray index="3" value="Lurker"/>
+        <AffectedUnitArray index="4" value="HydraliskBurrowed"/>
+        <AffectedUnitArray index="5" value="Queen"/>
+        <AffectedUnitArray value="QueenBurrowed"/>
+        <AffectedUnitArray value="Roach"/>
+        <AffectedUnitArray value="RoachBurrowed"/>
+        <EffectArray index="11" Value="0.5"/>
+        <EffectArray Reference="Effect,LurkerU,Amount" Value="1"/>
+        <EffectArray Reference="Weapon,Lurker,Level" Value="1"/>
+        <EffectArray Reference="Effect,Val03PsiBlastDamage,Amount" Value="10"/>
+        <EffectArray Reference="Weapon,Val03QueenOfBladesPsiBlast,Level" Value="1"/>
+        <EffectArray Reference="Effect,Val03RazorTalonsDamage,Amount" Value="10"/>
+        <EffectArray Reference="Weapon,Val03RazorTalons,Level" Value="1"/>
+        <EffectArray Reference="Effect,SporeCrawlerU,Amount" Value="1"/>
+        <EffectArray Reference="Weapon,SporeCrawler2,Level" Value="1"/>
+    </CUpgrade>
+    <CUpgrade id="ZergMissileWeaponsLevel2">
+        <AffectedUnitArray index="1" value="Infestor"/>
+        <AffectedUnitArray index="2" value="KerriganChar"/>
+        <AffectedUnitArray index="3" value="Lurker"/>
+        <AffectedUnitArray index="4" value="HydraliskBurrowed"/>
+        <AffectedUnitArray index="5" value="Queen"/>
+        <AffectedUnitArray value="QueenBurrowed"/>
+        <AffectedUnitArray value="Roach"/>
+        <AffectedUnitArray value="RoachBurrowed"/>
+        <EffectArray index="11" Value="0.5"/>
+        <EffectArray Reference="Effect,LurkerU,Amount" Value="1"/>
+        <EffectArray Reference="Weapon,Lurker,Level" Value="1"/>
+        <EffectArray Reference="Effect,Val03RazorTalonsDamage,Amount" Value="10"/>
+        <EffectArray Reference="Weapon,Val03RazorTalons,Level" Value="1"/>
+        <EffectArray Reference="Effect,Val03PsiBlastDamage,Amount" Value="10"/>
+        <EffectArray Reference="Weapon,Val03QueenOfBladesPsiBlast,Level" Value="1"/>
+        <EffectArray Reference="Effect,SporeCrawlerU,Amount" Value="1"/>
+        <EffectArray Reference="Weapon,SporeCrawler2,Level" Value="1"/>
+    </CUpgrade>
+    <CUpgrade id="ZergMissileWeaponsLevel3">
+        <AffectedUnitArray index="1" value="Infestor"/>
+        <AffectedUnitArray index="2" value="KerriganChar"/>
+        <AffectedUnitArray index="3" value="Lurker"/>
+        <AffectedUnitArray index="4" value="HydraliskBurrowed"/>
+        <AffectedUnitArray index="5" value="Queen"/>
+        <AffectedUnitArray value="QueenBurrowed"/>
+        <AffectedUnitArray value="Roach"/>
+        <AffectedUnitArray value="RoachBurrowed"/>
+        <EffectArray index="11" Value="0.5"/>
+        <EffectArray Reference="Effect,LurkerU,Amount" Value="1"/>
+        <EffectArray Reference="Weapon,Lurker,Level" Value="1"/>
+        <EffectArray Reference="Effect,Val03PsiBlastDamage,Amount" Value="10"/>
+        <EffectArray Reference="Weapon,Val03RazorTalons,Level" Value="1"/>
+        <EffectArray Reference="Effect,Val03RazorTalonsDamage,Amount" Value="10"/>
+        <EffectArray Reference="Weapon,Val03QueenOfBladesPsiBlast,Level" Value="1"/>
+        <EffectArray Reference="Abil,evolutionchamberresearch,InfoArray[Research9].Resource[Minerals]" Value="125"/>
+        <EffectArray Reference="Abil,evolutionchamberresearch,InfoArray[Research9].Charge.CountMax" Value="1"/>
+        <EffectArray Reference="Effect,SporeCrawlerU,Amount" Value="1"/>
+        <EffectArray Reference="Weapon,SporeCrawler2,Level" Value="1"/>
+        <MaxLevel value="7"/>
+    </CUpgrade>
+    <CUpgrade id="zerglingmovementspeed">
+        <EffectArray index="0" Value="1.000000"/>
+        <EffectArray Reference="Weapon,Claws,Period" Value="-0.109000"/>
+    </CUpgrade>
+</Catalog>

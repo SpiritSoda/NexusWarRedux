@@ -1,0 +1,8 @@
+﻿DocInfo/Author=Zman
+DocInfo/DescLong=Build units and try to kill the enemy nexus.<n/><n/>=]    by lilman<n/>Edit by Zman<n/><n/>V1
+DocInfo/DescShort=Nexus Wars US with a twist
+DocInfo/Name=星核战争(搬国服需卡兵)
+LoadingScreen/Subtitle=<s val="AchievementFrameName">=]    by lilman</s><n/>Edit by Zman
+LoadingScreen/TextBody=-Version 1.58 (3/30/11)<n/><n/>>> Two teams of 4 players each<n/>>> The Nexus is your main base<n/>>> Each player builds structures that automatically spawn attacking units<n/>>> Building structures will increase income<n/>>> Units will attack toward the opposing side's Nexus<n/>>> Counter the units your opponents are building<n/>>> Income is gained every 15s, and bounty granted for killing enemy units<n/>>> 1 Nuke per game is available for emergencies<n/>>> After 40 minutes, all units will go into a frenzy and deal 300% damage. <n/> <n/>>> Patch Notes, Bugs/suggestions - See the thread in the Custom Maps section of the Battle.net forums.<n/>>> Added to Tug of War filter.<n/><n/>>> Join us in the Chat Channel: Nexus Wars<n/> <n/><n/>Each player will start with a banpei.
+LoadingScreen/Tip=Build units in order to destroy the enemy nexus.
+LoadingScreen/Title=Nexus Wars Quick

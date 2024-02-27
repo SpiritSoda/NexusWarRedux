@@ -1,0 +1,8 @@
+﻿Behavior/EditorPrefix/VoidRayPhase0=Void Ray -
+Button/EditorSuffix/Infestor=(caster)
+Button/EditorSuffix/VikingFighter=(Fighter Mode)
+Unit/EditorPrefix/Broodling=Brood Lord -
+Unit/EditorPrefix/Queen=Queen -
+Unit/EditorSuffix/InfestorBurrowed=(Spellcaster - Burrowed)
+Unit/EditorSuffix/NydusCanal=(Canal)
+Unit/EditorSuffix/SiegeTankSieged=(Siege Mode)

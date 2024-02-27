@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<Catalog>
+    <CWater id="BelShir">
+        <FramesPerSec value="0.000000"/>
+        <State index="0">
+            <Height value="5.000000"/>
+            <Color value="0.000000,0.313726,0.431373,0.337000"/>
+            <Specularity value="73.000000"/>
+            <UvRate value="0.017438,-0.024411,0.000000,0.000000"/>
+        </State>
+    </CWater>
+    <CWater id="BraxisAlpha">
+        <FramesPerSec value="0.000000"/>
+        <State index="0">
+            <Height value="5.000000"/>
+            <Color value="0.098039,0.349020,0.498039,0.300000"/>
+            <UvRate value="-0.000000,-0.001000,0.000000,0.000000"/>
+            <RefractionDistortion value="0.020000"/>
+        </State>
+    </CWater>
+    <CWater id="Default">
+        <FramesPerSec value="0.000000"/>
+        <State index="0">
+            <Height value="5.000000"/>
+            <Color value="0.098039,0.349020,0.498039,0.300000"/>
+            <UvRate value="-0.000000,-0.001000,0.000000,0.000000"/>
+            <RefractionDistortion value="0.020000"/>
+        </State>
+    </CWater>
+    <CWater id="Shakuras">
+        <FramesPerSec value="0.000000"/>
+        <State index="0">
+            <Height value="5.000000"/>
+            <Color value="0.007843,0.356863,0.615686,0.160000"/>
+            <UvRate value="0.035355,-0.035355,0.000000,0.000000"/>
+            <UvRotate value="0.745430"/>
+        </State>
+    </CWater>
+</Catalog>

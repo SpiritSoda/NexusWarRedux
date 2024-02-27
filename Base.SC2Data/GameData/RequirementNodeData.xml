@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CRequirementConst id="7"/>
+    <CRequirementAnd id="AndCountUpgradeProtossAirArmorsLevel2CompleteOnly2731442398NotCountUpgradeProtossAirArmorsLevel3InProgressOnly">
+        <OperandArray value="CountUpgradeProtossAirArmorsLevel2CompleteOnly2731442398"/>
+        <OperandArray value="NotCountUpgradeProtossAirArmorsLevel3InProgressOnly"/>
+    </CRequirementAnd>
+    <CRequirementAnd id="AndCountUpgradeProtossAirWeaponsLevel2CompleteOnly524089035TechTreeCheatNotCountUpgradeProtossAirWeaponsLevel3InProgressOnlyTechTreeCheat">
+        <OperandArray value="CountUpgradeProtossAirWeaponsLevel2CompleteOnly524089035TechTreeCheat"/>
+        <OperandArray value="NotCountUpgradeProtossAirWeaponsLevel3InProgressOnlyTechTreeCheat"/>
+    </CRequirementAnd>
+    <CRequirementAnd id="AndCountUpgradeProtossGroundArmorsLevel2CompleteOnly419273267NotCountUpgradeProtossGroundArmorsLevel3InProgressOnly">
+        <OperandArray value="CountUpgradeProtossGroundArmorsLevel2CompleteOnly419273267"/>
+        <OperandArray value="NotCountUpgradeProtossGroundArmorsLevel3InProgressOnly"/>
+    </CRequirementAnd>
+    <CRequirementAnd id="AndCountUpgradeProtossGroundWeaponsLevel2CompleteOnlyNotCountUpgradeProtossGroundWeaponsLevel3InProgressOnlyTechTreeCheat">
+        <OperandArray value="CountUpgradeProtossGroundWeaponsLevel2CompleteOnly"/>
+        <OperandArray value="NotCountUpgradeProtossGroundWeaponsLevel3InProgressOnlyTechTreeCheat"/>
+    </CRequirementAnd>
+    <CRequirementAnd id="AndCountUpgradeProtossShieldsLevel2CompleteOnly3751249461NotCountUpgradeProtossShieldsLevel3InProgressOnly">
+        <OperandArray value="CountUpgradeProtossShieldsLevel2CompleteOnly3751249461"/>
+        <OperandArray value="NotCountUpgradeProtossShieldsLevel3InProgressOnly"/>
+    </CRequirementAnd>
+    <CRequirementAnd id="AndCountUpgradeTerranShipArmorsLevel2CompleteOnly1864353859NotCountUpgradeTerranShipArmorsLevel3InProgressOnly">
+        <OperandArray value="CountUpgradeTerranShipArmorsLevel2CompleteOnly1864353859"/>
+        <OperandArray value="NotCountUpgradeTerranShipArmorsLevel3InProgressOnly"/>
+    </CRequirementAnd>
+    <CRequirementAnd id="AndCountUpgradeTerranShipWeaponsLevel2CompleteOnly1004646809TechTreeCheatNotCountUpgradeTerranShipWeaponsLevel3InProgressOnlyTechTreeCheat">
+        <OperandArray value="CountUpgradeTerranShipWeaponsLevel2CompleteOnly1004646809TechTreeCheat"/>
+        <OperandArray value="NotCountUpgradeTerranShipWeaponsLevel3InProgressOnlyTechTreeCheat"/>
+    </CRequirementAnd>
+    <CRequirementAnd id="AndCountUpgradeTerranVehicleArmorsLevel2CompleteOnly2517918925NotCountUpgradeTerranVehicleArmorsLevel3InProgressOnly">
+        <OperandArray value="CountUpgradeTerranVehicleArmorsLevel2CompleteOnly2517918925"/>
+        <OperandArray value="NotCountUpgradeTerranVehicleArmorsLevel3InProgressOnly"/>
+    </CRequirementAnd>
+    <CRequirementAnd id="AndCountUpgradeTerranVehicleWeaponsLevel2CompleteOnly894233239TechTreeCheatNotCountUpgradeTerranVehicleWeaponsLevel3InProgressOnlyTechTreeCheat">
+        <OperandArray value="CountUpgradeTerranVehicleWeaponsLevel2CompleteOnly894233239TechTreeCheat"/>
+        <OperandArray value="NotCountUpgradeTerranVehicleWeaponsLevel3InProgressOnlyTechTreeCheat"/>
+    </CRequirementAnd>
+    <CRequirementAnd id="AndCountUpgradeZergFlyerArmorsLevel2CompleteOnly504020316NotCountUpgradeZergFlyerArmorsLevel3InProgressOnly">
+        <OperandArray value="CountUpgradeZergFlyerArmorsLevel2CompleteOnly504020316"/>
+        <OperandArray value="NotCountUpgradeZergFlyerArmorsLevel3InProgressOnly"/>
+    </CRequirementAnd>
+    <CRequirementAnd id="AndCountUpgradeZergFlyerWeaponsLevel2CompleteOnly2419098971TechTreeCheatNotCountUpgradeZergFlyerWeaponsLevel3InProgressOnlyTechTreeCheat">
+        <OperandArray value="CountUpgradeZergFlyerWeaponsLevel2CompleteOnly2419098971TechTreeCheat"/>
+        <OperandArray value="NotCountUpgradeZergFlyerWeaponsLevel3InProgressOnlyTechTreeCheat"/>
+    </CRequirementAnd>
+    <CRequirementAnd id="AndCountUpgradeZergGroundArmorsLevel2CompleteOnly4090499265NotCountUpgradeZergGroundArmorsLevel3InProgressOnly">
+        <OperandArray value="CountUpgradeZergGroundArmorsLevel2CompleteOnly4090499265"/>
+        <OperandArray value="NotCountUpgradeZergGroundArmorsLevel3InProgressOnly"/>
+    </CRequirementAnd>
+    <CRequirementAnd id="AndCountUpgradeZergMeleeWeaponsLevel2CompleteOnly2480428841TechTreeCheatNotCountUpgradeZergMeleeWeaponsLevel3InProgressOnlyTechTreeCheat">
+        <OperandArray value="CountUpgradeZergMeleeWeaponsLevel2CompleteOnly2480428841TechTreeCheat"/>
+        <OperandArray value="NotCountUpgradeZergMeleeWeaponsLevel3InProgressOnlyTechTreeCheat"/>
+    </CRequirementAnd>
+    <CRequirementAnd id="AndCountUpgradeZergMissileWeaponsLevel2CompleteOnly2358983352TechTreeCheatNotCountUpgradeZergMissileWeaponsLevel3InProgressOnlyTechTreeCheat">
+        <OperandArray value="CountUpgradeZergMissileWeaponsLevel2CompleteOnly2358983352TechTreeCheat"/>
+        <OperandArray value="NotCountUpgradeZergMissileWeaponsLevel3InProgressOnlyTechTreeCheat"/>
+    </CRequirementAnd>
+    <CRequirementAnd id="AndEq1542947369CountUpgradeZergMeleeWeaponsLevel1CompleteOnly1">
+        <OperandArray value="Eq1542947369CountUpgradeZergMeleeWeaponsLevel1CompleteOnly1"/>
+    </CRequirementAnd>
+    <CRequirementAnd id="AndEq1695466224CountUpgradeZergGroundArmorsLevel1CompleteOnly1">
+        <OperandArray value="Eq1695466224CountUpgradeZergGroundArmorsLevel1CompleteOnly1"/>
+    </CRequirementAnd>
+    <CRequirementAnd id="AndEq2966286162CountUpgradeZergMissileWeaponsLevel1CompleteOnly1">
+        <OperandArray value="Eq2966286162CountUpgradeZergMissileWeaponsLevel1CompleteOnly1"/>
+    </CRequirementAnd>
+    <CRequirementAnd id="AndEq3274469600CountUpgradeZergFlyerWeaponsLevel1CompleteOnly1">
+        <OperandArray value="Eq3274469600CountUpgradeZergFlyerWeaponsLevel1CompleteOnly1"/>
+    </CRequirementAnd>
+    <CRequirementAnd id="AndEq3446134918CountUpgradeTerranInfantryArmorsLevel1CompleteOnly1">
+        <OperandArray value="Eq3446134918CountUpgradeTerranInfantryArmorsLevel1CompleteOnly1"/>
+    </CRequirementAnd>
+    <CRequirementAnd id="AndEq539690215CountUpgradeZergFlyerArmorsLevel1CompleteOnly1">
+        <OperandArray value="Eq539690215CountUpgradeZergFlyerArmorsLevel1CompleteOnly1"/>
+    </CRequirementAnd>
+    <CRequirementAnd id="AndLTCountUpgradeProtossAirArmorsLevel3QueuedOrBetter7AllowUnitPhoenix">
+        <OperandArray value="LTCountUpgradeProtossAirArmorsLevel3QueuedOrBetter7"/>
+        <OperandArray value="AllowUnitPhoenix"/>
+    </CRequirementAnd>
+    <CRequirementAnd id="AndLTCountUpgradeProtossAirWeaponsLevel3QueuedOrBetter7AllowUnitPhoenix">
+        <OperandArray value="LTCountUpgradeProtossAirWeaponsLevel3QueuedOrBetter7"/>
+        <OperandArray value="AllowUnitPhoenix"/>
+    </CRequirementAnd>
+    <CRequirementAnd id="AndNot3722837715CountUpgradeTerranInfantryArmorsLevel3InProgressOnlyCountUpgradeTerranInfantryArmorsLevel2CompleteOnly">
+        <OperandArray value="Not3722837715CountUpgradeTerranInfantryArmorsLevel3InProgressOnly"/>
+        <OperandArray value="CountUpgradeTerranInfantryArmorsLevel2CompleteOnly"/>
+    </CRequirementAnd>
+    <CRequirementAnd id="AndNotCountUpgradeTerranInfantryWeaponsLevel3InProgressOnlyTechTreeCheatCountUpgradeTerranInfantryWeaponsLevel2CompleteOnly">
+        <OperandArray value="NotCountUpgradeTerranInfantryWeaponsLevel3InProgressOnlyTechTreeCheat"/>
+        <OperandArray value="CountUpgradeTerranInfantryWeaponsLevel2CompleteOnly"/>
+    </CRequirementAnd>
+    <CRequirementCountUnit id="CountUnitAssimilatorCompleteOnly1952641197TechTreeCheat">
+        <Count Link="Assimilator" State="CompleteOnly"/>
+    </CRequirementCountUnit>
+    <CRequirementCountUnit id="CountUnitAssimilatorCompleteOnlyTechTreeCheat">
+        <Count Link="Assimilator" State="CompleteOnly"/>
+    </CRequirementCountUnit>
+    <CRequirementCountUnit id="CountUnitDarkShrineCompleteOnly3550425427TechTreeCheat">
+        <Count Link="DarkShrine" State="CompleteOnly"/>
+    </CRequirementCountUnit>
+    <CRequirementCountUpgrade id="CountUpgradeFirebatJuggernautPlatingQueuedOrBetter">
+        <Count Link="FirebatJuggernautPlating" State="QueuedOrBetter"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeProtossAirArmorsLevel2CompleteOnly2731442398">
+        <Count Link="ProtossAirArmorsLevel2" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeProtossAirArmorsLevel3InProgressOnly">
+        <Count Link="ProtossAirArmorsLevel3" State="InProgressOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeProtossAirWeaponsLevel2CompleteOnly524089035TechTreeCheat">
+        <Count Link="ProtossAirWeaponsLevel2" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeProtossAirWeaponsLevel3InProgressOnlyTechTreeCheat">
+        <Count Link="ProtossAirWeaponsLevel3" State="InProgressOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeProtossGroundArmorsLevel2CompleteOnly419273267">
+        <Count Link="ProtossGroundArmorsLevel2" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeProtossGroundArmorsLevel3InProgressOnly">
+        <Count Link="ProtossGroundArmorsLevel3" State="InProgressOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeProtossGroundWeaponsLevel3InProgressOnlyTechTreeCheat">
+        <Count Link="ProtossGroundWeaponsLevel3" State="InProgressOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeProtossShieldsLevel2CompleteOnly3751249461">
+        <Count Link="ProtossShieldsLevel2" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeProtossShieldsLevel3InProgressOnly">
+        <Count Link="ProtossShieldsLevel3" State="InProgressOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeTerranInfantryArmorsLevel3InProgressOnly">
+        <Count Link="TerranInfantryArmorsLevel3" State="InProgressOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeTerranInfantryWeaponsLevel3InProgressOnlyTechTreeCheat">
+        <Count Link="TerranInfantryWeaponsLevel3" State="InProgressOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeTerranShipArmorsLevel2CompleteOnly1864353859">
+        <Count Link="TerranShipArmorsLevel2" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeTerranShipArmorsLevel3InProgressOnly">
+        <Count Link="TerranShipArmorsLevel3" State="InProgressOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeTerranShipWeaponsLevel2CompleteOnly1004646809TechTreeCheat">
+        <Count Link="TerranShipWeaponsLevel2" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeTerranShipWeaponsLevel3InProgressOnlyTechTreeCheat">
+        <Count Link="TerranShipWeaponsLevel3" State="InProgressOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeTerranVehicleArmorsLevel2CompleteOnly2517918925">
+        <Count Link="TerranVehicleArmorsLevel2" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeTerranVehicleArmorsLevel3InProgressOnly">
+        <Count Link="TerranVehicleArmorsLevel3" State="InProgressOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeTerranVehicleWeaponsLevel2CompleteOnly894233239TechTreeCheat">
+        <Count Link="TerranVehicleWeaponsLevel2" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeTerranVehicleWeaponsLevel3InProgressOnlyTechTreeCheat">
+        <Count Link="TerranVehicleWeaponsLevel3" State="InProgressOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeZergFlyerArmorsLevel2CompleteOnly504020316">
+        <Count Link="ZergFlyerArmorsLevel2" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeZergFlyerArmorsLevel3InProgressOnly">
+        <Count Link="ZergFlyerArmorsLevel3" State="InProgressOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeZergFlyerWeaponsLevel2CompleteOnly2419098971TechTreeCheat">
+        <Count Link="ZergFlyerWeaponsLevel2" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeZergFlyerWeaponsLevel3InProgressOnlyTechTreeCheat">
+        <Count Link="ZergFlyerWeaponsLevel3" State="InProgressOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeZergGroundArmorsLevel2CompleteOnly4090499265">
+        <Count Link="ZergGroundArmorsLevel2" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeZergGroundArmorsLevel3InProgressOnly">
+        <Count Link="ZergGroundArmorsLevel3" State="InProgressOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeZergMeleeWeaponsLevel2CompleteOnly2480428841TechTreeCheat">
+        <Count Link="ZergMeleeWeaponsLevel2" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeZergMeleeWeaponsLevel3InProgressOnlyTechTreeCheat">
+        <Count Link="ZergMeleeWeaponsLevel3" State="InProgressOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeZergMissileWeaponsLevel2CompleteOnly2358983352TechTreeCheat">
+        <Count Link="ZergMissileWeaponsLevel2" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeZergMissileWeaponsLevel3InProgressOnlyTechTreeCheat">
+        <Count Link="ZergMissileWeaponsLevel3" State="InProgressOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementEq id="Eq1429793488CountUpgradeTerranInfantryWeaponsLevel1CompleteOnly1"/>
+    <CRequirementEq id="Eq1491800815CountUpgradeProtossAirWeaponsLevel1CompleteOnly1"/>
+    <CRequirementEq id="Eq1542947369CountUpgradeZergMeleeWeaponsLevel1CompleteOnly1">
+        <Tooltip value="RequirementNode/Tooltip/Eq1542947369CountUpgradeZergMeleeWeaponsLevel1CompleteOnly1"/>
+    </CRequirementEq>
+    <CRequirementEq id="Eq1695466224CountUpgradeZergGroundArmorsLevel1CompleteOnly1">
+        <Tooltip value="RequirementNode/Tooltip/Eq1695466224CountUpgradeZergGroundArmorsLevel1CompleteOnly1"/>
+    </CRequirementEq>
+    <CRequirementEq id="Eq1740904084CountUpgradeProtossGroundWeaponsLevel1CompleteOnly1"/>
+    <CRequirementEq id="Eq2358983352CountUpgradeZergMissileWeaponsLevel2CompleteOnly1">
+        <Tooltip value="RequirementNode/Tooltip/Eq2358983352CountUpgradeZergMissileWeaponsLevel2CompleteOnly1"/>
+    </CRequirementEq>
+    <CRequirementEq id="Eq2419098971CountUpgradeZergFlyerWeaponsLevel2CompleteOnly1">
+        <Tooltip value="RequirementNode/Tooltip/Eq2419098971CountUpgradeZergFlyerWeaponsLevel2CompleteOnly1"/>
+    </CRequirementEq>
+    <CRequirementEq id="Eq2480428841CountUpgradeZergMeleeWeaponsLevel2CompleteOnly1">
+        <Tooltip value="RequirementNode/Tooltip/Eq2480428841CountUpgradeZergMeleeWeaponsLevel2CompleteOnly1"/>
+    </CRequirementEq>
+    <CRequirementEq id="Eq2731442398CountUpgradeProtossAirArmorsLevel2CompleteOnly1"/>
+    <CRequirementEq id="Eq2966286162CountUpgradeZergMissileWeaponsLevel1CompleteOnly1">
+        <Tooltip value="RequirementNode/Tooltip/Eq2966286162CountUpgradeZergMissileWeaponsLevel1CompleteOnly1"/>
+    </CRequirementEq>
+    <CRequirementEq id="Eq3274469600CountUpgradeZergFlyerWeaponsLevel1CompleteOnly1">
+        <Tooltip value="RequirementNode/Tooltip/Eq3274469600CountUpgradeZergFlyerWeaponsLevel1CompleteOnly1"/>
+    </CRequirementEq>
+    <CRequirementEq id="Eq3342497887CountUpgradeTerranInfantryWeaponsLevel2CompleteOnly1"/>
+    <CRequirementEq id="Eq3354561256CountUpgradeProtossShieldsLevel1CompleteOnly1"/>
+    <CRequirementEq id="Eq3446134918CountUpgradeTerranInfantryArmorsLevel1CompleteOnly1">
+        <Tooltip value="RequirementNode/Tooltip/Eq3446134918CountUpgradeTerranInfantryArmorsLevel1CompleteOnly1"/>
+    </CRequirementEq>
+    <CRequirementEq id="Eq3569156689CountUpgradeProtossGroundArmorsLevel1CompleteOnly1"/>
+    <CRequirementEq id="Eq3722837715CountUpgradeTerranInfantryArmorsLevel2CompleteOnly1">
+        <Tooltip value="RequirementNode/Tooltip/Eq3722837715CountUpgradeTerranInfantryArmorsLevel2CompleteOnly1"/>
+    </CRequirementEq>
+    <CRequirementEq id="Eq3751249461CountUpgradeProtossShieldsLevel2CompleteOnly1"/>
+    <CRequirementEq id="Eq4090499265CountUpgradeZergGroundArmorsLevel2CompleteOnly1">
+        <Tooltip value="RequirementNode/Tooltip/Eq4090499265CountUpgradeZergGroundArmorsLevel2CompleteOnly1"/>
+    </CRequirementEq>
+    <CRequirementEq id="Eq419273267CountUpgradeProtossGroundArmorsLevel2CompleteOnly1"/>
+    <CRequirementEq id="Eq4283478838CountUpgradeProtossAirArmorsLevel1CompleteOnly1"/>
+    <CRequirementEq id="Eq504020316CountUpgradeZergFlyerArmorsLevel2CompleteOnly1">
+        <Tooltip value="RequirementNode/Tooltip/Eq504020316CountUpgradeZergFlyerArmorsLevel2CompleteOnly1"/>
+    </CRequirementEq>
+    <CRequirementEq id="Eq524089035CountUpgradeProtossAirWeaponsLevel2CompleteOnly1"/>
+    <CRequirementEq id="Eq539690215CountUpgradeZergFlyerArmorsLevel1CompleteOnly1">
+        <Tooltip value="RequirementNode/Tooltip/Eq539690215CountUpgradeZergFlyerArmorsLevel1CompleteOnly1"/>
+    </CRequirementEq>
+    <CRequirementEq id="Eq629999927CountUpgradeProtossGroundWeaponsLevel2CompleteOnly1"/>
+    <CRequirementLT id="LTCountUpgradeProtossAirArmorsLevel3QueuedOrBetter7">
+        <OperandArray index="0" value="CountUpgradeProtossAirArmorsLevel3QueuedOrBetter"/>
+        <OperandArray index="1" value="7"/>
+    </CRequirementLT>
+    <CRequirementLT id="LTCountUpgradeProtossAirWeaponsLevel3QueuedOrBetter7">
+        <OperandArray index="0" value="CountUpgradeProtossAirWeaponsLevel3QueuedOrBetter"/>
+        <OperandArray index="1" value="7"/>
+    </CRequirementLT>
+    <CRequirementLT id="LTCountUpgradeProtossGroundArmorsLevel3QueuedOrBetter7">
+        <OperandArray index="0" value="CountUpgradeProtossGroundArmorsLevel3QueuedOrBetter"/>
+        <OperandArray index="1" value="7"/>
+    </CRequirementLT>
+    <CRequirementLT id="LTCountUpgradeProtossGroundWeaponsLevel3QueuedOrBetter7">
+        <OperandArray index="0" value="CountUpgradeProtossGroundWeaponsLevel3QueuedOrBetter"/>
+        <OperandArray index="1" value="7"/>
+    </CRequirementLT>
+    <CRequirementLT id="LTCountUpgradeProtossShieldsLevel3QueuedOrBetter7">
+        <OperandArray index="0" value="CountUpgradeProtossShieldsLevel3QueuedOrBetter"/>
+        <OperandArray index="1" value="7"/>
+    </CRequirementLT>
+    <CRequirementLT id="LTCountUpgradeTerranInfantryArmorsLevel3QueuedOrBetter7">
+        <OperandArray index="0" value="CountUpgradeTerranInfantryArmorsLevel3QueuedOrBetter"/>
+        <OperandArray index="1" value="7"/>
+    </CRequirementLT>
+    <CRequirementLT id="LTCountUpgradeTerranInfantryWeaponsLevel3QueuedOrBetter7">
+        <OperandArray index="0" value="CountUpgradeTerranInfantryWeaponsLevel3QueuedOrBetter"/>
+        <OperandArray index="1" value="7"/>
+    </CRequirementLT>
+    <CRequirementLT id="LTCountUpgradeTerranShipArmorsLevel3QueuedOrBetter7">
+        <OperandArray index="0" value="CountUpgradeTerranShipArmorsLevel3QueuedOrBetter"/>
+        <OperandArray index="1" value="7"/>
+    </CRequirementLT>
+    <CRequirementLT id="LTCountUpgradeTerranShipWeaponsLevel3QueuedOrBetter7">
+        <OperandArray index="0" value="CountUpgradeTerranShipWeaponsLevel3QueuedOrBetter"/>
+        <OperandArray index="1" value="7"/>
+    </CRequirementLT>
+    <CRequirementLT id="LTCountUpgradeTerranVehicleArmorsLevel3QueuedOrBetter7">
+        <OperandArray index="0" value="CountUpgradeTerranVehicleArmorsLevel3QueuedOrBetter"/>
+        <OperandArray index="1" value="7"/>
+    </CRequirementLT>
+    <CRequirementLT id="LTCountUpgradeTerranVehicleWeaponsLevel3QueuedOrBetter7">
+        <OperandArray index="0" value="CountUpgradeTerranVehicleWeaponsLevel3QueuedOrBetter"/>
+        <OperandArray index="1" value="7"/>
+    </CRequirementLT>
+    <CRequirementLT id="LTCountUpgradeZergFlyerArmorsLevel3QueuedOrBetter7">
+        <OperandArray index="0" value="CountUpgradeZergFlyerArmorsLevel3QueuedOrBetter"/>
+        <OperandArray index="1" value="7"/>
+    </CRequirementLT>
+    <CRequirementLT id="LTCountUpgradeZergFlyerWeaponsLevel3QueuedOrBetter7">
+        <OperandArray index="0" value="CountUpgradeZergFlyerWeaponsLevel3QueuedOrBetter"/>
+        <OperandArray index="1" value="7"/>
+    </CRequirementLT>
+    <CRequirementLT id="LTCountUpgradeZergGroundArmorsLevel3QueuedOrBetter7">
+        <OperandArray index="0" value="CountUpgradeZergGroundArmorsLevel3QueuedOrBetter"/>
+        <OperandArray index="1" value="7"/>
+    </CRequirementLT>
+    <CRequirementLT id="LTCountUpgradeZergMeleeWeaponsLevel3QueuedOrBetter7">
+        <OperandArray index="0" value="CountUpgradeZergMeleeWeaponsLevel3QueuedOrBetter"/>
+        <OperandArray index="1" value="7"/>
+    </CRequirementLT>
+    <CRequirementLT id="LTCountUpgradeZergMissileWeaponsLevel3QueuedOrBetter7">
+        <OperandArray index="0" value="CountUpgradeZergMissileWeaponsLevel3QueuedOrBetter"/>
+        <OperandArray index="1" value="7"/>
+    </CRequirementLT>
+    <CRequirementNot id="Not3722837715CountUpgradeTerranInfantryArmorsLevel3InProgressOnly">
+        <OperandArray index="0" value="CountUpgradeTerranInfantryArmorsLevel3InProgressOnly"/>
+    </CRequirementNot>
+    <CRequirementNot id="NotCountUpgradeFirebatJuggernautPlatingQueuedOrBetter">
+        <OperandArray index="0" value="CountUpgradeFirebatJuggernautPlatingQueuedOrBetter"/>
+    </CRequirementNot>
+    <CRequirementNot id="NotCountUpgradeProtossAirArmorsLevel3InProgressOnly">
+        <OperandArray index="0" value="CountUpgradeProtossAirArmorsLevel3InProgressOnly"/>
+    </CRequirementNot>
+    <CRequirementNot id="NotCountUpgradeProtossAirWeaponsLevel3InProgressOnlyTechTreeCheat">
+        <OperandArray index="0" value="CountUpgradeProtossAirWeaponsLevel3InProgressOnlyTechTreeCheat"/>
+    </CRequirementNot>
+    <CRequirementNot id="NotCountUpgradeProtossGroundArmorsLevel3InProgressOnly">
+        <OperandArray index="0" value="CountUpgradeProtossGroundArmorsLevel3InProgressOnly"/>
+    </CRequirementNot>
+    <CRequirementNot id="NotCountUpgradeProtossGroundWeaponsLevel3InProgressOnlyTechTreeCheat">
+        <OperandArray index="0" value="CountUpgradeProtossGroundWeaponsLevel3InProgressOnlyTechTreeCheat"/>
+    </CRequirementNot>
+    <CRequirementNot id="NotCountUpgradeProtossShieldsLevel3InProgressOnly">
+        <OperandArray index="0" value="CountUpgradeProtossShieldsLevel3InProgressOnly"/>
+    </CRequirementNot>
+    <CRequirementNot id="NotCountUpgradeTerranInfantryWeaponsLevel3InProgressOnlyTechTreeCheat">
+        <OperandArray index="0" value="CountUpgradeTerranInfantryWeaponsLevel3InProgressOnlyTechTreeCheat"/>
+    </CRequirementNot>
+    <CRequirementNot id="NotCountUpgradeTerranShipArmorsLevel3InProgressOnly">
+        <OperandArray index="0" value="CountUpgradeTerranShipArmorsLevel3InProgressOnly"/>
+    </CRequirementNot>
+    <CRequirementNot id="NotCountUpgradeTerranShipWeaponsLevel3InProgressOnlyTechTreeCheat">
+        <OperandArray index="0" value="CountUpgradeTerranShipWeaponsLevel3InProgressOnlyTechTreeCheat"/>
+    </CRequirementNot>
+    <CRequirementNot id="NotCountUpgradeTerranVehicleArmorsLevel3InProgressOnly">
+        <OperandArray index="0" value="CountUpgradeTerranVehicleArmorsLevel3InProgressOnly"/>
+    </CRequirementNot>
+    <CRequirementNot id="NotCountUpgradeTerranVehicleWeaponsLevel3InProgressOnlyTechTreeCheat">
+        <OperandArray index="0" value="CountUpgradeTerranVehicleWeaponsLevel3InProgressOnlyTechTreeCheat"/>
+    </CRequirementNot>
+    <CRequirementNot id="NotCountUpgradeZergFlyerArmorsLevel3InProgressOnly">
+        <OperandArray index="0" value="CountUpgradeZergFlyerArmorsLevel3InProgressOnly"/>
+    </CRequirementNot>
+    <CRequirementNot id="NotCountUpgradeZergFlyerWeaponsLevel3InProgressOnlyTechTreeCheat">
+        <OperandArray index="0" value="CountUpgradeZergFlyerWeaponsLevel3InProgressOnlyTechTreeCheat"/>
+    </CRequirementNot>
+    <CRequirementNot id="NotCountUpgradeZergGroundArmorsLevel3InProgressOnly">
+        <OperandArray index="0" value="CountUpgradeZergGroundArmorsLevel3InProgressOnly"/>
+    </CRequirementNot>
+    <CRequirementNot id="NotCountUpgradeZergMeleeWeaponsLevel3InProgressOnlyTechTreeCheat">
+        <OperandArray index="0" value="CountUpgradeZergMeleeWeaponsLevel3InProgressOnlyTechTreeCheat"/>
+    </CRequirementNot>
+    <CRequirementNot id="NotCountUpgradeZergMissileWeaponsLevel3InProgressOnlyTechTreeCheat">
+        <OperandArray index="0" value="CountUpgradeZergMissileWeaponsLevel3InProgressOnlyTechTreeCheat"/>
+    </CRequirementNot>
+    <CRequirementOr id="Or3315126919CountUnitAssimilatorCompleteOnly1952641197TechTreeCheatCountUnitDarkShrineCompleteOnly3550425427TechTreeCheat">
+        <OperandArray value="CountUnitAssimilatorCompleteOnly1952641197TechTreeCheat"/>
+        <OperandArray value="CountUnitDarkShrineCompleteOnly3550425427TechTreeCheat"/>
+    </CRequirementOr>
+</Catalog>

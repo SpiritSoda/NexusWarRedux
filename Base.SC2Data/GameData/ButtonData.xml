@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CButton id="Archon"/>
+    <CButton id="Armory"/>
+    <CButton id="Assimilator"/>
+    <CButton id="Baneling"/>
+    <CButton id="Banshee"/>
+    <CButton id="Barracks"/>
+    <CButton id="Battlecruiser"/>
+    <CButton id="Blink2">
+        <Icon value="Assets\Textures\btn-ability-protoss-blink-color.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-protoss-blink-color.dds"/>
+        <EditorCategories value="Race:Protoss"/>
+    </CButton>
+    <CButton id="BroodLord"/>
+    <CButton id="BuildScienceVessel"/>
+    <CButton id="Bunker"/>
+    <CButton id="Carrier"/>
+    <CButton id="Colossus"/>
+    <CButton id="Corruptor"/>
+    <CButton id="CyberneticsCore"/>
+    <CButton id="DarkShrine"/>
+    <CButton id="DarkTemplar"/>
+    <CButton id="EngineeringBay"/>
+    <CButton id="EvolveInfestorEnergyUpgrade"/>
+    <CButton id="Factory"/>
+    <CButton id="Firebat"/>
+    <CButton id="Forge"/>
+    <CButton id="FusionCore"/>
+    <CButton id="Gateway"/>
+    <CButton id="Ghost"/>
+    <CButton id="Hellion"/>
+    <CButton id="HighTemplar"/>
+    <CButton id="Hydralisk"/>
+    <CButton id="Immortal"/>
+    <CButton id="Implosion2">
+        <Icon value="Assets\Textures\btn-ability-zerg-explode.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+    </CButton>
+    <CButton id="Infestor"/>
+    <CButton id="Lurker"/>
+    <CButton id="Marauder"/>
+    <CButton id="Marine"/>
+    <CButton id="Medivac"/>
+    <CButton id="MercCompound"/>
+    <CButton id="MissileTurret"/>
+    <CButton id="Mutalisk"/>
+    <CButton id="NydusCanal">
+        <Icon value=""/>
+        <AlertIcon value=""/>
+    </CButton>
+    <CButton id="ObverseIncubation"/>
+    <CButton id="Odin"/>
+    <CButton id="Phoenix"/>
+    <CButton id="PhotonCannon"/>
+    <CButton id="ProtossAirArmorLevel1">
+        <Hotkey value="Button/Hotkey/ProtossAirArmorLevel3"/>
+    </CButton>
+    <CButton id="ProtossAirArmorLevel2">
+        <Hotkey value="Button/Hotkey/ProtossAirArmorLevel3"/>
+    </CButton>
+    <CButton id="ProtossAirArmorLevel3"/>
+    <CButton id="ProtossAirWeaponsLevel1">
+        <Hotkey value="Button/Hotkey/ProtossAirWeaponsLevel3"/>
+    </CButton>
+    <CButton id="ProtossAirWeaponsLevel2">
+        <Hotkey value="Button/Hotkey/ProtossAirWeaponsLevel3"/>
+    </CButton>
+    <CButton id="ProtossAirWeaponsLevel3"/>
+    <CButton id="ProtossGroundArmorLevel1">
+        <Hotkey value="Button/Hotkey/ProtossGroundArmorLevel2"/>
+    </CButton>
+    <CButton id="ProtossGroundArmorLevel2"/>
+    <CButton id="ProtossGroundArmorLevel3"/>
+    <CButton id="ProtossGroundWeaponsLevel1">
+        <Hotkey value="Button/Hotkey/ProtossGroundWeaponsLevel3"/>
+    </CButton>
+    <CButton id="ProtossGroundWeaponsLevel2">
+        <Hotkey value="Button/Hotkey/ProtossGroundWeaponsLevel3"/>
+    </CButton>
+    <CButton id="ProtossGroundWeaponsLevel3"/>
+    <CButton id="ProtossShieldsLevel1">
+        <Hotkey value="Button/Hotkey/ProtossShieldsLevel3"/>
+    </CButton>
+    <CButton id="ProtossShieldsLevel2">
+        <Hotkey value="Button/Hotkey/ProtossShieldsLevel3"/>
+    </CButton>
+    <CButton id="ProtossShieldsLevel3"/>
+    <CButton id="Pylon"/>
+    <CButton id="Pylon2">
+        <Icon value="Assets\Textures\btn-building-protoss-pylon.dds"/>
+        <AlertIcon value="Assets\Textures\btn-building-protoss-pylon.dds"/>
+        <EditorCategories value="Race:Protoss"/>
+    </CButton>
+    <CButton id="Pylon22">
+        <Icon value="Assets\Textures\btn-building-protoss-pylon.dds"/>
+        <AlertIcon value="Assets\Textures\btn-building-protoss-pylon.dds"/>
+        <EditorCategories value="Race:Protoss"/>
+    </CButton>
+    <CButton id="Pylon23">
+        <Icon value="Assets\Textures\btn-building-protoss-pylon.dds"/>
+        <AlertIcon value="Assets\Textures\btn-building-protoss-pylon.dds"/>
+        <EditorCategories value="Race:Protoss"/>
+    </CButton>
+    <CButton id="Pylon24">
+        <Icon value="Assets\Textures\btn-building-protoss-pylon.dds"/>
+        <AlertIcon value="Assets\Textures\btn-building-protoss-pylon.dds"/>
+        <EditorCategories value="Race:Protoss"/>
+    </CButton>
+    <CButton id="Pylon242">
+        <Icon value="Assets\Textures\btn-building-protoss-pylon.dds"/>
+        <AlertIcon value="Assets\Textures\btn-building-protoss-pylon.dds"/>
+        <EditorCategories value="Race:Protoss"/>
+    </CButton>
+    <CButton id="Queen"/>
+    <CButton id="Raven"/>
+    <CButton id="Reaper"/>
+    <CButton id="ReaperSpeed"/>
+    <CButton id="Repair"/>
+    <CButton id="ResearchGraviticBooster"/>
+    <CButton id="Roach"/>
+    <CButton id="RoboticsBay"/>
+    <CButton id="RoboticsFacility"/>
+    <CButton id="SCV"/>
+    <CButton id="Salvage2">
+        <Icon value="Assets\Textures\btn-ability-terran-salvage.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-terran-salvage.dds"/>
+        <EditorCategories value="Race:Terran"/>
+        <TintRacially value="1"/>
+    </CButton>
+    <CButton id="SensorTower"/>
+    <CButton id="Sentry"/>
+    <CButton id="SiegeMode"/>
+    <CButton id="SiegeTank"/>
+    <CButton id="SpawningPool"/>
+    <CButton id="Stalker"/>
+    <CButton id="Stargate"/>
+    <CButton id="Starport"/>
+    <CButton id="TerranInfantryArmorLevel1">
+        <Hotkey value="Button/Hotkey/TerranInfantryArmorLevel3"/>
+    </CButton>
+    <CButton id="TerranInfantryArmorLevel2">
+        <Hotkey value="Button/Hotkey/TerranInfantryArmorLevel3"/>
+    </CButton>
+    <CButton id="TerranInfantryWeaponsLevel1">
+        <Hotkey value="Button/Hotkey/TerranInfantryWeaponsLevel3"/>
+    </CButton>
+    <CButton id="TerranInfantryWeaponsLevel2">
+        <Hotkey value="Button/Hotkey/TerranInfantryWeaponsLevel3"/>
+    </CButton>
+    <CButton id="TerranInfantryWeaponsLevel3"/>
+    <CButton id="TerranShipPlatingLevel1">
+        <Hotkey value="Button/Hotkey/TerranShipPlatingLevel3"/>
+    </CButton>
+    <CButton id="TerranShipPlatingLevel2">
+        <Hotkey value="Button/Hotkey/TerranShipPlatingLevel3"/>
+    </CButton>
+    <CButton id="TerranShipPlatingLevel3"/>
+    <CButton id="TerranShipWeaponsLevel1">
+        <Hotkey value="Button/Hotkey/TerranShipWeaponsLevel3"/>
+    </CButton>
+    <CButton id="TerranShipWeaponsLevel2">
+        <Hotkey value="Button/Hotkey/TerranShipWeaponsLevel3"/>
+    </CButton>
+    <CButton id="TerranShipWeaponsLevel3"/>
+    <CButton id="TerranVehiclePlatingLevel1">
+        <Hotkey value="Button/Hotkey/TerranVehiclePlatingLevel3"/>
+    </CButton>
+    <CButton id="TerranVehiclePlatingLevel2">
+        <Hotkey value="Button/Hotkey/TerranVehiclePlatingLevel3"/>
+    </CButton>
+    <CButton id="TerranVehiclePlatingLevel3"/>
+    <CButton id="TerranVehicleWeaponsLevel1">
+        <Hotkey value="Button/Hotkey/TerranVehicleWeaponsLevel3"/>
+    </CButton>
+    <CButton id="TerranVehicleWeaponsLevel2">
+        <Hotkey value="Button/Hotkey/TerranVehicleWeaponsLevel3"/>
+    </CButton>
+    <CButton id="TerranVehicleWeaponsLevel3"/>
+    <CButton id="Thor"/>
+    <CButton id="TwilightCouncil"/>
+    <CButton id="Ultralisk"/>
+    <CButton id="UnknownButton">
+        <Icon value="Assets\Textures\gunflash1.dds"/>
+        <TintRacially value="1"/>
+    </CButton>
+    <CButton id="UnknownButton2">
+        <Icon value="Assets\Textures\gunflash1.dds"/>
+        <TintRacially value="1"/>
+    </CButton>
+    <CButton id="VikingFighter"/>
+    <CButton id="VoidRay"/>
+    <CButton id="WarpInScout"/>
+    <CButton id="WarpInZeratul"/>
+    <CButton id="YamatoGun"/>
+    <CButton id="Zealot"/>
+    <CButton id="Zergling"/>
+    <CButton id="hydraliskspeed"/>
+    <CButton id="zergflyerarmor1">
+        <Hotkey value="Button/Hotkey/zergflyerarmor3"/>
+    </CButton>
+    <CButton id="zergflyerarmor2">
+        <Hotkey value="Button/Hotkey/zergflyerarmor3"/>
+    </CButton>
+    <CButton id="zergflyerarmor3"/>
+    <CButton id="zergflyerattack1">
+        <Hotkey value="Button/Hotkey/zergflyerattack3"/>
+    </CButton>
+    <CButton id="zergflyerattack2">
+        <Hotkey value="Button/Hotkey/zergflyerattack3"/>
+    </CButton>
+    <CButton id="zergflyerattack3"/>
+    <CButton id="zerggroundarmor1">
+        <Hotkey value="Button/Hotkey/zerggroundarmor3"/>
+    </CButton>
+    <CButton id="zerggroundarmor2">
+        <Hotkey value="Button/Hotkey/zerggroundarmor3"/>
+    </CButton>
+    <CButton id="zerggroundarmor3"/>
+    <CButton id="zerglingattackspeed"/>
+    <CButton id="zergmeleeweapons1">
+        <Hotkey value="Button/Hotkey/zergmeleeweapons3"/>
+    </CButton>
+    <CButton id="zergmeleeweapons2">
+        <Hotkey value="Button/Hotkey/zergmeleeweapons3"/>
+    </CButton>
+    <CButton id="zergmeleeweapons3"/>
+    <CButton id="zergmissileweapons1">
+        <Hotkey value="Button/Hotkey/zergmissileweapons3"/>
+    </CButton>
+    <CButton id="zergmissileweapons2">
+        <Hotkey value="Button/Hotkey/zergmissileweapons3"/>
+    </CButton>
+    <CButton id="zergmissileweapons3"/>
+</Catalog>
