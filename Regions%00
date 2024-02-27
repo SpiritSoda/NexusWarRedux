@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Regions>
+    <region id="1">
+        <name value="Team1Bottom"/>
+        <invisible/>
+        <shape type="rect">
+            <quad value="0.0686,0.2275,33.0683,32.2275"/>
+        </shape>
+    </region>
+    <region id="2">
+        <name value="Team2Bottom"/>
+        <invisible/>
+        <shape type="rect">
+            <quad value="223.5002,0,256.5,32"/>
+        </shape>
+    </region>
+    <region id="3">
+        <name value="Team1 Spawn"/>
+        <invisible/>
+        <shape type="rect">
+            <quad value="16.0922,28.1145,23.9365,35.7287"/>
+        </shape>
+    </region>
+    <region id="4">
+        <name value="Team2 Spawn"/>
+        <invisible/>
+        <shape type="rect">
+            <quad value="232.1691,27.994,240.0014,35.8874"/>
+        </shape>
+    </region>
+    <region id="5">
+        <name value="Area"/>
+        <invisible/>
+        <shape type="rect">
+            <quad value="0,0.0002,256,64"/>
+        </shape>
+    </region>
+    <region id="6">
+        <name value="Region 001"/>
+        <invisible/>
+        <shape type="rect">
+            <quad value="64,32,128,64"/>
+        </shape>
+    </region>
+    <region id="7">
+        <name value="Region 002"/>
+        <invisible/>
+        <shape type="rect">
+            <quad value="128,32,192,64"/>
+        </shape>
+    </region>
+    <region id="8">
+        <name value="Region 003"/>
+        <invisible/>
+        <shape type="rect">
+            <quad value="64,0.02,128,32.0197"/>
+        </shape>
+    </region>
+    <region id="9">
+        <name value="Region 004"/>
+        <invisible/>
+        <shape type="rect">
+            <quad value="128,0,192,32"/>
+        </shape>
+    </region>
+    <region id="10">
+        <name value="Region 005"/>
+        <invisible/>
+        <shape type="rect">
+            <quad value="17,32,23,64"/>
+        </shape>
+    </region>
+    <region id="11">
+        <name value="Region 006"/>
+        <invisible/>
+        <shape type="rect">
+            <quad value="233,32,239,64"/>
+        </shape>
+    </region>
+    <region id="12">
+        <name value="Region 007"/>
+        <invisible/>
+        <shape type="rect">
+            <quad value="17.0002,0.0002,23,32"/>
+        </shape>
+    </region>
+    <region id="13">
+        <name value="Region 008"/>
+        <invisible/>
+        <shape type="rect">
+            <quad value="233.0002,0.0002,239,32"/>
+        </shape>
+    </region>
+    <region id="14">
+        <name value="Team1Top"/>
+        <invisible/>
+        <shape type="rect">
+            <quad value="-0.9997,32.0002,65,64"/>
+        </shape>
+    </region>
+    <region id="15">
+        <name value="Team2Top"/>
+        <invisible/>
+        <shape type="rect">
+            <quad value="191.0002,32,257,64"/>
+        </shape>
+    </region>
+    <region id="16">
+        <name value="Nogo Team1"/>
+        <invisible/>
+        <shape type="rect">
+            <quad value="63.9143,0,79.914,63.9997"/>
+        </shape>
+    </region>
+    <region id="17">
+        <name value="Nogo Team2"/>
+        <invisible/>
+        <shape type="rect">
+            <quad value="176,0,192,64"/>
+        </shape>
+    </region>
+    <region id="18">
+        <name value="Team1 Nexus"/>
+        <invisible/>
+        <shape type="rect">
+            <quad value="4.0002,28.0073,12.069,36.0017"/>
+        </shape>
+    </region>
+    <region id="19">
+        <name value="Team2 Nexus"/>
+        <invisible/>
+        <shape type="rect">
+            <quad value="243.9265,27.9782,252.0976,36.1345"/>
+        </shape>
+    </region>
+    <region id="20">
+        <name value="Team1Bottom Copy"/>
+        <invisible/>
+        <shape type="rect">
+            <quad value="0.0002,0,64,32"/>
+        </shape>
+    </region>
+    <region id="21">
+        <name value="Team2Bottom Copy"/>
+        <invisible/>
+        <shape type="rect">
+            <quad value="192.0002,0,256,32"/>
+        </shape>
+    </region>
+    <region id="22">
+        <name value="RightTop"/>
+        <invisible/>
+        <shape type="rect">
+            <quad value="192,32,195,43"/>
+        </shape>
+    </region>
+    <region id="23">
+        <name value="Right Bottom"/>
+        <invisible/>
+        <shape type="rect">
+            <quad value="192,20.8916,195,31.8916"/>
+        </shape>
+    </region>
+    <region id="24">
+        <name value="Left Bottom"/>
+        <invisible/>
+        <shape type="rect">
+            <quad value="61.0954,20.999,64.0954,31.999"/>
+        </shape>
+    </region>
+    <region id="25">
+        <name value="Left Top"/>
+        <invisible/>
+        <shape type="rect">
+            <quad value="61,31.9997,64,42.9997"/>
+        </shape>
+    </region>
+    <region id="26">
+        <name value="Team1"/>
+        <invisible/>
+        <shape type="rect">
+            <quad value="0.0002,0,64,64"/>
+        </shape>
+    </region>
+    <region id="27">
+        <name value="Team2"/>
+        <invisible/>
+        <shape type="rect">
+            <quad value="192,0,256,63.9997"/>
+        </shape>
+    </region>
+</Regions>

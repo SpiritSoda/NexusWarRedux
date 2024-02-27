@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Attributes>
+    <DefaultVariants Value="0"/>
+    <Variant>
+        <Id Value="2"/>
+        <CategoryId Value="5"/>
+        <ModeId Value="1"/>
+        <ModeName Value="Variant002/ModeName"/>
+        <ModeDesc Value="Variant002/ModeDesc"/>
+        <MaxTeamSize Value="8"/>
+        <AttributeHidden Namespace="999" Id="3006"/>
+        <AttributeHidden Namespace="999" Id="3001"/>
+        <AttributeHidden Namespace="999" Id="3003"/>
+        <Attribute Namespace="999" Id="1001">
+            <Default>
+                <Slot Id="Global"/>
+                <Value Id="7955827"/>
+                <Locked/>
+            </Default>
+        </Attribute>
+        <Attribute Namespace="999" Id="3006">
+            <Default>
+                <Slot Id="Global"/>
+                <Value Id="12592"/>
+            </Default>
+        </Attribute>
+        <Attribute Namespace="999" Id="2001">
+            <Default>
+                <Slot Id="Global"/>
+                <Value Id="3438132"/>
+                <Locked/>
+            </Default>
+        </Attribute>
+        <Attribute Namespace="999" Id="3010">
+            <Default>
+                <Slot Id="Global"/>
+                <Value Id="7955827"/>
+                <Locked/>
+            </Default>
+        </Attribute>
+        <Attribute Namespace="999" Id="2005">
+            <Default>
+                <Slot Id="0"/>
+                <Value Id="21553"/>
+            </Default>
+            <Default>
+                <Slot Id="1"/>
+                <Value Id="21553" Index="1"/>
+            </Default>
+            <Default>
+                <Slot Id="2"/>
+                <Value Id="21553" Index="2"/>
+            </Default>
+            <Default>
+                <Slot Id="3"/>
+                <Value Id="21553" Index="3"/>
+            </Default>
+            <Default>
+                <Slot Id="4"/>
+                <Value Id="21554"/>
+            </Default>
+            <Default>
+                <Slot Id="5"/>
+                <Value Id="21554" Index="1"/>
+            </Default>
+            <Default>
+                <Slot Id="6"/>
+                <Value Id="21554" Index="2"/>
+            </Default>
+            <Default>
+                <Slot Id="7"/>
+                <Value Id="21554" Index="3"/>
+            </Default>
+        </Attribute>
+    </Variant>
+</Attributes>

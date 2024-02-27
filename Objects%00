@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PlacedObjects Version="26">
+    <ObjectUnit Id="146" Position="8,32,0" Rotation="5.4958" Scale="1,1,1" UnitType="Nexus" Player="9"/>
+    <ObjectUnit Id="147" Position="248,32,0" Rotation="5.4958" Scale="1,1,1" UnitType="Nexus" Player="10"/>
+    <ObjectPoint Id="1" Position="20.5,31.5,0" Scale="1,1,1" Type="StartLoc" Name="Start Location 001" Color="0,0,0,0"/>
+    <ObjectPoint Id="2" Position="48.2446,50.041,0" Scale="1,1,1" Type="Normal" Name="Point 003" Color="0,0,0,0"/>
+    <ObjectPoint Id="3" Position="206.705,49.4235,0" Scale="1,1,1" Type="Normal" Name="Point 004" Color="0,0,0,0"/>
+    <ObjectPoint Id="4" Position="61.742,31.8056,0" Scale="1,1,1" Type="Normal" Name="Point 005" Color="0,0,0,0"/>
+    <ObjectPoint Id="5" Position="194.0917,31.6198,0" Scale="1,1,1" Type="Normal" Name="Point 006" Color="0,0,0,0"/>
+    <ObjectPoint Id="6" Position="65.8056,2.4267,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 001" Color="0,0,0,0"/>
+    <ObjectPoint Id="7" Position="66.1657,5.7841,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 002" Color="0,0,0,0"/>
+    <ObjectPoint Id="8" Position="65.6018,0.5444,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 003" Color="0,0,0,0"/>
+    <ObjectPoint Id="9" Position="65.862,4.4243,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 004" Color="0,0,0,0"/>
+    <ObjectPoint Id="10" Position="65.4174,6.6938,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 005" Color="0,0,0,0"/>
+    <ObjectPoint Id="11" Position="64.8312,29.9814,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 006" Color="0,0,0,0"/>
+    <ObjectPoint Id="12" Position="65.5903,23.8715,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 007" Color="0,0,0,0"/>
+    <ObjectPoint Id="13" Position="64.8266,32.221,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 008" Color="0,0,0,0"/>
+    <ObjectPoint Id="14" Position="65.0854,34.745,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 009" Color="0,0,0,0"/>
+    <ObjectPoint Id="15" Position="65.1215,37.8933,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 010" Color="0,0,0,0"/>
+    <ObjectPoint Id="16" Position="7.8376,48.2221,0" Scale="1,1,1" Type="Normal" Name="Top1" Color="0,0,0,0"/>
+    <ObjectPoint Id="17" Position="247.9433,47.947,0" Scale="1,1,1" Type="Normal" Name="Top4" Color="0,0,0,0"/>
+    <ObjectPoint Id="18" Position="7.5888,15.713,0" Scale="1,1,1" Type="Normal" Name="Bottom1" Color="0,0,0,0"/>
+    <ObjectPoint Id="19" Position="248.0014,15.912,0" Scale="1,1,1" Type="Normal" Name="Bottom4" Color="0,0,0,0"/>
+    <ObjectPoint Id="20" Position="235.5,31.5,0" Scale="1,1,1" Type="StartLoc" Name="Start Location 002" Color="0,0,0,0"/>
+    <ObjectPoint Id="27" Position="65.1345,38.8527,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 011" Color="0,0,0,0"/>
+    <ObjectPoint Id="28" Position="65.384,56.0183,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 012" Color="0,0,0,0"/>
+    <ObjectPoint Id="29" Position="65.1704,26.6198,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 013" Color="0,0,0,0"/>
+    <ObjectPoint Id="30" Position="65.5981,62.3957,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 014" Color="0,0,0,0"/>
+    <ObjectPoint Id="31" Position="65.812,59.8503,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 015" Color="0,0,0,0"/>
+    <ObjectPoint Id="32" Position="65.4912,58.3635,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 016" Color="0,0,0,0"/>
+    <ObjectPoint Id="33" Position="191.2883,0.5134,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 017" Color="0,0,0,0"/>
+    <ObjectPoint Id="34" Position="191.6091,2.4218,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 018" Color="0,0,0,0"/>
+    <ObjectPoint Id="35" Position="190.9685,7.2885,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 019" Color="0,0,0,0"/>
+    <ObjectPoint Id="36" Position="190.9685,7.2885,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 020" Color="0,0,0,0"/>
+    <ObjectPoint Id="37" Position="191.6787,3.604,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 021" Color="0,0,0,0"/>
+    <ObjectPoint Id="38" Position="191.604,4.1223,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 022" Color="0,0,0,0"/>
+    <ObjectPoint Id="39" Position="191.0927,24.8271,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 023" Color="0,0,0,0"/>
+    <ObjectPoint Id="40" Position="191.9023,27.0654,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 024" Color="0,0,0,0"/>
+    <ObjectPoint Id="41" Position="192.0683,30.419,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 025" Color="0,0,0,0"/>
+    <ObjectPoint Id="42" Position="192.0683,28.652,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 026" Color="0,0,0,0"/>
+    <ObjectPoint Id="43" Position="192.0683,32.406,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 027" Color="0,0,0,0"/>
+    <ObjectPoint Id="44" Position="192.1228,34.7023,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 028" Color="0,0,0,0"/>
+    <ObjectPoint Id="45" Position="192.0957,37.0812,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 029" Color="0,0,0,0"/>
+    <ObjectPoint Id="46" Position="190.9682,39.2468,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 030" Color="0,0,0,0"/>
+    <ObjectPoint Id="47" Position="190.934,56.4663,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 031" Color="0,0,0,0"/>
+    <ObjectPoint Id="48" Position="192.1386,61.0256,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 032" Color="0,0,0,0"/>
+    <ObjectPoint Id="49" Position="191.9384,59.08,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 033" Color="0,0,0,0"/>
+    <ObjectPoint Id="50" Position="192.049,62.9531,0" Scale="1,1,1" Type="NoFlyZone" Name="No Fly Zone 034" Color="0,0,0,0"/>
+    <ObjectPoint Id="101" Position="48.9282,13.3813,0" Scale="1,1,1" Type="Normal" Name="Point 001" Color="0,0,0,0"/>
+    <ObjectPoint Id="102" Position="206.571,14.041,0" Scale="1,1,1" Type="Normal" Name="Point 002" Color="0,0,0,0"/>
+    <ObjectPoint Id="148" Position="247.9941,31.6096,0" Scale="1,1,1" Type="Normal" Name="Team1 Attack" Color="0,0,0,0"/>
+    <ObjectPoint Id="149" Position="8.299,31.39,0" Scale="1,1,1" Type="Normal" Name="Team2 Attack" Color="0,0,0,0"/>
+    <ObjectPoint Id="161" Position="95.9248,47.622,0" Scale="1,1,1" Type="Normal" Name="Top2" Color="0,0,0,0"/>
+    <ObjectPoint Id="162" Position="159.964,47.7355,0" Scale="1,1,1" Type="Normal" Name="Top3" Color="0,0,0,0"/>
+    <ObjectPoint Id="163" Position="96.2033,16.0573,0" Scale="1,1,1" Type="Normal" Name="Bottom2" Color="0,0,0,0"/>
+    <ObjectPoint Id="164" Position="160.1367,16.2072,0" Scale="1,1,1" Type="Normal" Name="Bottom3" Color="0,0,0,0"/>
+</PlacedObjects>

@@ -192,12 +192,12 @@
         <AreaArray index="0" removed="1"/>
     </CEffectDamage>
     <CEffectDamage id="OdinNukeDamage">
-        <Amount value="200"/>
+        <AttributeBonus index="Structure" value="150"/>
+        <Amount value="250"/>
         <AreaArray index="0" Radius="4"/>
         <AreaArray index="1" Radius="6"/>
         <AreaArray index="2" Radius="8"/>
         <SearchFilters value="-;Player,Ally,Worker,Missile,Stasis,Dead,Hidden,Invulnerable"/>
-        <AttributeBonus index="Structure" value="200"/>
     </CEffectDamage>
     <CEffectDamage id="OmegaStormDamage">
         <Amount value="18"/>

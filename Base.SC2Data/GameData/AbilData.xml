@@ -79,7 +79,7 @@
             <Button Requirements=""/>
         </InfoArray>
         <InfoArray index="Train5" Time="30">
-            <Button DefaultButtonFace="Firebat"/>
+            <Button DefaultButtonFace="Firebat" Requirements=""/>
             <Unit value="Firebat"/>
         </InfoArray>
     </CAbilTrain>
@@ -584,7 +584,7 @@
     </CAbilResearch>
     <CAbilEffectInstant id="Stimpack">
         <Cost index="0">
-            <Cooldown TimeUse="10"/>
+            <Cooldown TimeUse="15"/>
         </Cost>
     </CAbilEffectInstant>
     <CAbilEffectInstant id="StimpackMarauder">

@@ -207,7 +207,7 @@
             <LayoutButtons index="2" Face="ResearchShieldWall" AbilCmd="BarracksTechLabResearch,Research2" Row="2" Column="0"/>
             <LayoutButtons index="3" Face="Cancel" AbilCmd="que5,CancelLast" Row="2" Column="4"/>
             <LayoutButtons index="4" Face="Cancel" AbilCmd="BuildInProgress,Cancel" Row="2"/>
-            <LayoutButtons index="5" removed="1"/>
+            <LayoutButtons index="5" Face="Stimpack" AbilCmd="BarracksTechLabResearch,Research1" Column="1"/>
             <LayoutButtons index="6" removed="1"/>
             <LayoutButtons index="7" removed="1"/>
             <LayoutButtons index="8" removed="1"/>
@@ -2279,6 +2279,8 @@
         <CostResource index="Minerals" value="0"/>
         <CostResource index="Vespene" value="0"/>
         <KillResource index="Minerals" value="3"/>
+        <Attributes index="Light" value="1"/>
+        <Attributes index="Armored" value="0"/>
     </CUnit>
     <CUnit id="SelendisInterceptor">
         <FlagArray index="Invulnerable" value="1"/>
@@ -3069,8 +3071,7 @@
         <Food value="0"/>
         <CostResource index="Minerals" value="0"/>
         <CostResource index="Vespene" value="0"/>
-        <KillResource index="Minerals" value="3"/>
-        <LifeArmor value="1"/>
+        <KillResource index="Minerals" value="4"/>
     </CUnit>
     <CUnit id="WarpGate">
         <Attributes index="Mechanical" value="1"/>
