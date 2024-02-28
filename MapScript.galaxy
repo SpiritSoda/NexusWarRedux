@@ -375,6 +375,10 @@ int gv_team1kills;
 int gv_team2kills;
 bool gv_gameover;
 int gv_stat;
+int[11] gv_drawVote;
+int gv_drawRequire;
+int gv_drawTimer;
+int gv_acceptPlayer;
 
 void InitGlobals () {
     int init_i;
@@ -1008,6 +1012,7 @@ trigger gt_Team2Income;
 trigger gt_Team1Kills;
 trigger gt_Team2Kills;
 trigger gt_Level;
+trigger gt_GameCommand;
 
 //--------------------------------------------------------------------------------------------------
 // Trigger: Maraudor
@@ -4143,6 +4148,12 @@ bool gt_TimeUpdate_Func (bool testConds, bool runActions) {
             }
         }
     }
+    if(gv_drawTimer > 0) {
+        gv_drawTimer = gv_drawTimer - 1;
+        if(gv_drawTimer == 300) {
+            gt_DrawResult();
+        }
+    }
     return true;
 }
 
@@ -6775,6 +6786,136 @@ void gt_Level_Init () {
 }
 
 //--------------------------------------------------------------------------------------------------
+// Trigger: Game Command
+//--------------------------------------------------------------------------------------------------
+bool gt_GameCommand_Func(bool testConds, bool runActions) {
+    int gv_allPlayer = gv_smiley1 + gv_smiley2;
+    int init_i = 0;
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    if(StringEqual(EventChatMessage(false), "/draw", false) && gv_seconds >= 2400) {
+        // Draw Proposal
+        if(gv_drawTimer > 0) {
+            if(gv_drawTimer > 300) {
+                UIDisplayMessage(PlayerGroupAll(), c_messageAreaSubtitle, StringExternal("Param/Value/D070E179"));
+            }
+            else {
+                UIDisplayMessage(PlayerGroupAll(), c_messageAreaSubtitle, StringExternal("Param/Value/D070E180") + FormatDuration(gv_drawTimer));
+            }
+            return true;
+        }
+        UIDisplayMessage(PlayerGroupAll(), c_messageAreaSubtitle, StringExternal("Param/Value/D070E174"));
+        while (init_i <= 10) {
+            gv_drawVote[init_i] = 0;
+            init_i = init_i + 1;
+        }
+        if(gv_allPlayer <= 4) {
+            gv_drawRequire = gv_allPlayer;
+        }
+        else {
+            if(gv_allPlayer == 5) {
+                gv_drawRequire = 4;
+            }
+            else {
+                if(gv_allPlayer == 6) {
+                    gv_drawRequire = 4;
+                }
+                else {
+                    if(gv_allPlayer == 7) {
+                        gv_drawRequire = 5;
+                    }
+                    else {
+                        if(gv_allPlayer == 8) {
+                            gv_drawRequire = 6;
+                        }
+                    }
+                }
+            }
+        }
+        UIDisplayMessage(PlayerGroupAll(), c_messageAreaSubtitle, StringExternal("Param/Value/D070E175") + " " + PlayerName(EventPlayer()) + " " + StringExternal("Param/Value/D070E176") + ": (" + IntToString(gv_acceptPlayer) + "/" + IntToString(gv_drawRequire) + ")");
+        gv_drawVote[EventPlayer()] = 1;
+        gv_acceptPlayer = 1;
+        gv_drawTimer = 312;
+    }
+    else {
+        if(StringEqual(EventChatMessage(false), "/accept", false) && gv_drawTimer > 300) {
+            // Draw Accept
+            if(gv_drawVote[EventPlayer()] == 0) {
+                gv_drawVote[EventPlayer()] = 1;
+                gv_acceptPlayer = gv_acceptPlayer + 1;
+                UIDisplayMessage(PlayerGroupAll(), c_messageAreaSubtitle, StringExternal("Param/Value/D070E175") + " " + PlayerName(EventPlayer()) + " " + StringExternal("Param/Value/D070E176") + ": (" + IntToString(gv_acceptPlayer) + "/" + IntToString(gv_drawRequire) + ")");
+            }
+        }
+        else {
+            if(StringEqual(EventChatMessage(false), "/reject", false) && gv_drawTimer > 300) {
+                // Draw Reject
+                if(gv_drawVote[EventPlayer()] == 0) {
+                    gv_drawVote[EventPlayer()] = 2;
+                    UIDisplayMessage(PlayerGroupAll(), c_messageAreaSubtitle, StringExternal("Param/Value/D070E175") + " " + PlayerName(EventPlayer()) + " " + StringExternal("Param/Value/D070E177"));
+                }
+            }
+        }
+    }
+}
+
+//--------------------------------------------------------------------------------------------------
+void gt_GameCommand_Init() {
+    gt_GameCommand = TriggerCreate("gt_GameCommand_Func");
+    TriggerAddEventChatMessage(gt_GameCommand, c_playerAny, "/", false);
+}
+
+void gt_DrawResult() {
+    if(gv_acceptPlayer >= gv_drawRequire) {
+        gt_DrawSuccess();
+    }
+    else {
+        gt_DrawFail();
+    }
+}
+
+void gt_DrawSuccess() {
+    UIDisplayMessage(PlayerGroupAll(), c_messageAreaSubtitle, StringExternal("Param/Value/D070E181"));
+    Wait(2.0, c_timeGame);
+    PlayerGroupLoopBegin(gv_team1);
+    while (!PlayerGroupLoopDone()) {
+        if ((PlayerStatus(PlayerGroupLoopCurrent()) == c_playerStatusActive)) {
+            if(gv_seconds < 3600) {
+                GameOver(PlayerGroupLoopCurrent(), c_gameOverTie, true, true);
+            }
+            else {
+                GameOver(PlayerGroupLoopCurrent(), c_gameOverVictory, true, true);
+            }
+        }
+        else {
+        }
+        PlayerGroupLoopStep();
+    }
+    PlayerGroupLoopEnd();
+    PlayerGroupLoopBegin(gv_team2);
+    while (!PlayerGroupLoopDone()) {
+        if ((PlayerStatus(PlayerGroupLoopCurrent()) == c_playerStatusActive)) {
+            if(gv_seconds < 3600) {
+                GameOver(PlayerGroupLoopCurrent(), c_gameOverTie, true, true);
+            }
+            else {
+                GameOver(PlayerGroupLoopCurrent(), c_gameOverVictory, true, true);
+            }
+        }
+        else {
+        }
+        PlayerGroupLoopStep();
+    }
+    PlayerGroupLoopEnd();
+}
+
+void gt_DrawFail() {
+    UIDisplayMessage(PlayerGroupAll(), c_messageAreaSubtitle, StringExternal("Param/Value/D070E178") + "(" + IntToString(gv_acceptPlayer) + "/" + IntToString(gv_drawRequire) + ")");
+}
+
+//--------------------------------------------------------------------------------------------------
 // Trigger Initialization
 //--------------------------------------------------------------------------------------------------
 void InitTriggers () {
@@ -6870,7 +7011,7 @@ void InitTriggers () {
     gt_Team2Income_Init();
     gt_Team1Kills_Init();
     gt_Team2Kills_Init();
-    gt_Level_Init();
+    gt_GameCommand_Init();
 }
 
 //--------------------------------------------------------------------------------------------------
