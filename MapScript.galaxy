@@ -382,6 +382,7 @@ int gv_acceptPlayer;
 bank[11] gv_banks;
 int[11] gv_wins;
 int[11] gv_loss;
+bool gv_validGame;
 
 void InitGlobals () {
     int init_i;
@@ -920,6 +921,8 @@ void InitGlobals () {
 
     init_i = 0;
     while(init_i <= 10) {
+        gv_wins[init_i] = 0;
+        gv_loss[init_i] = 0;
         if(PlayerStatus(init_i + 1) != c_playerStatusActive) {
             continue;
         }
@@ -928,16 +931,21 @@ void InitGlobals () {
         gv_loss[init_i] = BankValueGetAsInt(gv_banks[init_i], "record", "loss");
         init_i = init_i + 1;
     }
+    gv_validGame = false;
 }
 
 void GameVictory(int player) {
-    BankValueSetFromInt(gv_banks[player - 1], "record", "wins", gv_wins[player - 1] + 1);
+    if(gv_validGame) {
+        BankValueSetFromInt(gv_banks[player - 1], "record", "wins", gv_wins[player - 1] + 1);
+    }
     BankSave(gv_banks[player - 1]);
     GameOver(player, c_gameOverVictory, true, true);
 }
 
 void GameDefeat(int player) {
-    BankValueSetFromInt(gv_banks[player - 1], "record", "loss", gv_loss[player - 1] + 1);
+    if(gv_validGame) {
+        BankValueSetFromInt(gv_banks[player - 1], "record", "loss", gv_loss[player - 1] + 1);
+    }
     BankSave(gv_banks[player - 1]);
     GameOver(player, c_gameOverDefeat, true, true);
 }
@@ -3876,6 +3884,9 @@ bool gt_MapInitialization_Func (bool testConds, bool runActions) {
         PlayerGroupLoopStep();
     }
     PlayerGroupLoopEnd();
+    if(PlayerGroupCount(gv_team12) > 0 && PlayerGroupCount(gv_team22) > 0) {
+        gv_validGame = true;
+    }
     return true;
 }
 
