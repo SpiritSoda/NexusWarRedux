@@ -923,13 +923,13 @@ void InitGlobals () {
     while(init_i <= 10) {
         gv_wins[init_i] = 0;
         gv_loss[init_i] = 0;
+        init_i = init_i + 1;
         if(PlayerStatus(init_i + 1) != c_playerStatusActive) {
             continue;
         }
         gv_banks[init_i] = BankLoad("nexus-war-redux", init_i + 1);
         gv_wins[init_i] = BankValueGetAsInt(gv_banks[init_i], "record", "wins");
         gv_loss[init_i] = BankValueGetAsInt(gv_banks[init_i], "record", "loss");
-        init_i = init_i + 1;
     }
     gv_validGame = false;
 }
@@ -1089,7 +1089,7 @@ void gt_DrawSuccess() {
 }
 
 void gt_DrawFail() {
-    UIDisplayMessage(PlayerGroupAll(), c_messageAreaSubtitle, StringExternal("Param/Value/D070E178") + "(" + IntToString(gv_acceptPlayer) + "/" + IntToString(gv_drawRequire) + ")");
+    UIDisplayMessage(PlayerGroupAll(), c_messageAreaSubtitle, StringExternal("Param/Value/D070E178") + StringToText("(") + IntToText(gv_acceptPlayer) + StringToText("/") + IntToText(gv_drawRequire) + StringToText(")"));
 }
 
 void gt_DrawResult() {
@@ -6884,7 +6884,7 @@ bool gt_GameCommand_Func(bool testConds, bool runActions) {
         return true;
     }
 
-    if(StringEqual(EventChatMessage(false), "/draw", false) && gv_seconds >= 2400) {
+    if(StringEqual(EventChatMessage(false), "-draw", false) && gv_seconds >= 2400) {
         // Draw Proposal
         if(gv_drawTimer > 0) {
             if(gv_drawTimer > 300) {
@@ -6923,53 +6923,56 @@ bool gt_GameCommand_Func(bool testConds, bool runActions) {
                 }
             }
         }
-        UIDisplayMessage(PlayerGroupAll(), c_messageAreaChat, StringExternal("Param/Value/D070E175") + " " + PlayerName(EventPlayer()) + " " + StringExternal("Param/Value/D070E176") + ": (" + IntToString(gv_acceptPlayer) + "/" + IntToString(gv_drawRequire) + ")");
         gv_drawVote[EventPlayer()] = 1;
         gv_acceptPlayer = 1;
         gv_drawTimer = 316;
+        UIDisplayMessage(PlayerGroupAll(), c_messageAreaChat, StringExternal("Param/Value/D070E175") + StringToText(" ") + PlayerName(EventPlayer()) + StringToText(" ") + StringExternal("Param/Value/D070E176") + StringToText(": (") + IntToText(gv_acceptPlayer) + StringToText("/") + IntToText(gv_drawRequire) + StringToText(")"));
     }
     else {
-        if(StringEqual(EventChatMessage(false), "/accept", false) && gv_drawTimer > 300) {
+        if(StringEqual(EventChatMessage(false), "-y", false) && gv_drawTimer > 300) {
             // Draw Accept
             if(gv_drawVote[EventPlayer()] == 0) {
                 gv_drawVote[EventPlayer()] = 1;
                 gv_acceptPlayer = gv_acceptPlayer + 1;
-                UIDisplayMessage(PlayerGroupAll(), c_messageAreaChat, StringExternal("Param/Value/D070E175") + " " + PlayerName(EventPlayer()) + " " + StringExternal("Param/Value/D070E176") + ": (" + IntToString(gv_acceptPlayer) + "/" + IntToString(gv_drawRequire) + ")");
+                UIDisplayMessage(PlayerGroupAll(), c_messageAreaChat, StringExternal("Param/Value/D070E175") + StringToText(" ") + PlayerName(EventPlayer()) + StringToText(" ") + StringExternal("Param/Value/D070E176") + StringToText(": (") + IntToText(gv_acceptPlayer) + StringToText("/") + IntToText(gv_drawRequire) + StringToText(")"));
             }
         }
         else {
-            if(StringEqual(EventChatMessage(false), "/reject", false) && gv_drawTimer > 300) {
+            if(StringEqual(EventChatMessage(false), "-n", false) && gv_drawTimer > 300) {
                 // Draw Reject
                 if(gv_drawVote[EventPlayer()] == 0) {
                     gv_drawVote[EventPlayer()] = 2;
-                    UIDisplayMessage(PlayerGroupAll(), c_messageAreaChat, StringExternal("Param/Value/D070E175") + " " + PlayerName(EventPlayer()) + " " + StringExternal("Param/Value/D070E177"));
+                    UIDisplayMessage(PlayerGroupAll(), c_messageAreaChat, StringExternal("Param/Value/D070E175") + StringToText(" ") + PlayerName(EventPlayer()) + StringToText(" ") + StringExternal("Param/Value/D070E177"));
                 }
             }
             else {
-                if(StringEqual(EventChatMessage(false), "/record", false)) {
+                if(StringEqual(EventChatMessage(false), "-record", false)) {
                     // Display record
-                    UIDisplayMessage(PlayerGroupSingle(EventPlayer()), c_messageAreaSubtitle, "Team 1");
+                    UIDisplayMessage(PlayerGroupSingle(EventPlayer()), c_messageAreaSubtitle, StringToText("Team 1"));
                     PlayerGroupLoopBegin(gv_team12);
                     while(!PlayerGroupLoopDone()) {
-                        UIDisplayMessage(PlayerGroupSingle(EventPlayer()), c_messageAreaSubtitle, PlayerName(PlayerGroupLoopCurrent()) + ": " + IntToString(gv_wins[PlayerGroupLoopCurrent() - 1]) + " Wins | " + IntToString(gv_loss[PlayerGroupLoopCurrent() - 1]) + " Loss");
+                        UIDisplayMessage(PlayerGroupSingle(EventPlayer()), c_messageAreaSubtitle, PlayerName(PlayerGroupLoopCurrent()) + StringToText(": ") + IntToText(gv_wins[PlayerGroupLoopCurrent() - 1]) + StringToText(" Wins | ") + IntToText(gv_loss[PlayerGroupLoopCurrent() - 1]) + StringToText(" Loss"));
+                        PlayerGroupLoopStep();
                     }
                     PlayerGroupLoopEnd();
-                    UIDisplayMessage(PlayerGroupSingle(EventPlayer()), c_messageAreaSubtitle, "Team 2");
+                    UIDisplayMessage(PlayerGroupSingle(EventPlayer()), c_messageAreaSubtitle, StringToText("Team 2"));
                     PlayerGroupLoopBegin(gv_team22);
                     while(!PlayerGroupLoopDone()) {
-                        UIDisplayMessage(PlayerGroupSingle(EventPlayer()), c_messageAreaSubtitle, PlayerName(PlayerGroupLoopCurrent()) + " " + IntToString(gv_wins[PlayerGroupLoopCurrent() - 1]) + " Wins | " + IntToString(gv_loss[PlayerGroupLoopCurrent() - 1]) + " Loss");
+                        UIDisplayMessage(PlayerGroupSingle(EventPlayer()), c_messageAreaSubtitle, PlayerName(PlayerGroupLoopCurrent()) + StringToText(" ") + IntToText(gv_wins[PlayerGroupLoopCurrent() - 1]) + StringToText(" Wins | ") + IntToText(gv_loss[PlayerGroupLoopCurrent() - 1]) + StringToText(" Loss"));
+                        PlayerGroupLoopStep();
                     }
                     PlayerGroupLoopEnd();
                 }
             }
         }
     }
+    return true;
 }
 
 //--------------------------------------------------------------------------------------------------
 void gt_GameCommand_Init() {
     gt_GameCommand = TriggerCreate("gt_GameCommand_Func");
-    TriggerAddEventChatMessage(gt_GameCommand, c_playerAny, "/", false);
+    TriggerAddEventChatMessage(gt_GameCommand, c_playerAny, "-", false);
 }
 
 //--------------------------------------------------------------------------------------------------
