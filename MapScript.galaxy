@@ -4118,6 +4118,31 @@ bool gt_TimeUpdate_Func (bool testConds, bool runActions) {
     }
     else {
     }
+
+    if(gv_seconds > 5) {
+        if(gv_smiley1 == 0) {
+            // gt_Team2Win_Func(false, true);
+
+            UnitGroupLoopBegin(UnitGroup("Nexus", 9, RegionEntireMap(), UnitFilter(0, 0, 0, 0), 1));
+            while(!UnitGroupLoopDone()) {
+                UnitKill(UnitGroupLoopCurrent());
+                UnitGroupLoopStep();
+            }
+            UnitGroupLoopEnd();
+        }
+        else {
+            if(gv_smiley2 == 0) {
+                // gt_Team1Win_Func(false, true);
+
+                UnitGroupLoopBegin(UnitGroup("Nexus", 10, RegionEntireMap(), UnitFilter(0, 0, 0, 0), 1));
+                while(!UnitGroupLoopDone()) {
+                    UnitKill(UnitGroupLoopCurrent());
+                    UnitGroupLoopStep();
+                }
+                UnitGroupLoopEnd();
+            }
+        }
+    }
     return true;
 }
 
