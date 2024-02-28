@@ -3348,11 +3348,11 @@ bool gt_compscvbuild_Func (bool testConds, bool runActions) {
     }
 
     if (((UnitGetOwner(EventUnitProgressUnit()) == 9) || ((PlayerGroupHasPlayer(gv_team12, EventPlayer()) == true) && (PlayerStatus(EventPlayer()) == c_playerStatusLeft)))) {
-        UnitSetOwner(EventUnitProgressUnit(), PlayerGroupPlayer(gv_team1, RandomInt(1, PlayerGroupCount(gv_team1))), true);
+        UnitSetOwner(EventUnitProgressUnit(), EventPlayer(), true);
     }
     else {
         if (((UnitGetOwner(EventUnitProgressUnit()) == 10) || ((PlayerGroupHasPlayer(gv_team22, EventPlayer()) == true) && (PlayerStatus(EventPlayer()) == c_playerStatusLeft)))) {
-            UnitSetOwner(EventUnitProgressUnit(), PlayerGroupPlayer(gv_team2, RandomInt(1, PlayerGroupCount(gv_team2))), true);
+            UnitSetOwner(EventUnitProgressUnit(), EventPlayer(), true);
         }
         else {
         }
@@ -3913,7 +3913,6 @@ bool gt_SCVcreate2_Func (bool testConds, bool runActions) {
     if ((gv_smiley1 == 3)) {
         libNtve_gf_UnitCreateFacingPoint(1, "SCV", 0, 9, RegionGetCenter(RegionFromId(3)), RegionGetCenter(RegionFromId(18)));
         libNtve_gf_MakeUnitUncommandable(UnitLastCreated(), true);
-        UnitSetOwner(UnitLastCreated(), PlayerGroupPlayer(gv_team1, 1), true);
         PlayerModifyPropertyInt(PlayerGroupPlayer(gv_team1, 1), c_playerPropMinerals, c_playerPropOperAdd, 25);
         PlayerModifyPropertyInt(PlayerGroupPlayer(gv_team1, 2), c_playerPropMinerals, c_playerPropOperAdd, 25);
         PlayerModifyPropertyInt(PlayerGroupPlayer(gv_team1, 3), c_playerPropMinerals, c_playerPropOperAdd, 25);
@@ -3949,7 +3948,6 @@ bool gt_SCVcreate2_Func (bool testConds, bool runActions) {
     if ((gv_smiley2 == 3)) {
         libNtve_gf_UnitCreateFacingPoint(1, "SCV", 0, 10, RegionGetCenter(RegionFromId(4)), RegionGetCenter(RegionFromId(18)));
         libNtve_gf_MakeUnitUncommandable(UnitLastCreated(), true);
-        UnitSetOwner(UnitLastCreated(), PlayerGroupPlayer(gv_team2, 1), true);
         PlayerModifyPropertyInt(PlayerGroupPlayer(gv_team2, 1), c_playerPropMinerals, c_playerPropOperAdd, 25);
         PlayerModifyPropertyInt(PlayerGroupPlayer(gv_team2, 2), c_playerPropMinerals, c_playerPropOperAdd, 25);
         PlayerModifyPropertyInt(PlayerGroupPlayer(gv_team2, 3), c_playerPropMinerals, c_playerPropOperAdd, 25);
