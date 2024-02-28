@@ -930,22 +930,22 @@ void InitGlobals () {
 
 void GameVictory(int player) {
     if(gv_validGame) {
-        BankValueSetFromInt(gv_banks[player - 1], "record", "wins", gv_wins[player - 1] + 1);
+        BankValueSetFromInt(gv_banks[player], "record", "wins", gv_wins[player] + 1);
     }
-    BankSave(gv_banks[player - 1]);
+    BankSave(gv_banks[player]);
     GameOver(player, c_gameOverVictory, true, true);
 }
 
 void GameDefeat(int player) {
     if(gv_validGame) {
-        BankValueSetFromInt(gv_banks[player - 1], "record", "loss", gv_loss[player - 1] + 1);
+        BankValueSetFromInt(gv_banks[player], "record", "loss", gv_loss[player] + 1);
     }
-    BankSave(gv_banks[player - 1]);
+    BankSave(gv_banks[player]);
     GameOver(player, c_gameOverDefeat, true, true);
 }
 
 void GameTie(int player) {
-    BankSave(gv_banks[player - 1]);
+    BankSave(gv_banks[player]);
     GameOver(player, c_gameOverTie, true, true);
 }
 
@@ -4271,6 +4271,7 @@ bool gt_Team1Win_Func (bool testConds, bool runActions) {
 
     TriggerEnable(gt_Leave, false);
     gv_nexus2Dead = true;
+    gv_gameover = true;
     UIDisplayMessage(PlayerGroupAll(), c_messageAreaSubtitle, StringExternal("Param/Value/D6B2BE64"));
     IntLoopBegin(1, 8);
     while (!IntLoopDone()) {
@@ -4346,6 +4347,7 @@ bool gt_Team2Win_Func (bool testConds, bool runActions) {
 
     TriggerEnable(gt_Leave, false);
     gv_nexus1Dead = true;
+    gv_gameover = true;
     UIDisplayMessage(PlayerGroupAll(), c_messageAreaSubtitle, StringExternal("Param/Value/A8956CB4"));
     IntLoopBegin(1, 8);
     while (!IntLoopDone()) {
@@ -6898,24 +6900,34 @@ bool gt_GameCommand_Func(bool testConds, bool runActions) {
             gv_drawVote[init_i] = 0;
             init_i = init_i + 1;
         }
-        if(gv_allPlayer <= 4) {
+        if(gv_allPlayer <= 2) {
             gv_drawRequire = gv_allPlayer;
         }
         else {
-            if(gv_allPlayer == 5) {
-                gv_drawRequire = 4;
+            if(gv_allPlayer == 3) {
+                gv_drawRequire = 2;
             }
             else {
-                if(gv_allPlayer == 6) {
-                    gv_drawRequire = 4;
+                if(gv_allPlayer == 4) {
+                    gv_drawRequire = 3;
                 }
                 else {
-                    if(gv_allPlayer == 7) {
-                        gv_drawRequire = 5;
+                    if(gv_allPlayer == 5) {
+                        gv_drawRequire = 4;
                     }
                     else {
-                        if(gv_allPlayer == 8) {
-                            gv_drawRequire = 6;
+                        if(gv_allPlayer == 6) {
+                            gv_drawRequire = 4;
+                        }
+                        else {
+                            if(gv_allPlayer == 7) {
+                                gv_drawRequire = 5;
+                            }
+                            else {
+                                if(gv_allPlayer == 8) {
+                                    gv_drawRequire = 6;
+                                }
+                            }
                         }
                     }
                 }
@@ -6946,14 +6958,12 @@ bool gt_GameCommand_Func(bool testConds, bool runActions) {
             else {
                 if(StringEqual(EventChatMessage(false), "-record", false)) {
                     // Display record
-                    UIDisplayMessage(PlayerGroupSingle(EventPlayer()), c_messageAreaSubtitle, StringToText("Team 1"));
                     PlayerGroupLoopBegin(gv_team12);
                     while(!PlayerGroupLoopDone()) {
                         UIDisplayMessage(PlayerGroupSingle(EventPlayer()), c_messageAreaSubtitle, PlayerName(PlayerGroupLoopCurrent()) + StringToText(": ") + IntToText(gv_wins[PlayerGroupLoopCurrent()]) + StringToText(" Wins | ") + IntToText(gv_loss[PlayerGroupLoopCurrent()]) + StringToText(" Loss"));
                         PlayerGroupLoopStep();
                     }
                     PlayerGroupLoopEnd();
-                    UIDisplayMessage(PlayerGroupSingle(EventPlayer()), c_messageAreaSubtitle, StringToText("Team 2"));
                     PlayerGroupLoopBegin(gv_team22);
                     while(!PlayerGroupLoopDone()) {
                         UIDisplayMessage(PlayerGroupSingle(EventPlayer()), c_messageAreaSubtitle, PlayerName(PlayerGroupLoopCurrent()) + StringToText(" ") + IntToText(gv_wins[PlayerGroupLoopCurrent()]) + StringToText(" Wins | ") + IntToText(gv_loss[PlayerGroupLoopCurrent()]) + StringToText(" Loss"));
@@ -7010,6 +7020,9 @@ bool gt_PlayerLeavePunish_Func(bool testConds, bool runActions) {
         return true;
     }
     
+    if(gv_gameover) {
+        return true;
+    }
     BankValueSetFromInt(gv_banks[EventPlayer()], "record", "loss", gv_loss[EventPlayer()] + 1);
     BankSave(gv_banks[EventPlayer()]);
     return true;
