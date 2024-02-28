@@ -924,12 +924,6 @@ void InitGlobals () {
         gv_wins[init_i] = 0;
         gv_loss[init_i] = 0;
         init_i = init_i + 1;
-        if(PlayerStatus(init_i + 1) != c_playerStatusActive) {
-            continue;
-        }
-        gv_banks[init_i] = BankLoad("nexus-war-redux", init_i + 1);
-        gv_wins[init_i] = BankValueGetAsInt(gv_banks[init_i], "record", "wins");
-        gv_loss[init_i] = BankValueGetAsInt(gv_banks[init_i], "record", "loss");
     }
     gv_validGame = false;
 }
@@ -1052,6 +1046,8 @@ trigger gt_Team1Kills;
 trigger gt_Team2Kills;
 trigger gt_Level;
 trigger gt_GameCommand;
+trigger gt_BankLoad;
+trigger gt_PlayerLeavePunish;
 
 void gt_DrawSuccess() {
     UIDisplayMessage(PlayerGroupAll(), c_messageAreaSubtitle, StringExternal("Param/Value/D070E181"));
@@ -3435,11 +3431,11 @@ bool gt_compscvbuild_Func (bool testConds, bool runActions) {
     }
 
     if (((UnitGetOwner(EventUnitProgressUnit()) == 9) || ((PlayerGroupHasPlayer(gv_team12, EventPlayer()) == true) && (PlayerStatus(EventPlayer()) == c_playerStatusLeft)))) {
-        UnitSetOwner(EventUnitProgressUnit(), EventPlayer(), true);
+        UnitSetOwner(EventUnitProgressUnit(), PlayerGroupPlayer(gv_team1, RandomInt(1, PlayerGroupCount(gv_team1))), true);
     }
     else {
         if (((UnitGetOwner(EventUnitProgressUnit()) == 10) || ((PlayerGroupHasPlayer(gv_team22, EventPlayer()) == true) && (PlayerStatus(EventPlayer()) == c_playerStatusLeft)))) {
-            UnitSetOwner(EventUnitProgressUnit(), EventPlayer(), true);
+            UnitSetOwner(EventUnitProgressUnit(), PlayerGroupPlayer(gv_team2, RandomInt(1, PlayerGroupCount(gv_team2))), true);
         }
         else {
         }
@@ -4003,6 +3999,7 @@ bool gt_SCVcreate2_Func (bool testConds, bool runActions) {
     if ((gv_smiley1 == 3)) {
         libNtve_gf_UnitCreateFacingPoint(1, "SCV", 0, 9, RegionGetCenter(RegionFromId(3)), RegionGetCenter(RegionFromId(18)));
         libNtve_gf_MakeUnitUncommandable(UnitLastCreated(), true);
+        UnitSetOwner(UnitLastCreated(), PlayerGroupPlayer(gv_team1, 1), true);
         PlayerModifyPropertyInt(PlayerGroupPlayer(gv_team1, 1), c_playerPropMinerals, c_playerPropOperAdd, 25);
         PlayerModifyPropertyInt(PlayerGroupPlayer(gv_team1, 2), c_playerPropMinerals, c_playerPropOperAdd, 25);
         PlayerModifyPropertyInt(PlayerGroupPlayer(gv_team1, 3), c_playerPropMinerals, c_playerPropOperAdd, 25);
@@ -4038,6 +4035,7 @@ bool gt_SCVcreate2_Func (bool testConds, bool runActions) {
     if ((gv_smiley2 == 3)) {
         libNtve_gf_UnitCreateFacingPoint(1, "SCV", 0, 10, RegionGetCenter(RegionFromId(4)), RegionGetCenter(RegionFromId(18)));
         libNtve_gf_MakeUnitUncommandable(UnitLastCreated(), true);
+        UnitSetOwner(UnitLastCreated(), PlayerGroupPlayer(gv_team2, 1), true);
         PlayerModifyPropertyInt(PlayerGroupPlayer(gv_team2, 1), c_playerPropMinerals, c_playerPropOperAdd, 25);
         PlayerModifyPropertyInt(PlayerGroupPlayer(gv_team2, 2), c_playerPropMinerals, c_playerPropOperAdd, 25);
         PlayerModifyPropertyInt(PlayerGroupPlayer(gv_team2, 3), c_playerPropMinerals, c_playerPropOperAdd, 25);
@@ -6951,14 +6949,14 @@ bool gt_GameCommand_Func(bool testConds, bool runActions) {
                     UIDisplayMessage(PlayerGroupSingle(EventPlayer()), c_messageAreaSubtitle, StringToText("Team 1"));
                     PlayerGroupLoopBegin(gv_team12);
                     while(!PlayerGroupLoopDone()) {
-                        UIDisplayMessage(PlayerGroupSingle(EventPlayer()), c_messageAreaSubtitle, PlayerName(PlayerGroupLoopCurrent()) + StringToText(": ") + IntToText(gv_wins[PlayerGroupLoopCurrent() - 1]) + StringToText(" Wins | ") + IntToText(gv_loss[PlayerGroupLoopCurrent() - 1]) + StringToText(" Loss"));
+                        UIDisplayMessage(PlayerGroupSingle(EventPlayer()), c_messageAreaSubtitle, PlayerName(PlayerGroupLoopCurrent()) + StringToText(": ") + IntToText(gv_wins[PlayerGroupLoopCurrent()]) + StringToText(" Wins | ") + IntToText(gv_loss[PlayerGroupLoopCurrent()]) + StringToText(" Loss"));
                         PlayerGroupLoopStep();
                     }
                     PlayerGroupLoopEnd();
                     UIDisplayMessage(PlayerGroupSingle(EventPlayer()), c_messageAreaSubtitle, StringToText("Team 2"));
                     PlayerGroupLoopBegin(gv_team22);
                     while(!PlayerGroupLoopDone()) {
-                        UIDisplayMessage(PlayerGroupSingle(EventPlayer()), c_messageAreaSubtitle, PlayerName(PlayerGroupLoopCurrent()) + StringToText(" ") + IntToText(gv_wins[PlayerGroupLoopCurrent() - 1]) + StringToText(" Wins | ") + IntToText(gv_loss[PlayerGroupLoopCurrent() - 1]) + StringToText(" Loss"));
+                        UIDisplayMessage(PlayerGroupSingle(EventPlayer()), c_messageAreaSubtitle, PlayerName(PlayerGroupLoopCurrent()) + StringToText(" ") + IntToText(gv_wins[PlayerGroupLoopCurrent()]) + StringToText(" Wins | ") + IntToText(gv_loss[PlayerGroupLoopCurrent()]) + StringToText(" Loss"));
                         PlayerGroupLoopStep();
                     }
                     PlayerGroupLoopEnd();
@@ -6973,6 +6971,54 @@ bool gt_GameCommand_Func(bool testConds, bool runActions) {
 void gt_GameCommand_Init() {
     gt_GameCommand = TriggerCreate("gt_GameCommand_Func");
     TriggerAddEventChatMessage(gt_GameCommand, c_playerAny, "-", false);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Bank Load
+//--------------------------------------------------------------------------------------------------
+bool gt_BankLoad_Func(bool testConds, bool runActions) {
+    int init_i = 0;
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+    PlayerGroupLoopBegin(PlayerGroupAll());
+    while(!PlayerGroupLoopDone()) {
+        gv_banks[PlayerGroupLoopCurrent()] = BankLoad("nexuswarredux", PlayerGroupLoopCurrent());
+        gv_wins[PlayerGroupLoopCurrent()] = BankValueGetAsInt(gv_banks[PlayerGroupLoopCurrent()], "record", "wins");
+        gv_loss[PlayerGroupLoopCurrent()] = BankValueGetAsInt(gv_banks[PlayerGroupLoopCurrent()], "record", "loss");
+        
+        PlayerGroupLoopStep();
+    }
+    PlayerGroupLoopEnd();
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void gt_BankLoad_Init() {
+    gt_BankLoad = TriggerCreate("gt_BankLoad_Func");
+    TriggerAddEventTimeElapsed(gt_BankLoad, 1, c_timeGame);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Player Leave Punish
+//--------------------------------------------------------------------------------------------------
+bool gt_PlayerLeavePunish_Func(bool testConds, bool runActions) {
+    int init_i = 0;
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+    
+    BankValueSetFromInt(gv_banks[EventPlayer()], "record", "loss", gv_loss[EventPlayer()] + 1);
+    BankSave(gv_banks[EventPlayer()]);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void gt_PlayerLeavePunish_Init() {
+    gt_PlayerLeavePunish = TriggerCreate("gt_PlayerLeavePunish_Func");
+    TriggerAddEventPlayerLeft(gt_PlayerLeavePunish, c_playerAny, c_gameResultUndecided);
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -7072,6 +7118,8 @@ void InitTriggers () {
     gt_Team1Kills_Init();
     gt_Team2Kills_Init();
     gt_GameCommand_Init();
+    gt_BankLoad_Init();
+    gt_PlayerLeavePunish_Init();
 }
 
 //--------------------------------------------------------------------------------------------------
