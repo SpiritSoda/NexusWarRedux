@@ -379,6 +379,9 @@ int[11] gv_drawVote;
 int gv_drawRequire;
 int gv_drawTimer;
 int gv_acceptPlayer;
+bank[11] gv_banks;
+int[11] gv_wins;
+int[11] gv_loss;
 
 void InitGlobals () {
     int init_i;
@@ -914,6 +917,34 @@ void InitGlobals () {
     gv_team2kills = 0;
     gv_gameover = false;
     gv_stat = c_invalidDialogId;
+
+    init_i = 0;
+    while(init_i <= 10) {
+        if(PlayerStatus(init_i + 1) != c_playerStatusActive) {
+            continue;
+        }
+        gv_banks[init_i] = BankLoad("nexus-war-redux", init_i + 1);
+        gv_wins[init_i] = BankValueGetAsInt(gv_banks[init_i], "record", "wins");
+        gv_loss[init_i] = BankValueGetAsInt(gv_banks[init_i], "record", "loss");
+        init_i = init_i + 1;
+    }
+}
+
+void GameVictory(int player) {
+    BankValueSetFromInt(gv_banks[player - 1], "record", "wins", gv_wins[player - 1] + 1);
+    BankSave(gv_banks[player - 1]);
+    GameOver(player, c_gameOverVictory, true, true);
+}
+
+void GameDefeat(int player) {
+    BankValueSetFromInt(gv_banks[player - 1], "record", "loss", gv_loss[player - 1] + 1);
+    BankSave(gv_banks[player - 1]);
+    GameOver(player, c_gameOverDefeat, true, true);
+}
+
+void GameTie(int player) {
+    BankSave(gv_banks[player - 1]);
+    GameOver(player, c_gameOverTie, true, true);
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -1013,6 +1044,54 @@ trigger gt_Team1Kills;
 trigger gt_Team2Kills;
 trigger gt_Level;
 trigger gt_GameCommand;
+
+void gt_DrawSuccess() {
+    UIDisplayMessage(PlayerGroupAll(), c_messageAreaSubtitle, StringExternal("Param/Value/D070E181"));
+    Wait(2.0, c_timeGame);
+    PlayerGroupLoopBegin(gv_team1);
+    while (!PlayerGroupLoopDone()) {
+        if ((PlayerStatus(PlayerGroupLoopCurrent()) == c_playerStatusActive)) {
+            if(gv_seconds < 3600) {
+                GameTie(PlayerGroupLoopCurrent());
+            }
+            else {
+                GameVictory(PlayerGroupLoopCurrent());
+            }
+        }
+        else {
+        }
+        PlayerGroupLoopStep();
+    }
+    PlayerGroupLoopEnd();
+    PlayerGroupLoopBegin(gv_team2);
+    while (!PlayerGroupLoopDone()) {
+        if ((PlayerStatus(PlayerGroupLoopCurrent()) == c_playerStatusActive)) {
+            if(gv_seconds < 3600) {
+                GameTie(PlayerGroupLoopCurrent());
+            }
+            else {
+                GameVictory(PlayerGroupLoopCurrent());
+            }
+        }
+        else {
+        }
+        PlayerGroupLoopStep();
+    }
+    PlayerGroupLoopEnd();
+}
+
+void gt_DrawFail() {
+    UIDisplayMessage(PlayerGroupAll(), c_messageAreaSubtitle, StringExternal("Param/Value/D070E178") + "(" + IntToString(gv_acceptPlayer) + "/" + IntToString(gv_drawRequire) + ")");
+}
+
+void gt_DrawResult() {
+    if(gv_acceptPlayer >= gv_drawRequire) {
+        gt_DrawSuccess();
+    }
+    else {
+        gt_DrawFail();
+    }
+}
 
 //--------------------------------------------------------------------------------------------------
 // Trigger: Maraudor
@@ -4210,7 +4289,7 @@ bool gt_Team1Win_Func (bool testConds, bool runActions) {
     PlayerGroupLoopBegin(gv_team1);
     while (!PlayerGroupLoopDone()) {
         if ((PlayerStatus(PlayerGroupLoopCurrent()) == c_playerStatusActive)) {
-            GameOver(PlayerGroupLoopCurrent(), c_gameOverVictory, true, true);
+            GameVictory(PlayerGroupLoopCurrent());
         }
         else {
         }
@@ -4220,7 +4299,7 @@ bool gt_Team1Win_Func (bool testConds, bool runActions) {
     PlayerGroupLoopBegin(gv_team2);
     while (!PlayerGroupLoopDone()) {
         if ((PlayerStatus(PlayerGroupLoopCurrent()) == c_playerStatusActive)) {
-            GameOver(PlayerGroupLoopCurrent(), c_gameOverDefeat, true, true);
+            GameDefeat(PlayerGroupLoopCurrent());
         }
         else {
         }
@@ -4284,7 +4363,7 @@ bool gt_Team2Win_Func (bool testConds, bool runActions) {
     PlayerGroupLoopBegin(gv_team1);
     while (!PlayerGroupLoopDone()) {
         if ((PlayerStatus(PlayerGroupLoopCurrent()) == c_playerStatusActive)) {
-            GameOver(PlayerGroupLoopCurrent(), c_gameOverDefeat, true, true);
+            GameDefeat(PlayerGroupLoopCurrent());
         }
         else {
         }
@@ -4294,7 +4373,7 @@ bool gt_Team2Win_Func (bool testConds, bool runActions) {
     PlayerGroupLoopBegin(gv_team2);
     while (!PlayerGroupLoopDone()) {
         if ((PlayerStatus(PlayerGroupLoopCurrent()) == c_playerStatusActive)) {
-            GameOver(PlayerGroupLoopCurrent(), c_gameOverVictory, true, true);
+            GameVictory(PlayerGroupLoopCurrent());
         }
         else {
         }
@@ -6855,6 +6934,23 @@ bool gt_GameCommand_Func(bool testConds, bool runActions) {
                     UIDisplayMessage(PlayerGroupAll(), c_messageAreaSubtitle, StringExternal("Param/Value/D070E175") + " " + PlayerName(EventPlayer()) + " " + StringExternal("Param/Value/D070E177"));
                 }
             }
+            else {
+                if(StringEqual(EventChatMessage(false), "/record", false)) {
+                    // Display record
+                    UIDisplayMessage(PlayerGroupSingle(EventPlayer()), c_messageAreaSubtitle, "Team 1");
+                    PlayerGroupLoopBegin(gv_team12);
+                    while(!PlayerGroupLoopDone()) {
+                        UIDisplayMessage(PlayerGroupSingle(EventPlayer()), c_messageAreaSubtitle, PlayerName(PlayerGroupLoopCurrent()) + ": " + IntToString(gv_wins[PlayerGroupLoopCurrent() - 1]) + " Wins | " + IntToString(gv_loss[PlayerGroupLoopCurrent() - 1]) + " Loss");
+                    }
+                    PlayerGroupLoopEnd();
+                    UIDisplayMessage(PlayerGroupSingle(EventPlayer()), c_messageAreaSubtitle, "Team 2");
+                    PlayerGroupLoopBegin(gv_team22);
+                    while(!PlayerGroupLoopDone()) {
+                        UIDisplayMessage(PlayerGroupSingle(EventPlayer()), c_messageAreaSubtitle, PlayerName(PlayerGroupLoopCurrent()) + " " + IntToString(gv_wins[PlayerGroupLoopCurrent() - 1]) + " Wins | " + IntToString(gv_loss[PlayerGroupLoopCurrent() - 1]) + " Loss");
+                    }
+                    PlayerGroupLoopEnd();
+                }
+            }
         }
     }
 }
@@ -6863,54 +6959,6 @@ bool gt_GameCommand_Func(bool testConds, bool runActions) {
 void gt_GameCommand_Init() {
     gt_GameCommand = TriggerCreate("gt_GameCommand_Func");
     TriggerAddEventChatMessage(gt_GameCommand, c_playerAny, "/", false);
-}
-
-void gt_DrawResult() {
-    if(gv_acceptPlayer >= gv_drawRequire) {
-        gt_DrawSuccess();
-    }
-    else {
-        gt_DrawFail();
-    }
-}
-
-void gt_DrawSuccess() {
-    UIDisplayMessage(PlayerGroupAll(), c_messageAreaSubtitle, StringExternal("Param/Value/D070E181"));
-    Wait(2.0, c_timeGame);
-    PlayerGroupLoopBegin(gv_team1);
-    while (!PlayerGroupLoopDone()) {
-        if ((PlayerStatus(PlayerGroupLoopCurrent()) == c_playerStatusActive)) {
-            if(gv_seconds < 3600) {
-                GameOver(PlayerGroupLoopCurrent(), c_gameOverTie, true, true);
-            }
-            else {
-                GameOver(PlayerGroupLoopCurrent(), c_gameOverVictory, true, true);
-            }
-        }
-        else {
-        }
-        PlayerGroupLoopStep();
-    }
-    PlayerGroupLoopEnd();
-    PlayerGroupLoopBegin(gv_team2);
-    while (!PlayerGroupLoopDone()) {
-        if ((PlayerStatus(PlayerGroupLoopCurrent()) == c_playerStatusActive)) {
-            if(gv_seconds < 3600) {
-                GameOver(PlayerGroupLoopCurrent(), c_gameOverTie, true, true);
-            }
-            else {
-                GameOver(PlayerGroupLoopCurrent(), c_gameOverVictory, true, true);
-            }
-        }
-        else {
-        }
-        PlayerGroupLoopStep();
-    }
-    PlayerGroupLoopEnd();
-}
-
-void gt_DrawFail() {
-    UIDisplayMessage(PlayerGroupAll(), c_messageAreaSubtitle, StringExternal("Param/Value/D070E178") + "(" + IntToString(gv_acceptPlayer) + "/" + IntToString(gv_drawRequire) + ")");
 }
 
 //--------------------------------------------------------------------------------------------------
