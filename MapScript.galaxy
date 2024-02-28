@@ -6877,14 +6877,14 @@ bool gt_GameCommand_Func(bool testConds, bool runActions) {
         // Draw Proposal
         if(gv_drawTimer > 0) {
             if(gv_drawTimer > 300) {
-                UIDisplayMessage(PlayerGroupAll(), c_messageAreaSubtitle, StringExternal("Param/Value/D070E179"));
+                UIDisplayMessage(PlayerGroupAll(), c_messageAreaChat, StringExternal("Param/Value/D070E179"));
             }
             else {
-                UIDisplayMessage(PlayerGroupAll(), c_messageAreaSubtitle, StringExternal("Param/Value/D070E180") + FormatDuration(gv_drawTimer));
+                UIDisplayMessage(PlayerGroupAll(), c_messageAreaChat, StringExternal("Param/Value/D070E180") + FormatDuration(gv_drawTimer));
             }
             return true;
         }
-        UIDisplayMessage(PlayerGroupAll(), c_messageAreaSubtitle, StringExternal("Param/Value/D070E174"));
+        UIDisplayMessage(PlayerGroupAll(), c_messageAreaChat, StringExternal("Param/Value/D070E174"));
         while (init_i <= 10) {
             gv_drawVote[init_i] = 0;
             init_i = init_i + 1;
@@ -6912,7 +6912,7 @@ bool gt_GameCommand_Func(bool testConds, bool runActions) {
                 }
             }
         }
-        UIDisplayMessage(PlayerGroupAll(), c_messageAreaSubtitle, StringExternal("Param/Value/D070E175") + " " + PlayerName(EventPlayer()) + " " + StringExternal("Param/Value/D070E176") + ": (" + IntToString(gv_acceptPlayer) + "/" + IntToString(gv_drawRequire) + ")");
+        UIDisplayMessage(PlayerGroupAll(), c_messageAreaChat, StringExternal("Param/Value/D070E175") + " " + PlayerName(EventPlayer()) + " " + StringExternal("Param/Value/D070E176") + ": (" + IntToString(gv_acceptPlayer) + "/" + IntToString(gv_drawRequire) + ")");
         gv_drawVote[EventPlayer()] = 1;
         gv_acceptPlayer = 1;
         gv_drawTimer = 316;
@@ -6923,7 +6923,7 @@ bool gt_GameCommand_Func(bool testConds, bool runActions) {
             if(gv_drawVote[EventPlayer()] == 0) {
                 gv_drawVote[EventPlayer()] = 1;
                 gv_acceptPlayer = gv_acceptPlayer + 1;
-                UIDisplayMessage(PlayerGroupAll(), c_messageAreaSubtitle, StringExternal("Param/Value/D070E175") + " " + PlayerName(EventPlayer()) + " " + StringExternal("Param/Value/D070E176") + ": (" + IntToString(gv_acceptPlayer) + "/" + IntToString(gv_drawRequire) + ")");
+                UIDisplayMessage(PlayerGroupAll(), c_messageAreaChat, StringExternal("Param/Value/D070E175") + " " + PlayerName(EventPlayer()) + " " + StringExternal("Param/Value/D070E176") + ": (" + IntToString(gv_acceptPlayer) + "/" + IntToString(gv_drawRequire) + ")");
             }
         }
         else {
@@ -6931,7 +6931,7 @@ bool gt_GameCommand_Func(bool testConds, bool runActions) {
                 // Draw Reject
                 if(gv_drawVote[EventPlayer()] == 0) {
                     gv_drawVote[EventPlayer()] = 2;
-                    UIDisplayMessage(PlayerGroupAll(), c_messageAreaSubtitle, StringExternal("Param/Value/D070E175") + " " + PlayerName(EventPlayer()) + " " + StringExternal("Param/Value/D070E177"));
+                    UIDisplayMessage(PlayerGroupAll(), c_messageAreaChat, StringExternal("Param/Value/D070E175") + " " + PlayerName(EventPlayer()) + " " + StringExternal("Param/Value/D070E177"));
                 }
             }
             else {
