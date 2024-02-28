@@ -6915,7 +6915,7 @@ bool gt_GameCommand_Func(bool testConds, bool runActions) {
         UIDisplayMessage(PlayerGroupAll(), c_messageAreaSubtitle, StringExternal("Param/Value/D070E175") + " " + PlayerName(EventPlayer()) + " " + StringExternal("Param/Value/D070E176") + ": (" + IntToString(gv_acceptPlayer) + "/" + IntToString(gv_drawRequire) + ")");
         gv_drawVote[EventPlayer()] = 1;
         gv_acceptPlayer = 1;
-        gv_drawTimer = 312;
+        gv_drawTimer = 316;
     }
     else {
         if(StringEqual(EventChatMessage(false), "/accept", false) && gv_drawTimer > 300) {
