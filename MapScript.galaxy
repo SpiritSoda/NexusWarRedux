@@ -383,6 +383,7 @@ bank[11] gv_banks;
 int[11] gv_wins;
 int[11] gv_loss;
 bool gv_validGame;
+int[11] gv_nukeIndicator;
 
 void InitGlobals () {
     int init_i;
@@ -923,6 +924,7 @@ void InitGlobals () {
     while(init_i <= 10) {
         gv_wins[init_i] = 0;
         gv_loss[init_i] = 0;
+        gv_nukeIndicator[init_i] = 0;
         init_i = init_i + 1;
     }
     gv_validGame = false;
@@ -1046,10 +1048,11 @@ trigger gt_Team1Kills;
 trigger gt_Team2Kills;
 trigger gt_Level;
 trigger gt_GameCommand;
-trigger gt_BankLoad;
 trigger gt_PlayerLeavePunish;
+trigger gt_Nuke;
 
 void gt_DrawSuccess() {
+    gv_gameover = true;
     UIDisplayMessage(PlayerGroupAll(), c_messageAreaSubtitle, StringExternal("Param/Value/D070E181"));
     Wait(2.0, c_timeGame);
     PlayerGroupLoopBegin(gv_team1);
@@ -3543,6 +3546,16 @@ bool gt_LeaderboardIntialization_Func (bool testConds, bool runActions) {
     }
 
     PlayerGroupLoopBegin(PlayerGroupActive());
+    while(!PlayerGroupLoopDone()) {
+        gv_banks[PlayerGroupLoopCurrent()] = BankLoad("nexuswarredux", PlayerGroupLoopCurrent());
+        gv_wins[PlayerGroupLoopCurrent()] = BankValueGetAsInt(gv_banks[PlayerGroupLoopCurrent()], "record", "wins");
+        gv_loss[PlayerGroupLoopCurrent()] = BankValueGetAsInt(gv_banks[PlayerGroupLoopCurrent()], "record", "loss");
+        
+        PlayerGroupLoopStep();
+    }
+    PlayerGroupLoopEnd();
+
+    PlayerGroupLoopBegin(PlayerGroupActive());
     while (!PlayerGroupLoopDone()) {
         if ((PlayerStatus(PlayerGroupLoopCurrent()) == c_playerStatusActive)) {
             gv_currentnoofplayers=gv_currentnoofplayers + 1;
@@ -3565,7 +3578,8 @@ bool gt_LeaderboardIntialization_Func (bool testConds, bool runActions) {
     PlayerGroupLoopBegin(gv_team1);
     while (!PlayerGroupLoopDone()) {
         if ((PlayerStatus(PlayerGroupLoopCurrent()) == c_playerStatusActive)) {
-            libNtve_gf_CreateDialogItemImage(gv_mainDialogwindow, 282, 37, c_anchorTopLeft, 35, (lv_rowoffset - 9), StringExternal("Param/Value/D14D2B16"), "Assets\\Textures\\ui_battlenet_loading_bar_player_frame_highlighted_mod.dds", c_triggerImageTypeNormal, false, libNtve_gf_ConvertPlayerColorToColor(PlayerGetColorIndex(PlayerGroupLoopCurrent(), false)), c_triggerBlendModeNormal);
+            libNtve_gf_CreateDialogItemImage(gv_mainDialogwindow, 282, 37, c_anchorTopLeft, 35, (lv_rowoffset - 9), IntToText(gv_wins[PlayerGroupLoopCurrent()]) + StringToText("/") + IntToText(gv_loss[PlayerGroupLoopCurrent()]), "Assets\\Textures\\ui_battlenet_loading_bar_player_frame_highlighted_mod.dds", c_triggerImageTypeNormal, false, libNtve_gf_ConvertPlayerColorToColor(PlayerGetColorIndex(PlayerGroupLoopCurrent(), false)), c_triggerBlendModeNormal);
+            gv_nukeIndicator[PlayerGroupLoopCurrent()] = libNtve_gf_CreateDialogItemLabel(gv_mainDialogwindow, 25, 25, c_anchorTopLeft, 35, lv_rowoffset + 3, StringToText("*"), Color(100,100,100), false, 2.0);
             libNtve_gf_CreateDialogItemLabel(gv_mainDialogwindow, 125, 25, c_anchorTopLeft, 50, lv_rowoffset, PlayerName(PlayerGroupLoopCurrent()), Color(100,100,100), false, 2.0);
             libNtve_gf_CreateDialogItemLabel(gv_mainDialogwindow, 80, 25, c_anchorTopRight, 85, lv_rowoffset, IntToText(gv_playerskills[PlayerGroupLoopCurrent()]), Color(100,100,100), false, 2.0);
             gv_labelkills[PlayerGroupLoopCurrent()] = DialogControlLastCreated();
@@ -3585,7 +3599,8 @@ bool gt_LeaderboardIntialization_Func (bool testConds, bool runActions) {
     PlayerGroupLoopBegin(gv_team2);
     while (!PlayerGroupLoopDone()) {
         if ((PlayerStatus(PlayerGroupLoopCurrent()) == c_playerStatusActive)) {
-            libNtve_gf_CreateDialogItemImage(gv_mainDialogwindow, 282, 37, c_anchorTopLeft, 35, (lv_rowoffset - 9), StringExternal("Param/Value/A2DC0231"), "Assets\\Textures\\ui_battlenet_loading_bar_player_frame_highlighted_mod.dds", c_triggerImageTypeNormal, false, libNtve_gf_ConvertPlayerColorToColor(PlayerGetColorIndex(PlayerGroupLoopCurrent(), false)), c_triggerBlendModeNormal);
+            libNtve_gf_CreateDialogItemImage(gv_mainDialogwindow, 282, 37, c_anchorTopLeft, 35, (lv_rowoffset - 9), IntToText(gv_wins[PlayerGroupLoopCurrent()]) + StringToText("/") + IntToText(gv_loss[PlayerGroupLoopCurrent()]), "Assets\\Textures\\ui_battlenet_loading_bar_player_frame_highlighted_mod.dds", c_triggerImageTypeNormal, false, libNtve_gf_ConvertPlayerColorToColor(PlayerGetColorIndex(PlayerGroupLoopCurrent(), false)), c_triggerBlendModeNormal);
+            gv_nukeIndicator[PlayerGroupLoopCurrent()] = libNtve_gf_CreateDialogItemLabel(gv_mainDialogwindow, 25, 25, c_anchorTopLeft, 35, lv_rowoffset + 3, StringToText("*"), Color(100,100,100), false, 2.0);
             libNtve_gf_CreateDialogItemLabel(gv_mainDialogwindow, 125, 25, c_anchorTopLeft, 50, lv_rowoffset, PlayerName(PlayerGroupLoopCurrent()), Color(100,100,100), false, 2.0);
             libNtve_gf_CreateDialogItemLabel(gv_mainDialogwindow, 80, 25, c_anchorTopRight, 85, lv_rowoffset, IntToText(gv_playerskills[PlayerGroupLoopCurrent()]), Color(100,100,100), false, 2.0);
             gv_labelkills[PlayerGroupLoopCurrent()] = DialogControlLastCreated();
@@ -6984,33 +6999,6 @@ void gt_GameCommand_Init() {
 }
 
 //--------------------------------------------------------------------------------------------------
-// Trigger: Bank Load
-//--------------------------------------------------------------------------------------------------
-bool gt_BankLoad_Func(bool testConds, bool runActions) {
-    int init_i = 0;
-    // Actions
-    if (!runActions) {
-        return true;
-    }
-    PlayerGroupLoopBegin(PlayerGroupAll());
-    while(!PlayerGroupLoopDone()) {
-        gv_banks[PlayerGroupLoopCurrent()] = BankLoad("nexuswarredux", PlayerGroupLoopCurrent());
-        gv_wins[PlayerGroupLoopCurrent()] = BankValueGetAsInt(gv_banks[PlayerGroupLoopCurrent()], "record", "wins");
-        gv_loss[PlayerGroupLoopCurrent()] = BankValueGetAsInt(gv_banks[PlayerGroupLoopCurrent()], "record", "loss");
-        
-        PlayerGroupLoopStep();
-    }
-    PlayerGroupLoopEnd();
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void gt_BankLoad_Init() {
-    gt_BankLoad = TriggerCreate("gt_BankLoad_Func");
-    TriggerAddEventTimeElapsed(gt_BankLoad, 1, c_timeGame);
-}
-
-//--------------------------------------------------------------------------------------------------
 // Trigger: Player Leave Punish
 //--------------------------------------------------------------------------------------------------
 bool gt_PlayerLeavePunish_Func(bool testConds, bool runActions) {
@@ -7032,6 +7020,26 @@ bool gt_PlayerLeavePunish_Func(bool testConds, bool runActions) {
 void gt_PlayerLeavePunish_Init() {
     gt_PlayerLeavePunish = TriggerCreate("gt_PlayerLeavePunish_Func");
     TriggerAddEventPlayerLeft(gt_PlayerLeavePunish, c_playerAny, c_gameResultUndecided);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Player Leave Punish
+//--------------------------------------------------------------------------------------------------
+bool gt_Nuke_Func(bool testConds, bool runActions) {
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+    
+    UIDisplayMessage(PlayerGroupAll(), c_messageAreaSubtitle, PlayerName(UnitGetOwner(EventUnit())) + StringToText(" ") + StringExternal("Param/Value/D070E182"));
+    libNtve_gf_SetDialogItemText(gv_nukeIndicator[UnitGetOwner(EventUnit())], StringToText(""), PlayerGroupAll());
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void gt_Nuke_Init() {
+    gt_Nuke = TriggerCreate("gt_Nuke_Func");
+    TriggerAddEventUnitAbility(gt_Nuke, null, AbilityCommand("Nuke", 0), c_unitAbilStageComplete, false);
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -7131,8 +7139,8 @@ void InitTriggers () {
     gt_Team1Kills_Init();
     gt_Team2Kills_Init();
     gt_GameCommand_Init();
-    gt_BankLoad_Init();
     gt_PlayerLeavePunish_Init();
+    gt_Nuke_Init();
 }
 
 //--------------------------------------------------------------------------------------------------

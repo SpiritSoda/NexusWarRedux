@@ -29,7 +29,6 @@
         <ShieldsMax value="500"/>
         <ShieldRegenDelay value="1"/>
         <BehaviorArray Link="Immolation"/>
-        <ShieldArmor value="1"/>
     </CUnit>
     <CUnit id="Armory">
         <Collide index="Burrow" value="0"/>
@@ -2279,8 +2278,6 @@
         <CostResource index="Minerals" value="0"/>
         <CostResource index="Vespene" value="0"/>
         <KillResource index="Minerals" value="3"/>
-        <Attributes index="Light" value="1"/>
-        <Attributes index="Armored" value="0"/>
     </CUnit>
     <CUnit id="SelendisInterceptor">
         <FlagArray index="Invulnerable" value="1"/>
