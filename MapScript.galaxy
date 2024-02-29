@@ -7039,7 +7039,7 @@ bool gt_Nuke_Func(bool testConds, bool runActions) {
 //--------------------------------------------------------------------------------------------------
 void gt_Nuke_Init() {
     gt_Nuke = TriggerCreate("gt_Nuke_Func");
-    TriggerAddEventUnitAbility(gt_Nuke, null, AbilityCommand("Nuke", 0), c_unitAbilStageComplete, false);
+    TriggerAddEventUnitAbility(gt_Nuke, null, AbilityCommand("Blast", 0), c_unitAbilStageComplete, false);
 }
 
 //--------------------------------------------------------------------------------------------------
