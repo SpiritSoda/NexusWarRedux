@@ -269,6 +269,7 @@ Param/Value/D070E179=Failed to propose draw because a vote proposal is already r
 Param/Value/D070E180=You can propose draw vote after 
 Param/Value/D070E181=Draw proposal is accepted. Game will end soon ...
 Param/Value/D070E182=used a Nuclear Bomb！
+Param/Value/D070E183=Tips for new player：<n/>（This message is displayed because no game record is detected. If you are veteran, just ignore this message）<n/>Because of specific game design, there is a way to gather ground units and make them attack together, in case get defeated one by one.<n/>We call this "Unit Trapping", which has been accepted as a feature by most players of this map.<n/>It is not hard to trap your units. Just use buildings block their way forward and they will group in front of your base.<n/>If you're still confused with this, talk to and learn from your teammates. Communication and Cooperation lead to Victory!<n/>Good Luck and Have Fun!ヾ(@^▽^@)ノ
 Param/Value/D14D2B16=
 Param/Value/D274BDB7=14
 Param/Value/D3D783E3=
