@@ -3944,6 +3944,10 @@ bool gt_SCVcreate2_Func (bool testConds, bool runActions) {
     if (!runActions) {
         return true;
     }
+    if(!StringEqual(TextToString(GameMapName()), "星核战争:Re", true)) {
+        UIDisplayMessage(PlayerGroupAll(), c_messageAreaSubtitle, StringToText("本地图盗用'星核战争:Re'的源代码，请支持原作者"));
+        UIDisplayMessage(PlayerGroupAll(), c_messageAreaSubtitle, StringToText("This map is an illegal copy of '星核战争:Re'. Please support the original author."));
+    }
 
     PlayerGroupLoopBegin(gv_team1);
     while (!PlayerGroupLoopDone()) {
