@@ -3550,7 +3550,9 @@ bool gt_LeaderboardIntialization_Func (bool testConds, bool runActions) {
         gv_banks[PlayerGroupLoopCurrent()] = BankLoad("nexuswarredux", PlayerGroupLoopCurrent());
         gv_wins[PlayerGroupLoopCurrent()] = BankValueGetAsInt(gv_banks[PlayerGroupLoopCurrent()], "record", "wins");
         gv_loss[PlayerGroupLoopCurrent()] = BankValueGetAsInt(gv_banks[PlayerGroupLoopCurrent()], "record", "loss");
-        
+        if(gv_wins[PlayerGroupLoopCurrent()] == 0 && gv_loss[PlayerGroupLoopCurrent()] == 0) {
+            UIDisplayMessage(PlayerGroupSingle(PlayerGroupLoopCurrent()), c_messageAreaSubtitle, StringExternal("Param/Value/D070E183"));
+        }
         PlayerGroupLoopStep();
     }
     PlayerGroupLoopEnd();
