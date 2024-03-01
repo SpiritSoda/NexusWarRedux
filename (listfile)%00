@@ -24,6 +24,8 @@ Base.SC2Data\GameData\UpgradeData.xml
 Base.SC2Data\GameData\ValidatorData.xml
 Base.SC2Data\GameData\WaterData.xml
 Base.SC2Data\GameData\WeaponData.xml
+battle1.png
+battle3.png
 ComponentList.SC2Components
 deDE.SC2Data\LocalizedData\GameHotkeys.txt
 deDE.SC2Data\LocalizedData\GameStrings.txt

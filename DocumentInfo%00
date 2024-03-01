@@ -11,6 +11,23 @@
         <Value>bnet:Liberty (Campaign)/0.0/999,file:Campaigns/Liberty.SC2Campaign</Value>
         <Value>bnet:虚空之遗多人 (Mod)/0.0/999,file:Mods/VoidMulti.SC2Mod</Value>
     </Dependencies>
+    <Screenshot>
+        <File>
+            <Value>battle1.png</Value>
+            <Value>battle3.png</Value>
+            <Value>2.png</Value>
+        </File>
+        <CaptionId>
+            <Value>2</Value>
+            <Value>3</Value>
+            <Value>1</Value>
+        </CaptionId>
+        <Flags>
+            <Value> </Value>
+            <Value> </Value>
+            <Value> </Value>
+        </Flags>
+    </Screenshot>
     <ScreenshotHowToPlay>
         <File>
             <Value>1.png</Value>
@@ -50,6 +67,8 @@
             <Value>1.5</Value>
             <Value>1.6</Value>
             <Value>1.7</Value>
+            <Value>1.8</Value>
+            <Value>1.9</Value>
         </Version>
         <Date>
             <Value>2/26/2024</Value>
@@ -58,6 +77,8 @@
             <Value>2/28/2024</Value>
             <Value>2/28/2024</Value>
             <Value>2/29/2024</Value>
+            <Value>3/1/2024</Value>
+            <Value>3/1/2024</Value>
             <Value>3/1/2024</Value>
         </Date>
         <Notes>
@@ -68,6 +89,8 @@
             <Value>44,45,46,47,48,49,50,51,52,53,54</Value>
             <Value>55,56,57,58,59,60,61,62</Value>
             <Value>63,64,65,66,67</Value>
+            <Value>68,69,70,71,72,73</Value>
+            <Value>74,75</Value>
         </Notes>
     </PatchNote>
     <Preload>
