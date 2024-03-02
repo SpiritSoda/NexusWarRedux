@@ -7147,6 +7147,7 @@ void InitTriggers () {
     gt_GameCommand_Init();
     gt_PlayerLeavePunish_Init();
     gt_Nuke_Init();
+    gt_Level_Init();
 }
 
 //--------------------------------------------------------------------------------------------------
