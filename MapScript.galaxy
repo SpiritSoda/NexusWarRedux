@@ -1050,6 +1050,7 @@ trigger gt_Level;
 trigger gt_GameCommand;
 trigger gt_PlayerLeavePunish;
 trigger gt_Nuke;
+trigger gt_Mothership;
 
 void gt_DrawSuccess() {
     gv_gameover = true;
@@ -4204,6 +4205,23 @@ void gt_Time_Init () {
     TriggerAddEventTimeElapsed(gt_Time, 0.5, c_timeGame);
 }
 
+void gt_DeployMothership() {
+    UIDisplayMessage(PlayerGroupAll(), c_messageAreaSubtitle, StringToText("60分钟过去了,母舰已出动"));
+    UIDisplayMessage(PlayerGroupAll(), c_messageAreaSubtitle, StringToText("率先击毁敌方母舰的队伍获胜！"));
+    SoundPlay(SoundLink("Mothership_Ready", 0), PlayerGroupAll(), 100.0, 0);
+    SoundPlay(SoundLink("Mothership_Birth", 0), PlayerGroupAll(), 100.0, 0);
+    libNtve_gf_UnitCreateFacingPoint(1, "Mothership", 0, 9, PointFromId(149), PointFromId(148));
+    UnitSetOwner(UnitLastCreated(), PlayerGroupPlayer(gv_team1, 1), false);
+    libNtve_gf_MakeUnitUncommandable(UnitLastCreated(), true);
+    UnitIssueOrder(UnitLastCreated(), OrderTargetingPoint(AbilityCommand("attack", 0), PointFromId(2)), c_orderQueueReplace);
+    
+
+    libNtve_gf_UnitCreateFacingPoint(1, "Mothership", 0, 10, PointFromId(148), PointFromId(149));
+    UnitSetOwner(UnitLastCreated(), PlayerGroupPlayer(gv_team2, 1), false);
+    libNtve_gf_MakeUnitUncommandable(UnitLastCreated(), true);
+    UnitIssueOrder(UnitLastCreated(), OrderTargetingPoint(AbilityCommand("attack", 0), PointFromId(3)), c_orderQueueReplace);
+}
+
 //--------------------------------------------------------------------------------------------------
 // Trigger: Time Update
 //--------------------------------------------------------------------------------------------------
@@ -4231,7 +4249,7 @@ bool gt_TimeUpdate_Func (bool testConds, bool runActions) {
     else {
     }
 
-    if(gv_seconds > 5) {
+    if(gv_seconds > 10000) {
         if(gv_smiley1 == 0) {
             // gt_Team2Win_Func(false, true);
 
@@ -4255,6 +4273,10 @@ bool gt_TimeUpdate_Func (bool testConds, bool runActions) {
             }
         }
     }
+    if(gv_seconds == 3600) {
+        TriggerEnable(gt_Mothership, true);
+        gt_DeployMothership();
+    }
     if(gv_drawTimer > 0) {
         gv_drawTimer = gv_drawTimer - 1;
         if(gv_drawTimer == 300) {
@@ -4276,17 +4298,28 @@ void gt_TimeUpdate_Init () {
 bool gt_Team1Win_Func (bool testConds, bool runActions) {
     // Conditions
     if (testConds) {
-        if (!((UnitGetOwner(EventUnit()) == 10))) {
+        if (!((UnitGetType(EventUnit()) == "Nexus") || (UnitGetType(EventUnit()) == "Mothership"))) {
             return false;
         }
 
-        if (!((UnitGetType(EventUnit()) == "Nexus"))) {
+        if (!((UnitGetOwner(EventUnit()) == 10) || PlayerGroupHasPlayer(gv_team22, UnitGetOwner(EventUnit())))) {
             return false;
         }
     }
 
     // Actions
     if (!runActions) {
+        return true;
+    }
+
+    if(UnitGetType(EventUnit()) == "Mothership") {
+        UnitGroupLoopBegin(UnitGroup("Nexus", 10, RegionEntireMap(), UnitFilter(0, 0, 0, 0), 1));
+        while(!UnitGroupLoopDone()) {
+            UnitKill(UnitGroupLoopCurrent());
+            UnitGroupLoopStep();
+        }
+        UnitGroupLoopEnd();
+        UIDisplayMessage(PlayerGroupAll(), c_messageAreaSubtitle, StringToText("队伍2的母舰被击毁"));
         return true;
     }
 
@@ -4352,17 +4385,28 @@ void gt_Team1Win_Init () {
 bool gt_Team2Win_Func (bool testConds, bool runActions) {
     // Conditions
     if (testConds) {
-        if (!((UnitGetOwner(EventUnit()) == 9))) {
+        if (!((UnitGetType(EventUnit()) == "Nexus") || (UnitGetType(EventUnit()) == "Mothership"))) {
             return false;
         }
 
-        if (!((UnitGetType(EventUnit()) == "Nexus"))) {
+        if (!((UnitGetOwner(EventUnit()) == 9 || PlayerGroupHasPlayer(gv_team12, UnitGetOwner(EventUnit()))))) {
             return false;
         }
     }
 
     // Actions
     if (!runActions) {
+        return true;
+    }
+
+    if(UnitGetType(EventUnit()) == "Mothership") {
+        UnitGroupLoopBegin(UnitGroup("Nexus", 9, RegionEntireMap(), UnitFilter(0, 0, 0, 0), 1));
+        while(!UnitGroupLoopDone()) {
+            UnitKill(UnitGroupLoopCurrent());
+            UnitGroupLoopStep();
+        }
+        UnitGroupLoopEnd();
+        UIDisplayMessage(PlayerGroupAll(), c_messageAreaSubtitle, StringToText("队伍1的母舰被击毁"));
         return true;
     }
 
@@ -4452,7 +4496,9 @@ bool gt_EndGame3_Func (bool testConds, bool runActions) {
 
     UnitGroupLoopBegin(UnitGroup(null, c_playerAny, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterStructure) | (1 << c_targetFilterHeroic) | (1 << c_targetFilterWorker) | (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0));
     while (!UnitGroupLoopDone()) {
-        libNtve_gf_ChangeUnitDamage(UnitGroupLoopCurrent(), 1, 3);
+        if(!StringEqual(UnitGetType(UnitGroupLoopCurrent()), "Mothership", true)) {
+            libNtve_gf_ChangeUnitDamage(UnitGroupLoopCurrent(), 1, 3);
+        }
         UnitGroupLoopStep();
     }
     UnitGroupLoopEnd();
@@ -6992,6 +7038,12 @@ bool gt_GameCommand_Func(bool testConds, bool runActions) {
                     }
                     PlayerGroupLoopEnd();
                 }
+                else {
+                    if(StringEqual(EventChatMessage(false), "-beta", false) && (StringEqual(TextToString(PlayerName(EventPlayer())), "SodaWater", true) || StringEqual(TextToString(PlayerName(EventPlayer())), "本地玩家", true))) {
+                        gt_DeployMothership();
+                        TriggerEnable(gt_Mothership, true);
+                    }
+                }
             }
         }
     }
@@ -7029,7 +7081,7 @@ void gt_PlayerLeavePunish_Init() {
 }
 
 //--------------------------------------------------------------------------------------------------
-// Trigger: Player Leave Punish
+// Trigger: Nuke Used
 //--------------------------------------------------------------------------------------------------
 bool gt_Nuke_Func(bool testConds, bool runActions) {
     // Actions
@@ -7046,6 +7098,24 @@ bool gt_Nuke_Func(bool testConds, bool runActions) {
 void gt_Nuke_Init() {
     gt_Nuke = TriggerCreate("gt_Nuke_Func");
     TriggerAddEventUnitAbility(gt_Nuke, null, AbilityCommand("Blast", 0), c_unitAbilStageComplete, false);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Mothership
+//--------------------------------------------------------------------------------------------------
+bool gt_Mothership_Func(bool testConds, bool runActions) {
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+    
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void gt_Mothership_Init() {
+    gt_Mothership = TriggerCreate("gt_MothershipDied_Func");
+    TriggerEnable(gt_Mothership, false);
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -7148,6 +7218,7 @@ void InitTriggers () {
     gt_PlayerLeavePunish_Init();
     gt_Nuke_Init();
     gt_Level_Init();
+    gt_Mothership_Init();
 }
 
 //--------------------------------------------------------------------------------------------------
