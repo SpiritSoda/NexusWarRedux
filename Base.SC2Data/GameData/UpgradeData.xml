@@ -1,5 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Catalog>
+    <CUpgrade default="1" id="ProtossAirArmors">
+        <!--  Mothership -->
+        <EffectArray index="14" Value="0"/>
+        <EffectArray index="15" Value="0"/>
+    </CUpgrade>
+    <CUpgrade default="1" id="ProtossAirWeapons">
+        <!--  Mothership -->
+        <EffectArray index="12" Value="0"/>
+        <EffectArray index="13" Value="0"/>
+    </CUpgrade>
+    <CUpgrade default="1" id="ProtossShields">
+        <!--  Strike Fighter -->
+        <EffectArray index="32" Value="0"/>
+        <EffectArray index="33" Value="0"/>
+    </CUpgrade>
     <CUpgrade default="1" id="TerranInfantryArmors">
         <AffectedUnitArray index="1" value="TaurenSpaceMarine"/>
         <AffectedUnitArray index="2" value="Marauder"/>
@@ -84,6 +99,8 @@
         <AffectedUnitArray index="6" value="VoidRay"/>
         <AffectedUnitArray index="7" value="WarpPrismPhasing"/>
         <AffectedUnitArray value="WarpPrism"/>
+        <EffectArray index="14" Value="0"/>
+        <EffectArray index="15" Value="0"/>
         <EffectArray Reference="Unit,Scout,LifeArmorLevel" Value="1"/>
         <EffectArray Reference="Unit,Scout,LifeArmor" Value="1"/>
     </CUpgrade>
@@ -96,6 +113,8 @@
         <AffectedUnitArray index="6" value="VoidRay"/>
         <AffectedUnitArray index="7" value="WarpPrismPhasing"/>
         <AffectedUnitArray value="WarpPrism"/>
+        <EffectArray index="14" Value="0"/>
+        <EffectArray index="15" Value="0"/>
         <EffectArray Reference="Unit,Scout,LifeArmorLevel" Value="1"/>
         <EffectArray Reference="Unit,Scout,LifeArmor" Value="1"/>
     </CUpgrade>
@@ -108,6 +127,8 @@
         <AffectedUnitArray index="6" value="VoidRay"/>
         <AffectedUnitArray index="7" value="WarpPrismPhasing"/>
         <AffectedUnitArray value="WarpPrism"/>
+        <EffectArray index="14" Value="0"/>
+        <EffectArray index="15" Value="0"/>
         <EffectArray Reference="Unit,Scout,LifeArmorLevel" Value="1"/>
         <EffectArray Reference="Unit,Scout,LifeArmor" Value="1"/>
         <EffectArray Reference="Abil,CyberneticsCoreResearch,InfoArray[Research6].Charge.CountMax" Value="1"/>

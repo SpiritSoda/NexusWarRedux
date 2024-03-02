@@ -1,4 +1,5 @@
-﻿Button/Name/Archon=执政官（+8收入）
+﻿Abil/Name/MothershipPsiSupport=母舰灵能支援
+Button/Name/Archon=执政官（+8收入）
 Button/Name/Baneling=毒爆虫（+3收入）
 Button/Name/Banshee=女妖（+6收入）
 Button/Name/Battlecruiser=战巡舰（+14收入）
@@ -21,6 +22,7 @@ Button/Name/Marauder=劫掠者（+4收入）
 Button/Name/Marine=陆战队（+2收入）
 Button/Name/Medivac=医疗舰（+4收入）
 Button/Name/MercCompound=升级与英雄
+Button/Name/MothershipPsiSupport=母舰灵能支援
 Button/Name/Mutalisk=飞龙（+4收入）
 Button/Name/ObverseIncubation=沙拉.凯瑞甘
 Button/Name/Odin=奥丁
@@ -47,6 +49,7 @@ Button/Name/Zergling=小狗（+2收入）
 Button/Tooltip/Blink=使追猎者能够闪现到附近的目标位置.该技能<d ref="Abil,Blink,Cost[0].Cooldown.TimeUse"/>秒内只能使用1次.
 Button/Tooltip/EvolveInfestorEnergyUpgrade=进行异虫升级
 Button/Tooltip/MercCompound=在这里进行三族的升级和英雄的训练（虫族无法升级）.<n/>不会给予收入.
+Button/Tooltip/MothershipPsiSupport=母舰会根据周围的友方单位数量提升攻击力
 Button/Tooltip/NukeCalldown=核弹爆炸可以杀死附近的所有单位.<n/><n/>每场游戏只有一个炸弹.
 Button/Tooltip/ObverseIncubation=刀锋女王凯瑞根可以使用剃刀虫群造成可观的范围伤害，并能够在潜地状态下向目标地点瞬间移动.<n/><n/><c val="FFFF8A">可以对地和对空.</c>
 Button/Tooltip/Odin=强大的步战机甲，可以使用火炮弹幕支援战场，或借助战术聚变打击从远处摧毁敌方部队与重要建筑<n/><n/><n/><c val="#ColorAttackInfo">可以对地和对空.</c>

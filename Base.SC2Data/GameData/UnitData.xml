@@ -1487,6 +1487,21 @@
     </CUnit>
     <CUnit id="Mothership">
         <Food value="0"/>
+        <Attributes index="Mechanical" value="0"/>
+        <Attributes index="Hover" value="1"/>
+        <Attributes index="Heroic" value="0"/>
+        <Attributes index="MapBoss" value="1"/>
+        <LifeStart value="30000"/>
+        <LifeMax value="30000"/>
+        <LifeArmor value="40"/>
+        <ShieldsStart value="0"/>
+        <ShieldsMax value="0"/>
+        <CardLayouts index="0">
+            <LayoutButtons index="5" Face="TemporalField" AbilCmd="TemporalField,Execute" Column="0"/>
+            <LayoutButtons index="6" Face="MothershipPsiSupport" Type="Passive" AbilCmd="" Row="1"/>
+            <LayoutButtons index="7" removed="1"/>
+        </CardLayouts>
+        <AbilArray Link="MothershipPsiSupport"/>
     </CUnit>
     <CUnit id="MultiKillObject">
         <Collide index="Small" value="1"/>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="us-ascii"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Catalog>
     <CModel id="AiurTree">
         <ScaleMax value="2.000000,2.000000,2.000000"/>
@@ -289,7 +289,7 @@
         <Occlusion value="Show"/>
         <VariationCount value="2"/>
         <Variations Number="0" Probability="9"/>
-        <Variations Number="1"/>
+        <Variations Number="1" Probability="1"/>
     </CModel>
     <CModel id="MarineDeathFire2" parent="UnitDeath" Race="Terran">
         <Model value="Assets\Units\Terran\MarineDeathFire\MarineDeathFire.m3"/>
@@ -311,6 +311,10 @@
     <CModel id="MercCompoundPlacement">
         <ScaleMax value="0.500000,0.500000,0.500000"/>
         <ScaleMin value="0.500000,0.500000,0.500000"/>
+    </CModel>
+    <CModel id="Mothership">
+        <ScaleMax value="0.800000,0.800000,0.800000"/>
+        <ScaleMin value="0.800000,0.800000,0.800000"/>
     </CModel>
     <CModel id="Nexus">
         <ScaleMax value="1.700000,1.700000,1.700000"/>

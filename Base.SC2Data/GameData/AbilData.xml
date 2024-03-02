@@ -368,6 +368,9 @@
             </SectionArray>
         </InfoArray>
     </CAbilMorph>
+    <CAbilEffectTarget id="MothershipPsiSupport">
+        <EditorCategories value="AbilityorEffectType:Units,Race:Protoss"/>
+    </CAbilEffectTarget>
     <CAbilEffectTarget id="NanoRepair">
         <TargetFilters index="0" value="Mechanical,Visible;Self,Enemy,Structure,Missile,Dead,Hidden,Invulnerable"/>
         <Range index="0" value="5"/>
@@ -870,8 +873,11 @@
         </Cost>
         <Range index="0" value="50"/>
     </CAbilEffectTarget>
+    <CAbilEffectTarget id="ZeratulBlink">
+        <TargetFilters value="-;Player,Ally,Neutral,MapBoss,HeroUnit"/>
+    </CAbilEffectTarget>
     <CAbilEffectTarget id="ZeratulStun">
-        <TargetFilters index="0" value="Visible;Self,Player,Ally,Neutral,Heroic,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <TargetFilters index="0" value="-;Player,Ally,Neutral,MapBoss,HeroUnit"/>
     </CAbilEffectTarget>
     <CAbilTrain id="ZergTrain">
         <EditorCategories value="Race:Terran,AbilityorEffectType:Structures"/>
