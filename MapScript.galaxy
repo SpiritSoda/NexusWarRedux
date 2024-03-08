@@ -6905,6 +6905,89 @@ bool gt_GameCommand_Func(bool testConds, bool runActions) {
         return true;
     }
 
+    if(StringEqual(EventChatMessage(false), "-debugDraw", false)) {
+        gv_allPlayer = 8;
+        // Draw Proposal
+        if(gv_drawTimer > 0) {
+            if(gv_drawTimer > 300) {
+                UIDisplayMessage(PlayerGroupAll(), c_messageAreaChat, StringExternal("Param/Value/D070E179"));
+            }
+            else {
+                UIDisplayMessage(PlayerGroupAll(), c_messageAreaChat, StringExternal("Param/Value/D070E180") + FormatDuration(gv_drawTimer));
+            }
+            return true;
+        }
+        UIDisplayMessage(PlayerGroupAll(), c_messageAreaChat, StringExternal("Param/Value/D070E174"));
+        while (init_i <= 10) {
+            gv_drawVote[init_i] = 0;
+            init_i = init_i + 1;
+        }
+        if(gv_allPlayer <= 2) {
+            gv_drawRequire = gv_allPlayer;
+        }
+        else {
+            if(gv_allPlayer == 3) {
+                gv_drawRequire = 2;
+            }
+            else {
+                if(gv_allPlayer == 4) {
+                    gv_drawRequire = 3;
+                }
+                else {
+                    if(gv_allPlayer == 5) {
+                        gv_drawRequire = 4;
+                    }
+                    else {
+                        if(gv_allPlayer == 6) {
+                            gv_drawRequire = 4;
+                        }
+                        else {
+                            if(gv_allPlayer == 7) {
+                                gv_drawRequire = 5;
+                            }
+                            else {
+                                if(gv_allPlayer == 8) {
+                                    gv_drawRequire = 6;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        gv_drawVote[EventPlayer()] = 1;
+        gv_acceptPlayer = 1;
+        gv_drawTimer = 316;
+        UIDisplayMessage(PlayerGroupAll(), c_messageAreaChat, StringExternal("Param/Value/D070E175") + StringToText(" ") + PlayerName(EventPlayer()) + StringToText(" ") + StringExternal("Param/Value/D070E176") + StringToText(": (") + IntToText(gv_acceptPlayer) + StringToText("/") + IntToText(gv_drawRequire) + StringToText(")"));
+        return true;
+    }
+    if(StringEqual(EventChatMessage(false), "-debugY", false) && gv_drawTimer > 300) {
+        // Draw Accept
+        gv_acceptPlayer = gv_acceptPlayer + 1;
+        gv_drawVote[EventPlayer()] = 1;
+        UIDisplayMessage(PlayerGroupAll(), c_messageAreaChat, StringExternal("Param/Value/D070E175") + StringToText(" ") + PlayerName(EventPlayer()) + StringToText(" ") + StringExternal("Param/Value/D070E176") + StringToText(": (") + IntToText(gv_acceptPlayer) + StringToText("/") + IntToText(gv_drawRequire) + StringToText(")")); 
+        return true;
+    }
+    if(StringEqual(EventChatMessage(false), "-debugN", false) && gv_drawTimer > 300) {
+        // Draw Reject
+        gv_drawVote[EventPlayer()] = 2;
+        UIDisplayMessage(PlayerGroupAll(), c_messageAreaChat, StringExternal("Param/Value/D070E175") + StringToText(" ") + PlayerName(EventPlayer()) + StringToText(" ") + StringExternal("Param/Value/D070E177"));
+        return true;
+    }
+    if(StringEqual(EventChatMessage(false), "-elapse40", false)) {
+        gv_seconds = 2400;
+        TriggerEnable(gt_EndGame2, false);
+        TriggerExecute(gt_EndGame2);
+        return true;
+    }
+    if(StringEqual(EventChatMessage(false), "-elapse60", false)) {
+        gv_seconds = 3600;
+        TriggerEnable(gt_EndGame2, false);
+        TriggerExecute(gt_EndGame2);
+        return true;
+    }
+
+
     if(StringEqual(EventChatMessage(false), "-draw", false) && gv_seconds >= 2400) {
         // Draw Proposal
         if(gv_drawTimer > 0) {
@@ -6967,6 +7050,7 @@ bool gt_GameCommand_Func(bool testConds, bool runActions) {
                 gv_acceptPlayer = gv_acceptPlayer + 1;
                 UIDisplayMessage(PlayerGroupAll(), c_messageAreaChat, StringExternal("Param/Value/D070E175") + StringToText(" ") + PlayerName(EventPlayer()) + StringToText(" ") + StringExternal("Param/Value/D070E176") + StringToText(": (") + IntToText(gv_acceptPlayer) + StringToText("/") + IntToText(gv_drawRequire) + StringToText(")"));
             }
+            return true;
         }
         else {
             if(StringEqual(EventChatMessage(false), "-n", false) && gv_drawTimer > 300) {
@@ -6975,6 +7059,7 @@ bool gt_GameCommand_Func(bool testConds, bool runActions) {
                     gv_drawVote[EventPlayer()] = 2;
                     UIDisplayMessage(PlayerGroupAll(), c_messageAreaChat, StringExternal("Param/Value/D070E175") + StringToText(" ") + PlayerName(EventPlayer()) + StringToText(" ") + StringExternal("Param/Value/D070E177"));
                 }
+                return true;
             }
             else {
                 if(StringEqual(EventChatMessage(false), "-record", false)) {
@@ -6991,6 +7076,7 @@ bool gt_GameCommand_Func(bool testConds, bool runActions) {
                         PlayerGroupLoopStep();
                     }
                     PlayerGroupLoopEnd();
+                    return true;
                 }
             }
         }
