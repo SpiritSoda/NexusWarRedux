@@ -44,6 +44,10 @@
     <CButton id="Medivac"/>
     <CButton id="MercCompound"/>
     <CButton id="MissileTurret"/>
+    <CButton id="MothershipPsiSupport">
+        <Icon value="Assets\Textures\btn-ability-alarak-reliquaryofsouls.dds"/>
+        <EditorCategories value="Race:Protoss"/>
+    </CButton>
     <CButton id="Mutalisk"/>
     <CButton id="NydusCanal">
         <Icon value=""/>

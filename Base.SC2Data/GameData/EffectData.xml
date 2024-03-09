@@ -162,12 +162,16 @@
         <ValidatorArray index="10" removed="1"/>
     </CEffectCreateHealer>
     <CEffectDamage id="MothershipBeamDamage">
-        <Amount value="12"/>
+        <Amount value="45"/>
     </CEffectDamage>
     <CEffectCreatePersistent id="MothershipBeamPersistent">
-        <PeriodCount value="1"/>
-        <PeriodicPeriodArray index="0" value="1"/>
+        <PeriodCount value="8"/>
+        <PeriodicPeriodArray index="0" value="0.1"/>
     </CEffectCreatePersistent>
+    <CEffectApplyBehavior id="MothershipPsiSupportBoost">
+        <EditorCategories value="Race:Protoss"/>
+        <Behavior value="MothershipPsiSupport"/>
+    </CEffectApplyBehavior>
     <CEffectCreatePersistent id="MothershipSecondaryBeamPersistent">
         <PeriodCount value="0"/>
         <PeriodicPeriodArray index="0" value="1"/>
@@ -177,7 +181,7 @@
     </CEffectCreateHealer>
     <CEffectDamage id="NukeDamage">
         <Amount value="10000"/>
-        <SearchFilters value="-;Player,Ally,Worker,Missile,Stasis,Dead,Hidden"/>
+        <SearchFilters value="-;Player,Ally,Worker,Missile,Stasis,Dead,Hidden,MapBoss"/>
     </CEffectDamage>
     <CEffectDamage id="OdinDamage">
         <AttributeBonus index="Structure" value="0"/>

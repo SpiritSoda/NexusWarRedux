@@ -137,6 +137,12 @@
             <Charge CountMax="3"/>
         </InfoArray>
     </CAbilResearch>
+    <CAbilEffectTarget id="DarkTemplarBlink">
+        <Cost index="0">
+            <Cooldown TimeUse="10"/>
+        </Cost>
+        <CmdButtonArray index="Execute" Requirements=""/>
+    </CAbilEffectTarget>
     <CAbilResearch id="EngineeringBayResearch">
         <InfoArray index="Research3" Time="5">
             <Resource index="Vespene" value="0"/>
@@ -368,6 +374,9 @@
             </SectionArray>
         </InfoArray>
     </CAbilMorph>
+    <CAbilEffectTarget id="MothershipPsiSupport">
+        <EditorCategories value="AbilityorEffectType:Units,Race:Protoss"/>
+    </CAbilEffectTarget>
     <CAbilEffectTarget id="NanoRepair">
         <TargetFilters index="0" value="Mechanical,Visible;Self,Enemy,Structure,Missile,Dead,Hidden,Invulnerable"/>
         <Range index="0" value="5"/>
@@ -584,6 +593,10 @@
     </CAbilTrain>
     <CAbilResearch id="StarportTechLabResearch">
         <InfoArray index="Research7" Time="5">
+            <Resource index="Vespene" value="0"/>
+        </InfoArray>
+        <InfoArray index="Research10" Time="5">
+            <Resource index="Minerals" value="100"/>
             <Resource index="Vespene" value="0"/>
         </InfoArray>
     </CAbilResearch>
@@ -870,8 +883,11 @@
         </Cost>
         <Range index="0" value="50"/>
     </CAbilEffectTarget>
+    <CAbilEffectTarget id="ZeratulBlink">
+        <TargetFilters value="-;Player,Ally,Neutral,MapBoss,HeroUnit"/>
+    </CAbilEffectTarget>
     <CAbilEffectTarget id="ZeratulStun">
-        <TargetFilters index="0" value="Visible;Self,Player,Ally,Neutral,Heroic,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <TargetFilters index="0" value="-;Player,Ally,Neutral,MapBoss,HeroUnit"/>
     </CAbilEffectTarget>
     <CAbilTrain id="ZergTrain">
         <EditorCategories value="Race:Terran,AbilityorEffectType:Structures"/>

@@ -166,6 +166,11 @@
             </Cost>
         </DamageResponse>
     </CBehaviorBuff>
+    <CBehaviorBuff id="MothershipPsiSupport">
+        <Alignment value="Positive"/>
+        <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
+        <PeriodicEffect value="MothershipPsiSupportBoost"/>
+    </CBehaviorBuff>
     <CBehaviorBuff id="PermanentlyCloaked2">
         <InfoIcon value="Assets\Textures\btn-ability-terran-cloak.dds"/>
         <Duration value="1.5"/>

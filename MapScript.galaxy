@@ -1050,6 +1050,7 @@ trigger gt_Level;
 trigger gt_GameCommand;
 trigger gt_PlayerLeavePunish;
 trigger gt_Nuke;
+trigger gt_DarkTemplar;
 
 void gt_DrawSuccess() {
     gv_gameover = true;
@@ -1449,6 +1450,36 @@ void gt_stalker_Init () {
     gt_stalker = TriggerCreate("gt_stalker_Func");
     TriggerAddEventUnitAttacked(gt_stalker, null);
 }
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Dark Templar
+//--------------------------------------------------------------------------------------------------
+bool gt_DarkTemplar_Func (bool testConds, bool runActions) {
+    // Conditions
+    if (testConds) {
+        if (!((UnitGetType(EventUnit()) == "DarkTemplar"))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    if(UnitAbilityGetCooldown(EventUnit(), "DarkTemplarBlink", "Abil/DarkTemplarBlink") > 0) {
+        return true;
+    }
+    UnitIssueOrder(EventUnit(), OrderTargetingPoint(AbilityCommand("DarkTemplarBlink", 0), UnitGetPosition(EventUnitTarget())), c_orderQueueReplace);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void gt_DarkTemplar_Init () {
+    gt_DarkTemplar = TriggerCreate("gt_DarkTemplar_Func");
+    TriggerAddEventUnitAttacked(gt_DarkTemplar, null);
+}
+
 
 //--------------------------------------------------------------------------------------------------
 // Trigger: hellion
@@ -4231,7 +4262,7 @@ bool gt_TimeUpdate_Func (bool testConds, bool runActions) {
     else {
     }
 
-    if(gv_seconds > 5) {
+    if(gv_seconds > 10000) {
         if(gv_smiley1 == 0) {
             // gt_Team2Win_Func(false, true);
 
@@ -4257,8 +4288,11 @@ bool gt_TimeUpdate_Func (bool testConds, bool runActions) {
     }
     if(gv_drawTimer > 0) {
         gv_drawTimer = gv_drawTimer - 1;
-        if(gv_drawTimer == 300) {
+        if(gv_drawTimer == 180) {
             gt_DrawResult();
+        }
+        if(gv_drawTimer == 0) {
+            UIDisplayMessage(PlayerGroupAll(), c_messageAreaSubtitle, StringToText("当前可重新发起平局投票"));
         }
     }
     return true;
@@ -6905,10 +6939,41 @@ bool gt_GameCommand_Func(bool testConds, bool runActions) {
         return true;
     }
 
+    // Debug Command
+    if(StringEqual(TextToString(PlayerName(EventPlayer())), "SodaWater", true) || StringEqual(TextToString(PlayerName(EventPlayer())), "本地玩家", true)) {
+        if(StringEqual(EventChatMessage(false), "-elapse40", false)) {
+            gv_seconds = 2399;
+            TriggerEnable(gt_EndGame2, false);
+            TriggerExecute(gt_EndGame2, false, false);
+            return true;
+        }
+        if(StringEqual(EventChatMessage(false), "-elapse60", false)) {
+            gv_seconds = 3599;
+            TriggerEnable(gt_EndGame2, false);
+            TriggerExecute(gt_EndGame2, false, false);
+            return true;
+        }
+        if(StringEqual(EventChatMessage(false), "-elapse80", false)) {
+            gv_seconds = 4799;
+            TriggerEnable(gt_EndGame2, false);
+            TriggerExecute(gt_EndGame2, false, false);
+            return true;
+        }
+        if(StringEqual(EventChatMessage(false), "-rich", false)) {
+            PlayerGroupLoopBegin(PlayerGroupAll());
+            while(!PlayerGroupLoopDone()) {
+                PlayerModifyPropertyInt(PlayerGroupLoopCurrent(), c_playerPropMinerals, c_playerPropOperAdd, 5000);
+                PlayerGroupLoopStep();
+            }
+            PlayerGroupLoopEnd();
+            return true;
+        }
+    }
+
     if(StringEqual(EventChatMessage(false), "-draw", false) && gv_seconds >= 2400) {
         // Draw Proposal
         if(gv_drawTimer > 0) {
-            if(gv_drawTimer > 300) {
+            if(gv_drawTimer > 180) {
                 UIDisplayMessage(PlayerGroupAll(), c_messageAreaChat, StringExternal("Param/Value/D070E179"));
             }
             else {
@@ -6956,7 +7021,7 @@ bool gt_GameCommand_Func(bool testConds, bool runActions) {
         }
         gv_drawVote[EventPlayer()] = 1;
         gv_acceptPlayer = 1;
-        gv_drawTimer = 316;
+        gv_drawTimer = 210;
         UIDisplayMessage(PlayerGroupAll(), c_messageAreaChat, StringExternal("Param/Value/D070E175") + StringToText(" ") + PlayerName(EventPlayer()) + StringToText(" ") + StringExternal("Param/Value/D070E176") + StringToText(": (") + IntToText(gv_acceptPlayer) + StringToText("/") + IntToText(gv_drawRequire) + StringToText(")"));
     }
     else {
@@ -7064,6 +7129,7 @@ void InitTriggers () {
     gt_Banshee_Init();
     gt_Ghostclaok_Init();
     gt_stalker_Init();
+    gt_DarkTemplar_Init();
     gt_hellion_Init();
     gt_Carrier_Init();
     gt_Cannon60_Init();

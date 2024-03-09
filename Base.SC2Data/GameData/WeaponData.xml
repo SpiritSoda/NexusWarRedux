@@ -238,8 +238,9 @@
     </CWeaponLegacy>
     <CWeaponLegacy id="MothershipBeam">
         <MinScanRange value="13"/>
-        <Period value="1.5"/>
-        <DisplayAttackCount value="1"/>
+        <Period value="1"/>
+        <DisplayAttackCount value="8"/>
+        <Range value="8"/>
     </CWeaponLegacy>
     <CWeaponLegacy id="Mutalisk">
         <MinScanRange value="13"/>
