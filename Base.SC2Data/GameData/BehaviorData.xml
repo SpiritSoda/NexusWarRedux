@@ -181,6 +181,9 @@
     <CBehaviorBuff id="PsiStorm">
         <MaxStackCount value="2"/>
     </CBehaviorBuff>
+    <CBehaviorBuff id="QueenMustBeOnCreep">
+        <DisableValidatorArray index="0" removed="1"/>
+    </CBehaviorBuff>
     <CBehaviorBuff id="SalvageBunker">
         <Duration value="0.5"/>
         <Modification>

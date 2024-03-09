@@ -137,11 +137,19 @@
             <Charge CountMax="3"/>
         </InfoArray>
     </CAbilResearch>
+    <CAbilResearch id="DarkShrineResearch">
+        <InfoArray index="Research1" Time="5">
+            <Resource index="Vespene" value="0"/>
+        </InfoArray>
+    </CAbilResearch>
     <CAbilEffectTarget id="DarkTemplarBlink">
-        <Cost index="0">
-            <Cooldown TimeUse="10"/>
-        </Cost>
         <CmdButtonArray index="Execute" Requirements=""/>
+        <Flags index="AutoCast" value="1"/>
+        <Flags index="AutoCastOn" value="1"/>
+        <Flags index="BestUnit" value="1"/>
+        <AutoCastRange value="6"/>
+        <AutoCastValidatorArray value="TargetIsVisible"/>
+        <AutoCastValidatorArray value="IsGroundUnit"/>
     </CAbilEffectTarget>
     <CAbilResearch id="EngineeringBayResearch">
         <InfoArray index="Research3" Time="5">
