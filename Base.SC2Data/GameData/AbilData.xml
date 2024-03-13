@@ -150,6 +150,9 @@
         <AutoCastRange value="6"/>
         <AutoCastValidatorArray value="TargetIsVisible"/>
         <AutoCastValidatorArray value="IsGroundUnit"/>
+        <Cost index="0">
+            <Cooldown TimeUse="15"/>
+        </Cost>
     </CAbilEffectTarget>
     <CAbilResearch id="EngineeringBayResearch">
         <InfoArray index="Research3" Time="5">
