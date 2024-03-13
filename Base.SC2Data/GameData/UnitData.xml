@@ -29,6 +29,7 @@
         <ShieldsMax value="500"/>
         <ShieldRegenDelay value="1"/>
         <BehaviorArray Link="Immolation"/>
+        <InnerRadius value="0.75"/>
     </CUnit>
     <CUnit id="Armory">
         <Collide index="Burrow" value="0"/>

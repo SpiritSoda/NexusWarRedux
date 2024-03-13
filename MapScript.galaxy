@@ -3945,7 +3945,7 @@ bool gt_SCVcreate2_Func (bool testConds, bool runActions) {
     if (!runActions) {
         return true;
     }
-    
+
     PlayerGroupLoopBegin(gv_team1);
     while (!PlayerGroupLoopDone()) {
         if ((PlayerStatus(PlayerGroupLoopCurrent()) == c_playerStatusActive)) {
@@ -5365,7 +5365,7 @@ bool gt_AddingtoIncomeProtoss_Func (bool testConds, bool runActions) {
                 UnitGroupLoopStep();
             }
             UnitGroupLoopEnd();
-            gv_protossIncome[PlayerGroupLoopCurrent()] = ((((gv_incomeZealot[PlayerGroupLoopCurrent()] * 4) + (gv_incomeStalker[PlayerGroupLoopCurrent()] * 5)) + (gv_incomeSentry[PlayerGroupLoopCurrent()] * 3)) + ((gv_incomeDarkTemplar[PlayerGroupLoopCurrent()] * 5) + ((gv_incomeImmortal[PlayerGroupLoopCurrent()] * 7) + ((gv_incomeArchon[PlayerGroupLoopCurrent()] * 8) + ((gv_incomeCollossus[PlayerGroupLoopCurrent()] * 12) + ((gv_incomeVoidray[PlayerGroupLoopCurrent()] * 9) + ((gv_incomePhoenix[PlayerGroupLoopCurrent()] * 6) + ((gv_incomeCarrier[PlayerGroupLoopCurrent()] * 14) + ((gv_incomeHighTemplar[PlayerGroupLoopCurrent()] * 6) + (gv_incomeScout[PlayerGroupLoopCurrent()] * 6))))))))));
+            gv_protossIncome[PlayerGroupLoopCurrent()] = ((((gv_incomeZealot[PlayerGroupLoopCurrent()] * 4) + (gv_incomeStalker[PlayerGroupLoopCurrent()] * 5)) + (gv_incomeSentry[PlayerGroupLoopCurrent()] * 3)) + ((gv_incomeDarkTemplar[PlayerGroupLoopCurrent()] * 5) + ((gv_incomeImmortal[PlayerGroupLoopCurrent()] * 7) + ((gv_incomeArchon[PlayerGroupLoopCurrent()] * 8) + ((gv_incomeCollossus[PlayerGroupLoopCurrent()] * 12) + ((gv_incomeVoidray[PlayerGroupLoopCurrent()] * 10) + ((gv_incomePhoenix[PlayerGroupLoopCurrent()] * 6) + ((gv_incomeCarrier[PlayerGroupLoopCurrent()] * 14) + ((gv_incomeHighTemplar[PlayerGroupLoopCurrent()] * 6) + (gv_incomeScout[PlayerGroupLoopCurrent()] * 6))))))))));
         }
         else {
         }
